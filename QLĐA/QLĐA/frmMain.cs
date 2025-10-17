@@ -69,10 +69,7 @@ namespace Project_QLDA
 
         }
 
-        private void btnDangNhap_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
+    
 
         private void barClock_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -105,6 +102,26 @@ namespace Project_QLDA
         }
 
         private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDangNhap_ItemClick_2(object sender, ItemClickEventArgs e)
         {
 
         }
