@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraBars;
+using QLĐA;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -123,7 +124,11 @@ namespace Project_QLDA
 
         private void btnDangNhap_ItemClick_2(object sender, ItemClickEventArgs e)
         {
-
+            using (frmLogin frm = new frmLogin())
+            {
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.ShowDialog();
+            }
         }
     }
 }
