@@ -52,7 +52,7 @@ namespace Project_QLDA
 
         private void btnExit_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void btnTraCuuGiangVien_ItemClick(object sender, ItemClickEventArgs e)
@@ -129,6 +129,11 @@ namespace Project_QLDA
                 frm.StartPosition = FormStartPosition.CenterScreen;
                 frm.ShowDialog();
             }
+        }
+
+        private void ribbonStatusBar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -100,7 +100,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Caption = "Kết thúc";
+            this.btnExit.Caption = "Thoát";
             this.btnExit.Id = 4;
             this.btnExit.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExit.ImageOptions.SvgImage")));
             this.btnExit.Name = "btnExit";
@@ -212,6 +212,7 @@
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1699, 36);
+            this.ribbonStatusBar.Click += new System.EventHandler(this.ribbonStatusBar_Click);
             // 
             // timer1
             // 
