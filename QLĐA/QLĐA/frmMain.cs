@@ -135,5 +135,10 @@ namespace Project_QLDA
         {
 
         }
+
+        private void btnTraCuu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

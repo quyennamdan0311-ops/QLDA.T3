@@ -58,6 +58,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTraCuu = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -81,9 +83,11 @@
             this.barUser,
             this.barTimer,
             this.barClock,
-            this.btnDangNhap});
+            this.btnDangNhap,
+            this.barButtonItem2,
+            this.btnTraCuu});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 19;
+            this.ribbon.MaxItemId = 21;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -192,17 +196,15 @@
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2});
-            this.ribbonPage2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage2.ImageOptions.Image")));
+            this.ribbonPage2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ribbonPage2.ImageOptions.SvgImage")));
             this.ribbonPage2.Name = "ribbonPage2";
-            this.ribbonPage2.Text = "Tra cứu";
+            this.ribbonPage2.Text = "Chức năng ";
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnTraCuuDoAn);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnTraCuuGiangVien);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnTraCuuSinhVien);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnTraCuu);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Danh mục tra cứu";
+            this.ribbonPageGroup2.Text = "Quyền hạn";
             // 
             // ribbonStatusBar
             // 
@@ -330,6 +332,24 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Tra Cứu";
+            this.barButtonItem2.Id = 19;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // btnTraCuu
+            // 
+            this.btnTraCuu.Caption = "Tra cứu";
+            this.btnTraCuu.Id = 20;
+            this.btnTraCuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.btnTraCuu.Name = "btnTraCuu";
+            this.btnTraCuu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnTraCuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTraCuu_ItemClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -393,5 +413,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private DevExpress.XtraBars.BarButtonItem btnDangNhap;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btnTraCuu;
     }
 }
