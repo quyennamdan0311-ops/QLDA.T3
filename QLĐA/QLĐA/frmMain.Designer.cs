@@ -42,6 +42,8 @@
             this.barTimer = new DevExpress.XtraBars.BarStaticItem();
             this.barClock = new DevExpress.XtraBars.BarStaticItem();
             this.btnDangNhap = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTraCuu = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -58,8 +60,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnTraCuu = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -85,9 +87,11 @@
             this.barClock,
             this.btnDangNhap,
             this.barButtonItem2,
-            this.btnTraCuu});
+            this.btnTraCuu,
+            this.barButtonItem4,
+            this.barButtonItem5});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 21;
+            this.ribbon.MaxItemId = 23;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -107,6 +111,10 @@
             this.btnExit.Caption = "Thoát";
             this.btnExit.Id = 4;
             this.btnExit.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExit.ImageOptions.SvgImage")));
+            this.btnExit.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.btnExit.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnExit.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.btnExit.ItemInMenuAppearance.Normal.Options.UseFont = true;
             this.btnExit.Name = "btnExit";
             this.btnExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExit_ItemClick);
             // 
@@ -172,9 +180,36 @@
             this.btnDangNhap.Caption = "Đăng nhập";
             this.btnDangNhap.Id = 17;
             this.btnDangNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.ImageOptions.Image")));
+            this.btnDangNhap.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.btnDangNhap.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnDangNhap.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.btnDangNhap.ItemInMenuAppearance.Normal.Options.UseFont = true;
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnDangNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangNhap_ItemClick_2);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Tra Cứu";
+            this.barButtonItem2.Id = 19;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // btnTraCuu
+            // 
+            this.btnTraCuu.Caption = "Tra cứu thông tin ";
+            this.btnTraCuu.Id = 20;
+            this.btnTraCuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTraCuu.ImageOptions.Image")));
+            this.btnTraCuu.ImageOptions.SvgImageSize = new System.Drawing.Size(45, 45);
+            this.btnTraCuu.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.btnTraCuu.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnTraCuu.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.btnTraCuu.ItemInMenuAppearance.Normal.Options.UseFont = true;
+            this.btnTraCuu.Name = "btnTraCuu";
+            this.btnTraCuu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnTraCuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTraCuu_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -332,23 +367,17 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // barButtonItem2
+            // barButtonItem4
             // 
-            this.barButtonItem2.Caption = "Tra Cứu";
-            this.barButtonItem2.Id = 19;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem4.Caption = "barButtonItem4";
+            this.barButtonItem4.Id = 21;
+            this.barButtonItem4.Name = "barButtonItem4";
             // 
-            // btnTraCuu
+            // barButtonItem5
             // 
-            this.btnTraCuu.Caption = "Tra cứu";
-            this.btnTraCuu.Id = 20;
-            this.btnTraCuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.btnTraCuu.Name = "btnTraCuu";
-            this.btnTraCuu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnTraCuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTraCuu_ItemClick);
+            this.barButtonItem5.Caption = "barButtonItem5";
+            this.barButtonItem5.Id = 22;
+            this.barButtonItem5.Name = "barButtonItem5";
             // 
             // frmMain
             // 
@@ -415,5 +444,7 @@
         private DevExpress.XtraBars.BarButtonItem btnDangNhap;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem btnTraCuu;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
     }
 }

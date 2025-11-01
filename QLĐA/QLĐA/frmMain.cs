@@ -138,7 +138,11 @@ namespace Project_QLDA
 
         private void btnTraCuu_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            using (frmTraCuu frm = new frmTraCuu())
+            {
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.ShowDialog();
+            }
         }
     }
 }
