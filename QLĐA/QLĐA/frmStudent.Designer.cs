@@ -37,6 +37,7 @@
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
+            this.btnTraCuu = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -45,7 +46,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.grbThongTinCaNhan = new System.Windows.Forms.GroupBox();
-            this.btnInThongTin = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtKhoa = new System.Windows.Forms.TextBox();
@@ -63,27 +63,22 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.grbThongTinDoAn = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.lblMoTa = new System.Windows.Forms.Label();
-            this.txtKetQua = new System.Windows.Forms.TextBox();
             this.txtNgayBaoVe = new System.Windows.Forms.TextBox();
             this.txtNgayNop = new System.Windows.Forms.TextBox();
             this.txtGVPB = new System.Windows.Forms.TextBox();
             this.txtGVHD = new System.Windows.Forms.TextBox();
             this.txtTenDoAn = new System.Windows.Forms.TextBox();
             this.txtMaDoAn = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnTraCuu = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.panel1.SuspendLayout();
             this.grbThongTinCaNhan.SuspendLayout();
@@ -109,7 +104,7 @@
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2});
-            this.ribbon.Size = new System.Drawing.Size(1540, 250);
+            this.ribbon.Size = new System.Drawing.Size(1802, 250);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnLogout
@@ -154,6 +149,15 @@
             this.barStaticItem4.Id = 6;
             this.barStaticItem4.Name = "barStaticItem4";
             // 
+            // btnTraCuu
+            // 
+            this.btnTraCuu.Caption = "Tra cứu";
+            this.btnTraCuu.Id = 7;
+            this.btnTraCuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTraCuu.ImageOptions.Image")));
+            this.btnTraCuu.Name = "btnTraCuu";
+            this.btnTraCuu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnTraCuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTraCuu_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -193,7 +197,7 @@
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 961);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1540, 36);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1802, 36);
             // 
             // timer1
             // 
@@ -212,7 +216,6 @@
             // 
             // grbThongTinCaNhan
             // 
-            this.grbThongTinCaNhan.Controls.Add(this.btnInThongTin);
             this.grbThongTinCaNhan.Controls.Add(this.txtEmail);
             this.grbThongTinCaNhan.Controls.Add(this.txtSDT);
             this.grbThongTinCaNhan.Controls.Add(this.txtKhoa);
@@ -234,15 +237,6 @@
             this.grbThongTinCaNhan.TabIndex = 7;
             this.grbThongTinCaNhan.TabStop = false;
             this.grbThongTinCaNhan.Text = "Thông tin cá nhân";
-            // 
-            // btnInThongTin
-            // 
-            this.btnInThongTin.Location = new System.Drawing.Point(354, 451);
-            this.btnInThongTin.Name = "btnInThongTin";
-            this.btnInThongTin.Size = new System.Drawing.Size(220, 35);
-            this.btnInThongTin.TabIndex = 16;
-            this.btnInThongTin.Text = "In thông tin";
-            this.btnInThongTin.UseVisualStyleBackColor = true;
             // 
             // txtEmail
             // 
@@ -388,28 +382,24 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(916, 250);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(624, 711);
+            this.panel2.Size = new System.Drawing.Size(886, 711);
             this.panel2.TabIndex = 3;
             // 
             // grbThongTinDoAn
             // 
-            this.grbThongTinDoAn.Controls.Add(this.textBox2);
             this.grbThongTinDoAn.Controls.Add(this.label16);
             this.grbThongTinDoAn.Controls.Add(this.textBox1);
             this.grbThongTinDoAn.Controls.Add(this.label15);
             this.grbThongTinDoAn.Controls.Add(this.txtMoTa);
             this.grbThongTinDoAn.Controls.Add(this.lblMoTa);
-            this.grbThongTinDoAn.Controls.Add(this.txtKetQua);
             this.grbThongTinDoAn.Controls.Add(this.txtNgayBaoVe);
             this.grbThongTinDoAn.Controls.Add(this.txtNgayNop);
             this.grbThongTinDoAn.Controls.Add(this.txtGVPB);
             this.grbThongTinDoAn.Controls.Add(this.txtGVHD);
             this.grbThongTinDoAn.Controls.Add(this.txtTenDoAn);
             this.grbThongTinDoAn.Controls.Add(this.txtMaDoAn);
-            this.grbThongTinDoAn.Controls.Add(this.label14);
             this.grbThongTinDoAn.Controls.Add(this.label13);
             this.grbThongTinDoAn.Controls.Add(this.label12);
-            this.grbThongTinDoAn.Controls.Add(this.label11);
             this.grbThongTinDoAn.Controls.Add(this.label10);
             this.grbThongTinDoAn.Controls.Add(this.label9);
             this.grbThongTinDoAn.Controls.Add(this.label8);
@@ -417,23 +407,15 @@
             this.grbThongTinDoAn.Font = new System.Drawing.Font("Tahoma", 11F);
             this.grbThongTinDoAn.Location = new System.Drawing.Point(916, 250);
             this.grbThongTinDoAn.Name = "grbThongTinDoAn";
-            this.grbThongTinDoAn.Size = new System.Drawing.Size(624, 711);
+            this.grbThongTinDoAn.Size = new System.Drawing.Size(886, 711);
             this.grbThongTinDoAn.TabIndex = 0;
             this.grbThongTinDoAn.TabStop = false;
             this.grbThongTinDoAn.Text = "Thông tin đồ án tốt nghiệp";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(314, 551);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(108, 34);
-            this.textBox2.TabIndex = 22;
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(22, 551);
+            this.label16.Location = new System.Drawing.Point(22, 503);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(57, 27);
             this.label16.TabIndex = 21;
@@ -450,7 +432,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(23, 491);
+            this.label15.Location = new System.Drawing.Point(23, 441);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(78, 27);
             this.label15.TabIndex = 19;
@@ -462,7 +444,7 @@
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.ReadOnly = true;
-            this.txtMoTa.Size = new System.Drawing.Size(402, 34);
+            this.txtMoTa.Size = new System.Drawing.Size(467, 34);
             this.txtMoTa.TabIndex = 18;
             // 
             // lblMoTa
@@ -474,14 +456,6 @@
             this.lblMoTa.TabIndex = 17;
             this.lblMoTa.Text = "Mô tả";
             // 
-            // txtKetQua
-            // 
-            this.txtKetQua.Location = new System.Drawing.Point(314, 602);
-            this.txtKetQua.Name = "txtKetQua";
-            this.txtKetQua.ReadOnly = true;
-            this.txtKetQua.Size = new System.Drawing.Size(108, 34);
-            this.txtKetQua.TabIndex = 16;
-            // 
             // txtNgayBaoVe
             // 
             this.txtNgayBaoVe.Location = new System.Drawing.Point(314, 432);
@@ -492,7 +466,7 @@
             // 
             // txtNgayNop
             // 
-            this.txtNgayNop.Location = new System.Drawing.Point(314, 371);
+            this.txtNgayNop.Location = new System.Drawing.Point(314, 372);
             this.txtNgayNop.Name = "txtNgayNop";
             this.txtNgayNop.ReadOnly = true;
             this.txtNgayNop.Size = new System.Drawing.Size(467, 34);
@@ -531,19 +505,10 @@
             this.txtMaDoAn.Size = new System.Drawing.Size(191, 34);
             this.txtMaDoAn.TabIndex = 10;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(22, 605);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(87, 27);
-            this.label14.TabIndex = 6;
-            this.label14.Text = "Kết quả";
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(22, 371);
+            this.label13.Location = new System.Drawing.Point(23, 315);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(105, 27);
             this.label13.TabIndex = 5;
@@ -552,20 +517,11 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(22, 432);
+            this.label12.Location = new System.Drawing.Point(23, 379);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(135, 27);
             this.label12.TabIndex = 4;
             this.label12.Text = "Ngày bảo vệ";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(22, 315);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(218, 27);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Giảng viên phản biện";
             // 
             // label10
             // 
@@ -594,20 +550,11 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Mã đồ án";
             // 
-            // btnTraCuu
-            // 
-            this.btnTraCuu.Caption = "Tra cứu";
-            this.btnTraCuu.Id = 7;
-            this.btnTraCuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnTraCuu.Name = "btnTraCuu";
-            this.btnTraCuu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnTraCuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTraCuu_ItemClick);
-            // 
             // frmStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1540, 997);
+            this.ClientSize = new System.Drawing.Size(1802, 997);
             this.Controls.Add(this.grbThongTinDoAn);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -665,23 +612,18 @@
         private System.Windows.Forms.GroupBox grbThongTinDoAn;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnInThongTin;
-        private System.Windows.Forms.TextBox txtKetQua;
         private System.Windows.Forms.TextBox txtNgayBaoVe;
         private System.Windows.Forms.TextBox txtNgayNop;
         private System.Windows.Forms.TextBox txtGVPB;
         private System.Windows.Forms.TextBox txtGVHD;
         private System.Windows.Forms.TextBox txtTenDoAn;
         private System.Windows.Forms.TextBox txtMaDoAn;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtMoTa;
         private System.Windows.Forms.Label lblMoTa;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox1;
         private DevExpress.XtraBars.BarButtonItem btnTraCuu;
