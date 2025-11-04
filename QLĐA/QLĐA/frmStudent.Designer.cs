@@ -35,7 +35,7 @@
             this.btnClose = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
-            this.lblHoTen = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
             this.btnTraCuu = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -64,16 +64,18 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.grbThongTinDoAn = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtNam = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.lblMoTa = new System.Windows.Forms.Label();
-            this.txtHocKy = new System.Windows.Forms.TextBox();
+            this.txtNgayBaoVe = new System.Windows.Forms.TextBox();
             this.txtNgayNop = new System.Windows.Forms.TextBox();
+            this.txtGVPB = new System.Windows.Forms.TextBox();
             this.txtGVHD = new System.Windows.Forms.TextBox();
             this.txtTenDoAn = new System.Windows.Forms.TextBox();
             this.txtMaDoAn = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -93,7 +95,7 @@
             this.btnClose,
             this.barStaticItem1,
             this.barStaticItem2,
-            this.lblHoTen,
+            this.barStaticItem3,
             this.barStaticItem4,
             this.btnTraCuu});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
@@ -134,12 +136,12 @@
             this.barStaticItem2.Id = 4;
             this.barStaticItem2.Name = "barStaticItem2";
             // 
-            // lblHoTen
+            // barStaticItem3
             // 
-            this.lblHoTen.Caption = "Họ tên";
-            this.lblHoTen.Id = 5;
-            this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.lblHoTen_ItemClick);
+            this.barStaticItem3.Caption = "Vai trò: ";
+            this.barStaticItem3.Id = 5;
+            this.barStaticItem3.Name = "barStaticItem3";
+            this.barStaticItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barStaticItem3_ItemClick);
             // 
             // barStaticItem4
             // 
@@ -188,7 +190,9 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.ItemLinks.Add(this.lblHoTen);
+            this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem1);
+            this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem3);
+            this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem4);
             this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem2);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 961);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
@@ -265,7 +269,6 @@
             this.txtLopNienChe.ReadOnly = true;
             this.txtLopNienChe.Size = new System.Drawing.Size(524, 34);
             this.txtLopNienChe.TabIndex = 12;
-            this.txtLopNienChe.TextChanged += new System.EventHandler(this.txtLopNienChe_TextChanged);
             // 
             // txtGioiTinh
             // 
@@ -277,7 +280,7 @@
             // 
             // txtHoTen
             // 
-            this.txtHoTen.Location = new System.Drawing.Point(170, 121);
+            this.txtHoTen.Location = new System.Drawing.Point(159, 147);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.ReadOnly = true;
             this.txtHoTen.Size = new System.Drawing.Size(467, 34);
@@ -290,7 +293,6 @@
             this.txtMaSV.ReadOnly = true;
             this.txtMaSV.Size = new System.Drawing.Size(211, 34);
             this.txtMaSV.TabIndex = 9;
-            this.txtMaSV.TextChanged += new System.EventHandler(this.txtMaSV_TextChanged);
             // 
             // label7
             // 
@@ -386,16 +388,18 @@
             // grbThongTinDoAn
             // 
             this.grbThongTinDoAn.Controls.Add(this.label16);
-            this.grbThongTinDoAn.Controls.Add(this.txtNam);
+            this.grbThongTinDoAn.Controls.Add(this.textBox1);
             this.grbThongTinDoAn.Controls.Add(this.label15);
             this.grbThongTinDoAn.Controls.Add(this.txtMoTa);
             this.grbThongTinDoAn.Controls.Add(this.lblMoTa);
-            this.grbThongTinDoAn.Controls.Add(this.txtHocKy);
+            this.grbThongTinDoAn.Controls.Add(this.txtNgayBaoVe);
             this.grbThongTinDoAn.Controls.Add(this.txtNgayNop);
+            this.grbThongTinDoAn.Controls.Add(this.txtGVPB);
             this.grbThongTinDoAn.Controls.Add(this.txtGVHD);
             this.grbThongTinDoAn.Controls.Add(this.txtTenDoAn);
             this.grbThongTinDoAn.Controls.Add(this.txtMaDoAn);
             this.grbThongTinDoAn.Controls.Add(this.label13);
+            this.grbThongTinDoAn.Controls.Add(this.label12);
             this.grbThongTinDoAn.Controls.Add(this.label10);
             this.grbThongTinDoAn.Controls.Add(this.label9);
             this.grbThongTinDoAn.Controls.Add(this.label8);
@@ -411,24 +415,24 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(23, 522);
+            this.label16.Location = new System.Drawing.Point(22, 503);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(57, 27);
             this.label16.TabIndex = 21;
             this.label16.Text = "Năm";
             // 
-            // txtNam
+            // textBox1
             // 
-            this.txtNam.Location = new System.Drawing.Point(314, 522);
-            this.txtNam.Name = "txtNam";
-            this.txtNam.ReadOnly = true;
-            this.txtNam.Size = new System.Drawing.Size(108, 34);
-            this.txtNam.TabIndex = 20;
+            this.textBox1.Location = new System.Drawing.Point(314, 491);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(108, 34);
+            this.textBox1.TabIndex = 20;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(23, 468);
+            this.label15.Location = new System.Drawing.Point(23, 441);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(78, 27);
             this.label15.TabIndex = 19;
@@ -440,7 +444,7 @@
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.ReadOnly = true;
-            this.txtMoTa.Size = new System.Drawing.Size(467, 109);
+            this.txtMoTa.Size = new System.Drawing.Size(467, 34);
             this.txtMoTa.TabIndex = 18;
             // 
             // lblMoTa
@@ -452,25 +456,33 @@
             this.lblMoTa.TabIndex = 17;
             this.lblMoTa.Text = "Mô tả";
             // 
-            // txtHocKy
+            // txtNgayBaoVe
             // 
-            this.txtHocKy.Location = new System.Drawing.Point(314, 465);
-            this.txtHocKy.Name = "txtHocKy";
-            this.txtHocKy.ReadOnly = true;
-            this.txtHocKy.Size = new System.Drawing.Size(467, 34);
-            this.txtHocKy.TabIndex = 15;
+            this.txtNgayBaoVe.Location = new System.Drawing.Point(314, 432);
+            this.txtNgayBaoVe.Name = "txtNgayBaoVe";
+            this.txtNgayBaoVe.ReadOnly = true;
+            this.txtNgayBaoVe.Size = new System.Drawing.Size(467, 34);
+            this.txtNgayBaoVe.TabIndex = 15;
             // 
             // txtNgayNop
             // 
-            this.txtNgayNop.Location = new System.Drawing.Point(314, 402);
+            this.txtNgayNop.Location = new System.Drawing.Point(314, 372);
             this.txtNgayNop.Name = "txtNgayNop";
             this.txtNgayNop.ReadOnly = true;
             this.txtNgayNop.Size = new System.Drawing.Size(467, 34);
-            this.txtNgayNop.TabIndex = 13;
+            this.txtNgayNop.TabIndex = 14;
+            // 
+            // txtGVPB
+            // 
+            this.txtGVPB.Location = new System.Drawing.Point(314, 312);
+            this.txtGVPB.Name = "txtGVPB";
+            this.txtGVPB.ReadOnly = true;
+            this.txtGVPB.Size = new System.Drawing.Size(467, 34);
+            this.txtGVPB.TabIndex = 13;
             // 
             // txtGVHD
             // 
-            this.txtGVHD.Location = new System.Drawing.Point(314, 333);
+            this.txtGVHD.Location = new System.Drawing.Point(314, 245);
             this.txtGVHD.Name = "txtGVHD";
             this.txtGVHD.ReadOnly = true;
             this.txtGVHD.Size = new System.Drawing.Size(467, 34);
@@ -496,16 +508,25 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(23, 409);
+            this.label13.Location = new System.Drawing.Point(23, 315);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(105, 27);
             this.label13.TabIndex = 5;
             this.label13.Text = "Ngày nộp";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(23, 379);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(135, 27);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Ngày bảo vệ";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(23, 340);
+            this.label10.Location = new System.Drawing.Point(23, 248);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(226, 27);
             this.label10.TabIndex = 2;
@@ -514,7 +535,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(23, 130);
+            this.label9.Location = new System.Drawing.Point(22, 130);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(112, 27);
             this.label9.TabIndex = 1;
@@ -523,7 +544,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(23, 78);
+            this.label8.Location = new System.Drawing.Point(22, 78);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(104, 27);
             this.label8.TabIndex = 0;
@@ -543,7 +564,6 @@
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "frmStudent";
-            this.Load += new System.EventHandler(this.frmStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.panel1.ResumeLayout(false);
             this.grbThongTinCaNhan.ResumeLayout(false);
@@ -569,7 +589,7 @@
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private System.Windows.Forms.Timer timer1;
         private DevExpress.XtraBars.BarStaticItem barStaticItem2;
-        private DevExpress.XtraBars.BarStaticItem lblHoTen;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem3;
         private DevExpress.XtraBars.BarStaticItem barStaticItem4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -591,11 +611,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox grbThongTinDoAn;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtHocKy;
+        private System.Windows.Forms.TextBox txtNgayBaoVe;
         private System.Windows.Forms.TextBox txtNgayNop;
+        private System.Windows.Forms.TextBox txtGVPB;
         private System.Windows.Forms.TextBox txtGVHD;
         private System.Windows.Forms.TextBox txtTenDoAn;
         private System.Windows.Forms.TextBox txtMaDoAn;
@@ -603,7 +625,7 @@
         private System.Windows.Forms.Label lblMoTa;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtNam;
+        private System.Windows.Forms.TextBox textBox1;
         private DevExpress.XtraBars.BarButtonItem btnTraCuu;
     }
 }
