@@ -318,11 +318,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLoginPopUp.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLoginPopUp.Designer.cs">
-      <DependentUpon>frmLoginPopUp.cs</DependentUpon>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
@@ -349,8 +349,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyDoAnTotNghiepDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmLoginPopUp.resx">
-      <DependentUpon>frmLoginPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
