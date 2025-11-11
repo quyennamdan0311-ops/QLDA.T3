@@ -148,7 +148,7 @@ namespace QLĐA
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvTraCuu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -215,7 +215,7 @@
             this.dgvTraCuu.RowTemplate.Height = 28;
             this.dgvTraCuu.Size = new System.Drawing.Size(1094, 908);
             this.dgvTraCuu.TabIndex = 3;
-            this.dgvTraCuu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvTraCuu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTraCuu_CellContentClick);
             // 
             // groupBox1
             // 
