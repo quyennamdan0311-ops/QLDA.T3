@@ -28,7 +28,7 @@ namespace QLĐA
 
         }
 
-        // Class-level variable to store current placeholder
+        
         private string currentPlaceholder = "";
 
         // ===== XỬ LÝ RADIOBUTTON =====
@@ -113,14 +113,14 @@ namespace QLĐA
             txtTuKhoa.GotFocus -= TxtTuKhoa_GotFocus;
             txtTuKhoa.LostFocus -= TxtTuKhoa_LostFocus;
 
-            // Store the new placeholder
+           
             currentPlaceholder = text;
 
-            // Set placeholder text
+           
             txtTuKhoa.Text = currentPlaceholder;
             txtTuKhoa.ForeColor = Color.Gray;
 
-            // Add event handlers
+       
             txtTuKhoa.GotFocus += TxtTuKhoa_GotFocus;
             txtTuKhoa.LostFocus += TxtTuKhoa_LostFocus;
         }
@@ -144,6 +144,11 @@ namespace QLĐA
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
