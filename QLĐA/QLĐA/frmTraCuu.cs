@@ -37,6 +37,7 @@ namespace QLĐA
             if (rdoSinhVien != null && rdoSinhVien.Checked)
             {
                 UpdateSearchCriteria("SinhVien");
+                ShowPanel("SinhVien");
                 txtTuKhoa?.Focus();
             }
         }
@@ -46,6 +47,7 @@ namespace QLĐA
             if (rdoGiangVien != null && rdoGiangVien.Checked)
             {
                 UpdateSearchCriteria("GiangVien");
+                ShowPanel("GiangVien");
                 txtTuKhoa?.Focus();
             }
         }
@@ -55,6 +57,7 @@ namespace QLĐA
             if (rdoDoAn != null && rdoDoAn.Checked)
             {
                 UpdateSearchCriteria("DoAn");
+                ShowPanel("DoAn");
                 txtTuKhoa?.Focus();
             }
         }
@@ -142,6 +145,29 @@ namespace QLĐA
                 txtTuKhoa.ForeColor = Color.Gray;
             }
         }
+        private void ShowPanel(string panelType)
+        {
+            // Ẩn tất cả các panel trước
+            if (pnlSinhVien != null) pnlSinhVien.Visible = false;
+            if (pnlGiangVien != null) pnlGiangVien.Visible = false;
+            if (pnlDoAn != null) pnlDoAn.Visible = false;
+
+            // Hiển thị panel được chọn
+            switch (panelType)
+            {
+                case "SinhVien":
+                    if (pnlSinhVien != null) pnlSinhVien.Visible = true;
+                    break;
+
+                case "GiangVien":
+                    if (pnlGiangVien != null) pnlGiangVien.Visible = true;
+                    break;
+
+                case "DoAn":
+                    if (pnlDoAn != null) pnlDoAn.Visible = true;
+                    break;
+            }
+        }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
@@ -149,6 +175,26 @@ namespace QLĐA
         }
 
         private void dgvTraCuu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pnlDoAn_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlGiangVien_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlSinhVien_Paint(object sender, PaintEventArgs e)
         {
 
         }

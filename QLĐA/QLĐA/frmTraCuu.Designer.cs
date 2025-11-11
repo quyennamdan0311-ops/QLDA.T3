@@ -104,7 +104,7 @@
             // 
             // grpDoiTuongTraCuu
             // 
-            this.grpDoiTuongTraCuu.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.grpDoiTuongTraCuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.grpDoiTuongTraCuu.Controls.Add(this.btnTimKiem);
             this.grpDoiTuongTraCuu.Controls.Add(this.rdoDoAn);
             this.grpDoiTuongTraCuu.Controls.Add(this.label3);
@@ -114,7 +114,7 @@
             this.grpDoiTuongTraCuu.Controls.Add(this.label2);
             this.grpDoiTuongTraCuu.Controls.Add(this.cboTieuChi);
             this.grpDoiTuongTraCuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpDoiTuongTraCuu.Location = new System.Drawing.Point(1103, 78);
+            this.grpDoiTuongTraCuu.Location = new System.Drawing.Point(1097, 78);
             this.grpDoiTuongTraCuu.Name = "grpDoiTuongTraCuu";
             this.grpDoiTuongTraCuu.Size = new System.Drawing.Size(592, 300);
             this.grpDoiTuongTraCuu.TabIndex = 1;
@@ -209,26 +209,28 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTraCuu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTraCuu.Location = new System.Drawing.Point(3, 78);
+            this.dgvTraCuu.Location = new System.Drawing.Point(38, 78);
             this.dgvTraCuu.Name = "dgvTraCuu";
             this.dgvTraCuu.RowHeadersWidth = 62;
             this.dgvTraCuu.RowTemplate.Height = 28;
-            this.dgvTraCuu.Size = new System.Drawing.Size(1094, 908);
+            this.dgvTraCuu.Size = new System.Drawing.Size(1047, 879);
             this.dgvTraCuu.TabIndex = 3;
             this.dgvTraCuu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTraCuu_CellContentClick);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pnlDoAn);
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.pnlSinhVien);
+            this.groupBox1.Controls.Add(this.pnlDoAn);
             this.groupBox1.Controls.Add(this.pnlGiangVien);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(1103, 384);
+            this.groupBox1.Location = new System.Drawing.Point(1097, 384);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(592, 602);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // pnlDoAn
             // 
@@ -246,10 +248,11 @@
             this.pnlDoAn.Controls.Add(this.label15);
             this.pnlDoAn.Controls.Add(this.label16);
             this.pnlDoAn.Controls.Add(this.label17);
-            this.pnlDoAn.Location = new System.Drawing.Point(0, 30);
+            this.pnlDoAn.Location = new System.Drawing.Point(0, 33);
             this.pnlDoAn.Name = "pnlDoAn";
-            this.pnlDoAn.Size = new System.Drawing.Size(592, 529);
+            this.pnlDoAn.Size = new System.Drawing.Size(592, 458);
             this.pnlDoAn.TabIndex = 14;
+            this.pnlDoAn.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDoAn_Paint);
             // 
             // txtMaSinhVien
             // 
@@ -388,10 +391,11 @@
             this.pnlSinhVien.Controls.Add(this.label6);
             this.pnlSinhVien.Controls.Add(this.label5);
             this.pnlSinhVien.Controls.Add(this.label4);
-            this.pnlSinhVien.Location = new System.Drawing.Point(1103, 414);
+            this.pnlSinhVien.Location = new System.Drawing.Point(0, 33);
             this.pnlSinhVien.Name = "pnlSinhVien";
-            this.pnlSinhVien.Size = new System.Drawing.Size(592, 564);
+            this.pnlSinhVien.Size = new System.Drawing.Size(592, 531);
             this.pnlSinhVien.TabIndex = 0;
+            this.pnlSinhVien.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSinhVien_Paint);
             // 
             // txtMaChuyenNganh
             // 
@@ -506,7 +510,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 17);
+            this.label4.Location = new System.Drawing.Point(9, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(151, 32);
             this.label4.TabIndex = 0;
@@ -527,8 +531,9 @@
             this.pnlGiangVien.Controls.Add(this.label22);
             this.pnlGiangVien.Location = new System.Drawing.Point(0, 30);
             this.pnlGiangVien.Name = "pnlGiangVien";
-            this.pnlGiangVien.Size = new System.Drawing.Size(592, 564);
+            this.pnlGiangVien.Size = new System.Drawing.Size(592, 534);
             this.pnlGiangVien.TabIndex = 12;
+            this.pnlGiangVien.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGiangVien_Paint);
             // 
             // label25
             // 
