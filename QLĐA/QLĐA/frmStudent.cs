@@ -30,7 +30,7 @@ namespace QLĐA
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Hide();
-                using (var login = new frmLoginPopUp()) login.ShowDialog();
+                using (var login = new frmLogin()) login.ShowDialog();
                 this.Close(); // đóng form hiện tại sau khi login form xong
             }
         }

@@ -124,7 +124,7 @@ namespace Project_QLDA
 
         private void btnDangNhap_ItemClick_2(object sender, ItemClickEventArgs e)
         {
-            using (frmLoginPopUp frm = new frmLoginPopUp())
+            using (frmLogin frm = new frmLogin())
             {
                 frm.StartPosition = FormStartPosition.CenterScreen;
                 frm.ShowDialog();
