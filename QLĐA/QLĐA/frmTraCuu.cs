@@ -83,7 +83,7 @@ namespace QLĐA
                     cboTieuChi.Items.AddRange(new object[] {
                 "Mã giảng viên",
                 "Họ và tên",
-                "Khoa/Bộ môn",
+                "Bằng cấp",
                 "Chức danh",
                 "Email"
             });
@@ -142,5 +142,10 @@ namespace QLĐA
                 txtTuKhoa.ForeColor = Color.Gray;
             }
         }
-      }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
     }
