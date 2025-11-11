@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Project_QLDA
 {
-    public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmDangNhap : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public frmMain()
+        public frmDangNhap()
         {
             InitializeComponent();
         }
@@ -124,7 +124,7 @@ namespace Project_QLDA
 
         private void btnDangNhap_ItemClick_2(object sender, ItemClickEventArgs e)
         {
-            using (frmLogin frm = new frmLogin())
+            using (frmLoginPopUp frm = new frmLoginPopUp())
             {
                 frm.StartPosition = FormStartPosition.CenterScreen;
                 frm.ShowDialog();
