@@ -83,6 +83,10 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.txtGioiTinhSV = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtGioiTinhGV = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.grpDoiTuongTraCuu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTraCuu)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -223,24 +227,24 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTraCuu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTraCuu.Location = new System.Drawing.Point(38, 78);
+            this.dgvTraCuu.Location = new System.Drawing.Point(3, 78);
             this.dgvTraCuu.Name = "dgvTraCuu";
             this.dgvTraCuu.RowHeadersWidth = 62;
             this.dgvTraCuu.RowTemplate.Height = 28;
-            this.dgvTraCuu.Size = new System.Drawing.Size(1047, 879);
+            this.dgvTraCuu.Size = new System.Drawing.Size(1077, 908);
             this.dgvTraCuu.TabIndex = 3;
             this.dgvTraCuu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTraCuu_CellContentClick);
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.pnlGiangVien);
             this.groupBox1.Controls.Add(this.pnlSinhVien);
             this.groupBox1.Controls.Add(this.pnlDoAn);
-            this.groupBox1.Controls.Add(this.pnlGiangVien);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(1097, 384);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(592, 602);
+            this.groupBox1.Size = new System.Drawing.Size(592, 556);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết";
@@ -248,6 +252,8 @@
             // 
             // pnlSinhVien
             // 
+            this.pnlSinhVien.Controls.Add(this.label11);
+            this.pnlSinhVien.Controls.Add(this.txtGioiTinhSV);
             this.pnlSinhVien.Controls.Add(this.txtChuyenNganh);
             this.pnlSinhVien.Controls.Add(this.txtGiangVienHD);
             this.pnlSinhVien.Controls.Add(this.txtEmailSV);
@@ -270,21 +276,21 @@
             // 
             // txtChuyenNganh
             // 
-            this.txtChuyenNganh.Location = new System.Drawing.Point(215, 378);
+            this.txtChuyenNganh.Location = new System.Drawing.Point(212, 433);
             this.txtChuyenNganh.Name = "txtChuyenNganh";
             this.txtChuyenNganh.Size = new System.Drawing.Size(374, 39);
             this.txtChuyenNganh.TabIndex = 13;
             // 
             // txtGiangVienHD
             // 
-            this.txtGiangVienHD.Location = new System.Drawing.Point(215, 315);
+            this.txtGiangVienHD.Location = new System.Drawing.Point(212, 376);
             this.txtGiangVienHD.Name = "txtGiangVienHD";
             this.txtGiangVienHD.Size = new System.Drawing.Size(374, 39);
             this.txtGiangVienHD.TabIndex = 12;
             // 
             // txtEmailSV
             // 
-            this.txtEmailSV.Location = new System.Drawing.Point(215, 257);
+            this.txtEmailSV.Location = new System.Drawing.Point(212, 313);
             this.txtEmailSV.Name = "txtEmailSV";
             this.txtEmailSV.Size = new System.Drawing.Size(374, 39);
             this.txtEmailSV.TabIndex = 11;
@@ -298,14 +304,14 @@
             // 
             // txtLop
             // 
-            this.txtLop.Location = new System.Drawing.Point(215, 133);
+            this.txtLop.Location = new System.Drawing.Point(212, 186);
             this.txtLop.Name = "txtLop";
             this.txtLop.Size = new System.Drawing.Size(374, 39);
             this.txtLop.TabIndex = 9;
             // 
             // txtKhoa
             // 
-            this.txtKhoa.Location = new System.Drawing.Point(215, 195);
+            this.txtKhoa.Location = new System.Drawing.Point(212, 250);
             this.txtKhoa.Name = "txtKhoa";
             this.txtKhoa.Size = new System.Drawing.Size(374, 39);
             this.txtKhoa.TabIndex = 8;
@@ -321,7 +327,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 381);
+            this.label10.Location = new System.Drawing.Point(3, 440);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(175, 32);
             this.label10.TabIndex = 6;
@@ -331,7 +337,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(5, 318);
+            this.label9.Location = new System.Drawing.Point(4, 385);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(124, 32);
             this.label9.TabIndex = 5;
@@ -341,7 +347,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 257);
+            this.label8.Location = new System.Drawing.Point(4, 316);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 32);
             this.label8.TabIndex = 4;
@@ -351,7 +357,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 195);
+            this.label7.Location = new System.Drawing.Point(6, 253);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 32);
             this.label7.TabIndex = 3;
@@ -361,7 +367,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 140);
+            this.label6.Location = new System.Drawing.Point(6, 189);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 32);
             this.label6.TabIndex = 2;
@@ -371,7 +377,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 77);
+            this.label5.Location = new System.Drawing.Point(9, 77);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 32);
             this.label5.TabIndex = 1;
@@ -532,6 +538,8 @@
             // 
             // pnlGiangVien
             // 
+            this.pnlGiangVien.Controls.Add(this.label12);
+            this.pnlGiangVien.Controls.Add(this.txtGioiTinhGV);
             this.pnlGiangVien.Controls.Add(this.label25);
             this.pnlGiangVien.Controls.Add(this.txtEmailGiangVien);
             this.pnlGiangVien.Controls.Add(this.txtHotenGV);
@@ -543,9 +551,9 @@
             this.pnlGiangVien.Controls.Add(this.label20);
             this.pnlGiangVien.Controls.Add(this.label21);
             this.pnlGiangVien.Controls.Add(this.label22);
-            this.pnlGiangVien.Location = new System.Drawing.Point(0, 30);
+            this.pnlGiangVien.Location = new System.Drawing.Point(0, 33);
             this.pnlGiangVien.Name = "pnlGiangVien";
-            this.pnlGiangVien.Size = new System.Drawing.Size(592, 534);
+            this.pnlGiangVien.Size = new System.Drawing.Size(592, 512);
             this.pnlGiangVien.TabIndex = 12;
             this.pnlGiangVien.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGiangVien_Paint);
             // 
@@ -561,35 +569,35 @@
             // 
             // txtEmailGiangVien
             // 
-            this.txtEmailGiangVien.Location = new System.Drawing.Point(212, 315);
+            this.txtEmailGiangVien.Location = new System.Drawing.Point(204, 361);
             this.txtEmailGiangVien.Name = "txtEmailGiangVien";
             this.txtEmailGiangVien.Size = new System.Drawing.Size(374, 39);
             this.txtEmailGiangVien.TabIndex = 11;
             // 
             // txtHotenGV
             // 
-            this.txtHotenGV.Location = new System.Drawing.Point(212, 93);
+            this.txtHotenGV.Location = new System.Drawing.Point(204, 88);
             this.txtHotenGV.Name = "txtHotenGV";
             this.txtHotenGV.Size = new System.Drawing.Size(374, 39);
             this.txtHotenGV.TabIndex = 10;
             // 
             // txtBangCap
             // 
-            this.txtBangCap.Location = new System.Drawing.Point(212, 168);
+            this.txtBangCap.Location = new System.Drawing.Point(204, 216);
             this.txtBangCap.Name = "txtBangCap";
             this.txtBangCap.Size = new System.Drawing.Size(374, 39);
             this.txtBangCap.TabIndex = 9;
             // 
             // txtChucDanh
             // 
-            this.txtChucDanh.Location = new System.Drawing.Point(212, 234);
+            this.txtChucDanh.Location = new System.Drawing.Point(204, 287);
             this.txtChucDanh.Name = "txtChucDanh";
             this.txtChucDanh.Size = new System.Drawing.Size(374, 39);
             this.txtChucDanh.TabIndex = 8;
             // 
             // txtMaGV
             // 
-            this.txtMaGV.Location = new System.Drawing.Point(212, 22);
+            this.txtMaGV.Location = new System.Drawing.Point(204, 22);
             this.txtMaGV.Name = "txtMaGV";
             this.txtMaGV.Size = new System.Drawing.Size(374, 39);
             this.txtMaGV.TabIndex = 7;
@@ -598,7 +606,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(6, 308);
+            this.label18.Location = new System.Drawing.Point(3, 354);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(71, 32);
             this.label18.TabIndex = 4;
@@ -608,7 +616,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(3, 227);
+            this.label19.Location = new System.Drawing.Point(3, 287);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(129, 32);
             this.label19.TabIndex = 3;
@@ -618,7 +626,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(6, 163);
+            this.label20.Location = new System.Drawing.Point(3, 216);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(112, 32);
             this.label20.TabIndex = 2;
@@ -628,7 +636,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(6, 86);
+            this.label21.Location = new System.Drawing.Point(6, 85);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(87, 32);
             this.label21.TabIndex = 1;
@@ -642,6 +650,40 @@
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(0, 32);
             this.label22.TabIndex = 0;
+            // 
+            // txtGioiTinhSV
+            // 
+            this.txtGioiTinhSV.Location = new System.Drawing.Point(212, 132);
+            this.txtGioiTinhSV.Name = "txtGioiTinhSV";
+            this.txtGioiTinhSV.Size = new System.Drawing.Size(374, 39);
+            this.txtGioiTinhSV.TabIndex = 14;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(6, 135);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(105, 32);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "Giới tính";
+            // 
+            // txtGioiTinhGV
+            // 
+            this.txtGioiTinhGV.Location = new System.Drawing.Point(204, 154);
+            this.txtGioiTinhGV.Name = "txtGioiTinhGV";
+            this.txtGioiTinhGV.Size = new System.Drawing.Size(374, 39);
+            this.txtGioiTinhGV.TabIndex = 15;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(5, 149);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(105, 32);
+            this.label12.TabIndex = 16;
+            this.label12.Text = "Giới tính";
             // 
             // frmTraCuu
             // 
@@ -727,5 +769,9 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox txtChuyenNganh;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtGioiTinhSV;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtGioiTinhGV;
     }
 }

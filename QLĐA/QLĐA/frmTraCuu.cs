@@ -81,23 +81,23 @@ namespace QLĐA
                 switch (dataType)
                 {
                     case "SinhVien":
-                        query = @"SELECT SV.Ma_sinh_vien, SV.Ho_ten, SV.Lop, SV.Khoa, SV.Email, 
-                                        GV.Ho_ten as Ten_giang_vien, CN.Ten_chuyen_nganh
-                                 FROM Sinh_vien SV
-                                 LEFT JOIN Giang_vien GV ON SV.Ma_giang_vien = GV.Ma_giang_vien
-                                 LEFT JOIN Chuyen_nganh CN ON SV.Ma_chuyen_nganh = CN.Ma_chuyen_nganh";
+                        query = @"SELECT SV.Ma_sinh_vien, SV.Ho_ten, SV.Gioi_tinh, SV.Lop, SV.Khoa, SV.Email, 
+                                GV.Ho_ten as Ten_giang_vien, CN.Ten_chuyen_nganh
+                         FROM Sinh_vien SV
+                         LEFT JOIN Giang_vien GV ON SV.Ma_giang_vien = GV.Ma_giang_vien
+                         LEFT JOIN Chuyen_nganh CN ON SV.Ma_chuyen_nganh = CN.Ma_chuyen_nganh";
                         break;
 
                     case "GiangVien":
-                        query = @"SELECT Ma_giang_vien, Ho_ten, Bang_cap, Chuc_danh, Email 
-                                 FROM Giang_vien";
+                        query = @"SELECT Ma_giang_vien, Ho_ten, Gioi_tinh, Bang_cap, Chuc_danh, Email 
+                         FROM Giang_vien";
                         break;
 
                     case "DoAn":
                         query = @"SELECT DA.Ma_do_an, DA.Ten_de_tai, DA.Mo_ta, DA.Ngay_nop, 
-                                        DA.Hoc_ky, DA.Nam, SV.Ho_ten as Ten_sinh_vien
-                                 FROM Do_an DA
-                                 LEFT JOIN Sinh_vien SV ON DA.Ma_sinh_vien = SV.Ma_sinh_vien";
+                                DA.Hoc_ky, DA.Nam, SV.Ho_ten as Ten_sinh_vien
+                         FROM Do_an DA
+                         LEFT JOIN Sinh_vien SV ON DA.Ma_sinh_vien = SV.Ma_sinh_vien";
                         break;
                 }
 
@@ -223,12 +223,12 @@ namespace QLĐA
             // Escape single quote để tránh lỗi SQL
             searchValue = searchValue.Replace("'", "''");
             
-            string baseQuery = @"SELECT SV.Ma_sinh_vien, SV.Ho_ten, SV.Lop, SV.Khoa, SV.Email, 
-                                   GV.Ho_ten as Ten_giang_vien, CN.Ten_chuyen_nganh
-                            FROM Sinh_vien SV
-                            LEFT JOIN Giang_vien GV ON SV.Ma_giang_vien = GV.Ma_giang_vien
-                            LEFT JOIN Chuyen_nganh CN ON SV.Ma_chuyen_nganh = CN.Ma_chuyen_nganh
-                            WHERE ";
+            string baseQuery = @"SELECT SV.Ma_sinh_vien, SV.Ho_ten, SV.Gioi_tinh, SV.Lop, SV.Khoa, SV.Email, 
+                               GV.Ho_ten as Ten_giang_vien, CN.Ten_chuyen_nganh
+                        FROM Sinh_vien SV
+                        LEFT JOIN Giang_vien GV ON SV.Ma_giang_vien = GV.Ma_giang_vien
+                        LEFT JOIN Chuyen_nganh CN ON SV.Ma_chuyen_nganh = CN.Ma_chuyen_nganh
+                        WHERE ";
 
             switch (criterion)
             {
@@ -236,8 +236,9 @@ namespace QLĐA
                     return baseQuery + $"SV.Ma_sinh_vien LIKE N'%{searchValue}%'";
                 case "Họ và tên":
                     return baseQuery + $"SV.Ho_ten LIKE N'%{searchValue}%'";
+                case "Giới tính":
+                    return baseQuery + $"SV.Gioi_tinh = N'{searchValue}'";
                 case "Lớp":
-                    // So sánh chính xác cho Lớp
                     return baseQuery + $"SV.Lop = N'{searchValue}'";
                 case "Chuyên ngành":
                     return baseQuery + $"CN.Ten_chuyen_nganh LIKE N'%{searchValue}%'>";
@@ -248,8 +249,11 @@ namespace QLĐA
 
         private string BuildSearchQuery_GiangVien(string criterion, string searchValue)
         {
-            string baseQuery = @"SELECT Ma_giang_vien, Ho_ten, Bang_cap, Chuc_danh, Email 
-                                FROM Giang_vien WHERE ";
+            // Escape single quote để tránh lỗi SQL
+            searchValue = searchValue.Replace("'", "''");
+            
+            string baseQuery = @"SELECT Ma_giang_vien, Ho_ten, Gioi_tinh, Bang_cap, Chuc_danh, Email 
+                        FROM Giang_vien WHERE ";
 
             switch (criterion)
             {
@@ -257,6 +261,8 @@ namespace QLĐA
                     return baseQuery + $"Ma_giang_vien LIKE N'%{searchValue}%'";
                 case "Họ và tên":
                     return baseQuery + $"Ho_ten LIKE N'%{searchValue}%'";
+                case "Giới tính":
+                    return baseQuery + $"Gioi_tinh = N'{searchValue}'";
                 case "Bằng cấp":
                     return baseQuery + $"Bang_cap LIKE N'%{searchValue}%'";
                 case "Chức danh":
@@ -310,6 +316,8 @@ namespace QLĐA
                         dgvTraCuu.Columns["Ma_sinh_vien"].HeaderText = "Mã SV";
                     if (dgvTraCuu.Columns["Ho_ten"] != null)
                         dgvTraCuu.Columns["Ho_ten"].HeaderText = "Họ và Tên";
+                    if (dgvTraCuu.Columns["Gioi_tinh"] != null)
+                        dgvTraCuu.Columns["Gioi_tinh"].HeaderText = "Giới Tính";
                     if (dgvTraCuu.Columns["Lop"] != null)
                         dgvTraCuu.Columns["Lop"].HeaderText = "Lớp";
                     if (dgvTraCuu.Columns["Khoa"] != null)
@@ -327,6 +335,8 @@ namespace QLĐA
                         dgvTraCuu.Columns["Ma_giang_vien"].HeaderText = "Mã GV";
                     if (dgvTraCuu.Columns["Ho_ten"] != null)
                         dgvTraCuu.Columns["Ho_ten"].HeaderText = "Họ và Tên";
+                    if (dgvTraCuu.Columns["Gioi_tinh"] != null)
+                        dgvTraCuu.Columns["Gioi_tinh"].HeaderText = "Giới Tính";
                     if (dgvTraCuu.Columns["Bang_cap"] != null)
                         dgvTraCuu.Columns["Bang_cap"].HeaderText = "Bằng Cấp";
                     if (dgvTraCuu.Columns["Chuc_danh"] != null)
@@ -371,6 +381,7 @@ namespace QLĐA
                     cboTieuChi.Items.AddRange(new object[] {
                 "Mã sinh viên",
                 "Họ và tên",
+                "Giới tính",
                 "Lớp",
                 "Chuyên ngành"
             });
@@ -381,6 +392,7 @@ namespace QLĐA
                     cboTieuChi.Items.AddRange(new object[] {
                 "Mã giảng viên",
                 "Họ và tên",
+                "Giới tính",
                 "Bằng cấp",
                 "Chức danh",
                 "Email"
@@ -508,13 +520,14 @@ namespace QLĐA
         // ===== HIỂN THỊ CHI TIẾT SINH VIÊN =====
         private void DisplaySinhVienDetail(DataGridViewRow row)
         {
-            // Tên control có thể là: txtMaSV, txtHoTenSV, txtLop, txtKhoa, txtEmailSV, txtGiangVienHD, txtChuyenNganh
-
             if (pnlSinhVien.Controls["txtMaSV"] is TextBox txtMaSV)
                 txtMaSV.Text = row.Cells["Ma_sinh_vien"].Value?.ToString() ?? "";
 
             if (pnlSinhVien.Controls["txtHoTenSV"] is TextBox txtHoTenSV)
                 txtHoTenSV.Text = row.Cells["Ho_ten"].Value?.ToString() ?? "";
+
+            if (pnlSinhVien.Controls["txtGioiTinhSV"] is TextBox txtGioiTinhSV)
+                txtGioiTinhSV.Text = row.Cells["Gioi_tinh"].Value?.ToString() ?? "";
 
             if (pnlSinhVien.Controls["txtLop"] is TextBox txtLop)
                 txtLop.Text = row.Cells["Lop"].Value?.ToString() ?? "";
@@ -535,13 +548,14 @@ namespace QLĐA
         // ===== HIỂN THỊ CHI TIẾT GIẢNG VIÊN =====
         private void DisplayGiangVienDetail(DataGridViewRow row)
         {
-            // Tên control có thể là: txtMaGV, txtHoTenGV, txtBangCap, txtChucDanh, txtEmailGV
-
             if (pnlGiangVien.Controls["txtMaGV"] is TextBox txtMaGV)
                 txtMaGV.Text = row.Cells["Ma_giang_vien"].Value?.ToString() ?? "";
 
             if (pnlGiangVien.Controls["txtHoTenGV"] is TextBox txtHoTenGV)
                 txtHoTenGV.Text = row.Cells["Ho_ten"].Value?.ToString() ?? "";
+
+            if (pnlGiangVien.Controls["txtGioiTinhGV"] is TextBox txtGioiTinhGV)
+                txtGioiTinhGV.Text = row.Cells["Gioi_tinh"].Value?.ToString() ?? "";
 
             if (pnlGiangVien.Controls["txtBangCap"] is TextBox txtBangCap)
                 txtBangCap.Text = row.Cells["Bang_cap"].Value?.ToString() ?? "";
