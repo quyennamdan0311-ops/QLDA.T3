@@ -709,8 +709,17 @@ namespace QLĐA
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                e.Handled = true;  // Ngăn tiếng beep
-                PerformSearch();   // Thực hiện tìm kiếm
+                e.Handled = true;  
+                PerformSearch();   
+            }
+        }
+
+        private void txtTuKhoa_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                PerformSearch();
             }
         }
     }
