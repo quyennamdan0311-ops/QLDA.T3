@@ -312,6 +312,12 @@
     <Reference Include="Web.DemoData.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FluentDesignForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FluentDesignForm1.Designer.cs">
+      <DependentUpon>FluentDesignForm1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +355,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyDoAnTotNghiepDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FluentDesignForm1.resx">
+      <DependentUpon>FluentDesignForm1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLoginPopUp.resx">
       <DependentUpon>frmLoginPopUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,6 +379,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -394,6 +404,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bannerkhoahtttql679x130.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tuyensinh2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
