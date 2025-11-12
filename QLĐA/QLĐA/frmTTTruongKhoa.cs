@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLĐA
 {
-    public partial class TTGiangVien : Form
+    public partial class frmTTTruongKhoa : Form
     {
-        public TTGiangVien()
+        public frmTTTruongKhoa()
         {
             InitializeComponent();
         }

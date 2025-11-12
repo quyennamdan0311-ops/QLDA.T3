@@ -1,6 +1,6 @@
 ﻿namespace QLĐA
 {
-    partial class TTGiangVien
+    partial class frmTTTruongKhoa
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TTGiangVien));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTTTruongKhoa));
             this.grbThongTinCaNhan = new System.Windows.Forms.GroupBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtBangCap = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtChucDanh = new System.Windows.Forms.TextBox();
             this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.txtHoTen = new System.Windows.Forms.TextBox();
@@ -42,13 +43,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grbThongTinCaNhan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // grbThongTinCaNhan
             // 
+            this.grbThongTinCaNhan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grbThongTinCaNhan.Controls.Add(this.txtEmail);
             this.grbThongTinCaNhan.Controls.Add(this.txtBangCap);
             this.grbThongTinCaNhan.Controls.Add(this.pictureBox1);
@@ -62,69 +65,86 @@
             this.grbThongTinCaNhan.Controls.Add(this.label5);
             this.grbThongTinCaNhan.Controls.Add(this.label3);
             this.grbThongTinCaNhan.Controls.Add(this.label4);
-            this.grbThongTinCaNhan.Dock = System.Windows.Forms.DockStyle.Left;
-            this.grbThongTinCaNhan.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.grbThongTinCaNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbThongTinCaNhan.Location = new System.Drawing.Point(0, 0);
             this.grbThongTinCaNhan.Name = "grbThongTinCaNhan";
-            this.grbThongTinCaNhan.Size = new System.Drawing.Size(690, 992);
-            this.grbThongTinCaNhan.TabIndex = 10;
+            this.grbThongTinCaNhan.Size = new System.Drawing.Size(864, 848);
+            this.grbThongTinCaNhan.TabIndex = 11;
             this.grbThongTinCaNhan.TabStop = false;
             this.grbThongTinCaNhan.Text = "Thông tin cá nhân";
             this.grbThongTinCaNhan.Enter += new System.EventHandler(this.grbThongTinCaNhan_Enter);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(170, 586);
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtEmail.Location = new System.Drawing.Point(170, 664);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
-            this.txtEmail.Size = new System.Drawing.Size(524, 34);
+            this.txtEmail.Size = new System.Drawing.Size(524, 39);
             this.txtEmail.TabIndex = 15;
             // 
             // txtBangCap
             // 
-            this.txtBangCap.Location = new System.Drawing.Point(170, 520);
+            this.txtBangCap.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBangCap.Location = new System.Drawing.Point(170, 602);
             this.txtBangCap.Name = "txtBangCap";
             this.txtBangCap.ReadOnly = true;
-            this.txtBangCap.Size = new System.Drawing.Size(524, 34);
+            this.txtBangCap.Size = new System.Drawing.Size(524, 39);
             this.txtBangCap.TabIndex = 13;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(332, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(223, 211);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // txtChucDanh
             // 
-            this.txtChucDanh.Location = new System.Drawing.Point(170, 459);
+            this.txtChucDanh.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtChucDanh.Location = new System.Drawing.Point(170, 536);
             this.txtChucDanh.Name = "txtChucDanh";
             this.txtChucDanh.ReadOnly = true;
-            this.txtChucDanh.Size = new System.Drawing.Size(524, 34);
+            this.txtChucDanh.Size = new System.Drawing.Size(524, 39);
             this.txtChucDanh.TabIndex = 12;
             // 
             // txtGioiTinh
             // 
-            this.txtGioiTinh.Location = new System.Drawing.Point(170, 397);
+            this.txtGioiTinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtGioiTinh.Location = new System.Drawing.Point(170, 475);
             this.txtGioiTinh.Name = "txtGioiTinh";
             this.txtGioiTinh.ReadOnly = true;
-            this.txtGioiTinh.Size = new System.Drawing.Size(118, 34);
+            this.txtGioiTinh.Size = new System.Drawing.Size(118, 39);
             this.txtGioiTinh.TabIndex = 11;
             // 
             // txtHoTen
             // 
-            this.txtHoTen.Location = new System.Drawing.Point(170, 331);
+            this.txtHoTen.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtHoTen.Location = new System.Drawing.Point(170, 404);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.ReadOnly = true;
-            this.txtHoTen.Size = new System.Drawing.Size(467, 34);
+            this.txtHoTen.Size = new System.Drawing.Size(467, 39);
             this.txtHoTen.TabIndex = 10;
             // 
             // txtMaGV
             // 
-            this.txtMaGV.Location = new System.Drawing.Point(170, 271);
+            this.txtMaGV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtMaGV.Location = new System.Drawing.Point(170, 331);
             this.txtMaGV.Name = "txtMaGV";
             this.txtMaGV.ReadOnly = true;
-            this.txtMaGV.Size = new System.Drawing.Size(211, 34);
+            this.txtMaGV.Size = new System.Drawing.Size(211, 39);
             this.txtMaGV.TabIndex = 9;
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 589);
+            this.label7.Location = new System.Drawing.Point(6, 676);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 27);
             this.label7.TabIndex = 8;
@@ -133,9 +153,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 271);
+            this.label1.Location = new System.Drawing.Point(6, 338);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(148, 27);
             this.label1.TabIndex = 1;
@@ -143,9 +164,10 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 331);
+            this.label2.Location = new System.Drawing.Point(6, 404);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 27);
             this.label2.TabIndex = 2;
@@ -153,9 +175,10 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 527);
+            this.label5.Location = new System.Drawing.Point(6, 609);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 27);
             this.label5.TabIndex = 5;
@@ -163,9 +186,10 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 400);
+            this.label3.Location = new System.Drawing.Point(6, 475);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 27);
             this.label3.TabIndex = 3;
@@ -173,32 +197,23 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 462);
+            this.label4.Location = new System.Drawing.Point(6, 536);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 27);
             this.label4.TabIndex = 4;
             this.label4.Text = "Chức danh";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(273, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(223, 211);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
-            // TTGiangVien
+            // frmTTTruongKhoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1416, 992);
+            this.ClientSize = new System.Drawing.Size(864, 848);
             this.Controls.Add(this.grbThongTinCaNhan);
-            this.Name = "TTGiangVien";
-            this.Text = "TTGiangVien";
+            this.Name = "frmTTTruongKhoa";
+            this.Text = "TTTruongKhoa";
             this.grbThongTinCaNhan.ResumeLayout(false);
             this.grbThongTinCaNhan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -211,6 +226,7 @@
         private System.Windows.Forms.GroupBox grbThongTinCaNhan;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtBangCap;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtChucDanh;
         private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.TextBox txtHoTen;
@@ -221,6 +237,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace QLĐA
+{
+    public partial class frmTTGiangVien : Form
+    {
+        public frmTTGiangVien()
+        {
+            InitializeComponent();
+        }
+
+        private void grbThongTinCaNhan_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDoAnHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
+}

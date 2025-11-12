@@ -18,7 +18,7 @@ namespace QLĐA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTraCuu());
+            Application.Run(new frmTTTruongKhoa());
         }
     }
 }

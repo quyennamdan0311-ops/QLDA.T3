@@ -355,11 +355,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyDoAnTotNghiepDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="TTGiangVien.cs">
+    <Compile Include="frmTTGiangVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TTGiangVien.Designer.cs">
-      <DependentUpon>TTGiangVien.cs</DependentUpon>
+    <Compile Include="frmTTGiangVien.Designer.cs">
+      <DependentUpon>frmTTGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTTTruongKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTTTruongKhoa.Designer.cs">
+      <DependentUpon>frmTTTruongKhoa.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -386,8 +392,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TTGiangVien.resx">
-      <DependentUpon>TTGiangVien.cs</DependentUpon>
+    <EmbeddedResource Include="frmTTGiangVien.resx">
+      <DependentUpon>frmTTGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTTTruongKhoa.resx">
+      <DependentUpon>frmTTTruongKhoa.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
