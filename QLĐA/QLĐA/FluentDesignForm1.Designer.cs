@@ -48,6 +48,7 @@
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
@@ -59,9 +60,9 @@
             this.fluentDesignFormContainer1.Controls.Add(this.panel2);
             this.fluentDesignFormContainer1.Controls.Add(this.panel1);
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(312, 39);
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(239, 39);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(922, 567);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(995, 567);
             this.fluentDesignFormContainer1.TabIndex = 0;
             this.fluentDesignFormContainer1.Click += new System.EventHandler(this.fluentDesignFormContainer1_Click);
             // 
@@ -72,7 +73,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 145);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(922, 422);
+            this.panel2.Size = new System.Drawing.Size(995, 422);
             this.panel2.TabIndex = 1;
             // 
             // panel1
@@ -82,7 +83,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(922, 145);
+            this.panel1.Size = new System.Drawing.Size(995, 145);
             this.panel1.TabIndex = 0;
             // 
             // accordionControl1
@@ -96,7 +97,7 @@
             this.accordionControl1.Location = new System.Drawing.Point(0, 39);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(312, 567);
+            this.accordionControl1.Size = new System.Drawing.Size(239, 567);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -164,7 +165,8 @@
             this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barStaticItem1,
             this.barStaticItem2,
-            this.barStaticItem3});
+            this.barStaticItem3,
+            this.barStaticItem4});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
@@ -193,14 +195,22 @@
             this.fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barStaticItem1,
             this.barStaticItem2,
-            this.barStaticItem3});
-            this.fluentFormDefaultManager1.MaxItemId = 3;
+            this.barStaticItem3,
+            this.barStaticItem4});
+            this.fluentFormDefaultManager1.MaxItemId = 4;
             // 
             // barStaticItem3
             // 
-            this.barStaticItem3.Caption = "QUẢN LÝ ĐỒ ÁN";
+            this.barStaticItem3.Caption = "QUẢN LÝ ĐỒ ÁN KHOA HỆ THỐNG THÔNG TIN QUẢN LÝ";
             this.barStaticItem3.Id = 2;
             this.barStaticItem3.Name = "barStaticItem3";
+            this.barStaticItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barStaticItem3_ItemClick);
+            // 
+            // barStaticItem4
+            // 
+            this.barStaticItem4.Caption = "barStaticItem4";
+            this.barStaticItem4.Id = 3;
+            this.barStaticItem4.Name = "barStaticItem4";
             // 
             // FluentDesignForm1
             // 
@@ -242,5 +252,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraBars.BarStaticItem barStaticItem3;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem4;
     }
 }

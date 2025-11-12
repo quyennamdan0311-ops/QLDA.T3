@@ -21,5 +21,10 @@ namespace QLĐA
         {
 
         }
+
+        private void barStaticItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }
