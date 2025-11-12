@@ -32,7 +32,7 @@
             this.grbThongTinCaNhan = new System.Windows.Forms.GroupBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtKhoa = new System.Windows.Forms.TextBox();
-            this.txtLopNienChe = new System.Windows.Forms.TextBox();
+            this.txtLop = new System.Windows.Forms.TextBox();
             this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.txtMaSV = new System.Windows.Forms.TextBox();
@@ -58,6 +58,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtChuyenNganh = new System.Windows.Forms.TextBox();
             this.grbThongTinCaNhan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grbThongTinDoAn.SuspendLayout();
@@ -65,10 +67,12 @@
             // 
             // grbThongTinCaNhan
             // 
+            this.grbThongTinCaNhan.Controls.Add(this.txtChuyenNganh);
+            this.grbThongTinCaNhan.Controls.Add(this.label6);
             this.grbThongTinCaNhan.Controls.Add(this.txtEmail);
             this.grbThongTinCaNhan.Controls.Add(this.txtKhoa);
             this.grbThongTinCaNhan.Controls.Add(this.pictureBox1);
-            this.grbThongTinCaNhan.Controls.Add(this.txtLopNienChe);
+            this.grbThongTinCaNhan.Controls.Add(this.txtLop);
             this.grbThongTinCaNhan.Controls.Add(this.txtGioiTinh);
             this.grbThongTinCaNhan.Controls.Add(this.txtHoTen);
             this.grbThongTinCaNhan.Controls.Add(this.txtMaSV);
@@ -89,7 +93,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(170, 586);
+            this.txtEmail.Location = new System.Drawing.Point(170, 658);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(524, 34);
@@ -97,19 +101,19 @@
             // 
             // txtKhoa
             // 
-            this.txtKhoa.Location = new System.Drawing.Point(170, 520);
+            this.txtKhoa.Location = new System.Drawing.Point(170, 586);
             this.txtKhoa.Name = "txtKhoa";
             this.txtKhoa.ReadOnly = true;
             this.txtKhoa.Size = new System.Drawing.Size(524, 34);
             this.txtKhoa.TabIndex = 13;
             // 
-            // txtLopNienChe
+            // txtLop
             // 
-            this.txtLopNienChe.Location = new System.Drawing.Point(170, 459);
-            this.txtLopNienChe.Name = "txtLopNienChe";
-            this.txtLopNienChe.ReadOnly = true;
-            this.txtLopNienChe.Size = new System.Drawing.Size(524, 34);
-            this.txtLopNienChe.TabIndex = 12;
+            this.txtLop.Location = new System.Drawing.Point(170, 459);
+            this.txtLop.Name = "txtLop";
+            this.txtLop.ReadOnly = true;
+            this.txtLop.Size = new System.Drawing.Size(524, 34);
+            this.txtLop.TabIndex = 12;
             // 
             // txtGioiTinh
             // 
@@ -139,7 +143,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 589);
+            this.label7.Location = new System.Drawing.Point(0, 658);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 27);
             this.label7.TabIndex = 8;
@@ -170,7 +174,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 527);
+            this.label5.Location = new System.Drawing.Point(3, 589);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 27);
             this.label5.TabIndex = 5;
@@ -352,6 +356,24 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Mã đồ án";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 526);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(151, 27);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Chuyên ngành";
+            // 
+            // txtChuyenNganh
+            // 
+            this.txtChuyenNganh.Location = new System.Drawing.Point(170, 523);
+            this.txtChuyenNganh.Name = "txtChuyenNganh";
+            this.txtChuyenNganh.ReadOnly = true;
+            this.txtChuyenNganh.Size = new System.Drawing.Size(524, 34);
+            this.txtChuyenNganh.TabIndex = 17;
+            // 
             // frmTTSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -375,7 +397,7 @@
         private System.Windows.Forms.GroupBox grbThongTinCaNhan;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtKhoa;
-        private System.Windows.Forms.TextBox txtLopNienChe;
+        private System.Windows.Forms.TextBox txtLop;
         private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.TextBox txtMaSV;
@@ -401,5 +423,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtChuyenNganh;
     }
 }
