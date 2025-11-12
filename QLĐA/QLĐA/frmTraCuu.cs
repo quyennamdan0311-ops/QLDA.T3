@@ -122,7 +122,7 @@ namespace QLĐA
             // Kiểm tra đối tượng đã được chọn chưa
             if (string.IsNullOrEmpty(currentSearchType))
             {
-                XtraMessageBox.Show("Vui lòng chọn đối tượng tra cứu (Sinh viên/Giảng viên/Đồ án)!", 
+                XtraMessageBox.Show("Vui lòng chọn đối tượng tra cứu (Sinh viên/Giảng viên/Đồ án)!",
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -130,16 +130,16 @@ namespace QLĐA
             // Kiểm tra tiêu chí đã được chọn chưa
             if (cboTieuChi?.SelectedItem == null)
             {
-                XtraMessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm!", 
+                XtraMessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm!",
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             // Kiểm tra từ khóa có hợp lệ không
             string searchValue = txtTuKhoa?.Text?.Trim() ?? "";
-            
+
             // Nếu từ khóa rỗng hoặc là placeholder → Load toàn bộ dữ liệu
-            if (string.IsNullOrWhiteSpace(searchValue) || 
+            if (string.IsNullOrWhiteSpace(searchValue) ||
                 searchValue == currentPlaceholder ||
                 txtTuKhoa.ForeColor == Color.Gray)
             {
@@ -176,7 +176,7 @@ namespace QLĐA
 
                 if (string.IsNullOrEmpty(query))
                 {
-                    XtraMessageBox.Show("Không thể tạo câu truy vấn!", "Lỗi", 
+                    XtraMessageBox.Show("Không thể tạo câu truy vấn!", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -196,23 +196,23 @@ namespace QLĐA
 
                 if (dt.Rows.Count == 0)
                 {
-                    XtraMessageBox.Show($"Không tìm thấy kết quả phù hợp với từ khóa: '{searchValue}'", 
+                    XtraMessageBox.Show($"Không tìm thấy kết quả phù hợp với từ khóa: '{searchValue}'",
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    XtraMessageBox.Show($"Tìm thấy {dt.Rows.Count} kết quả!", 
+                    XtraMessageBox.Show($"Tìm thấy {dt.Rows.Count} kết quả!",
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (SqlException sqlEx)
             {
-                XtraMessageBox.Show($"Lỗi SQL: {sqlEx.Message}\n\nChi tiết:\n{sqlEx.ToString()}", 
+                XtraMessageBox.Show($"Lỗi SQL: {sqlEx.Message}\n\nChi tiết:\n{sqlEx.ToString()}",
                     "Lỗi Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show($"Lỗi khi tìm kiếm: {ex.Message}\n\nChi tiết:\n{ex.ToString()}", 
+                XtraMessageBox.Show($"Lỗi khi tìm kiếm: {ex.Message}\n\nChi tiết:\n{ex.ToString()}",
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -222,7 +222,7 @@ namespace QLĐA
         {
             // Escape single quote để tránh lỗi SQL
             searchValue = searchValue.Replace("'", "''");
-            
+
             string baseQuery = @"SELECT SV.Ma_sinh_vien, SV.Ho_ten, SV.Gioi_tinh, SV.Lop, SV.Khoa, SV.Email, 
                                GV.Ho_ten as Ten_giang_vien, CN.Ten_chuyen_nganh
                         FROM Sinh_vien SV
@@ -251,7 +251,7 @@ namespace QLĐA
         {
             // Escape single quote để tránh lỗi SQL
             searchValue = searchValue.Replace("'", "''");
-            
+
             string baseQuery = @"SELECT Ma_giang_vien, Ho_ten, Gioi_tinh, Bang_cap, Chuc_danh, Email 
                         FROM Giang_vien WHERE ";
 
@@ -422,14 +422,14 @@ namespace QLĐA
             txtTuKhoa.GotFocus -= TxtTuKhoa_GotFocus;
             txtTuKhoa.LostFocus -= TxtTuKhoa_LostFocus;
 
-           
+
             currentPlaceholder = text;
 
-           
+
             txtTuKhoa.Text = currentPlaceholder;
             txtTuKhoa.ForeColor = Color.Gray;
 
-       
+
             txtTuKhoa.GotFocus += TxtTuKhoa_GotFocus;
             txtTuKhoa.LostFocus += TxtTuKhoa_LostFocus;
         }
@@ -604,7 +604,7 @@ namespace QLĐA
 
         }
 
-      
+
 
         private void pnlDoAn_Paint(object sender, PaintEventArgs e)
         {
@@ -723,8 +723,8 @@ namespace QLĐA
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                e.Handled = true;  
-                PerformSearch();   
+                e.Handled = true;
+                PerformSearch();
             }
         }
 
@@ -736,5 +736,150 @@ namespace QLĐA
                 PerformSearch();
             }
         }
+
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvTraCuu.Rows.Count > 0)
+                {
+                    dgvTraCuu.ClearSelection();
+                    dgvTraCuu.Rows[0].Selected = true;
+                    dgvTraCuu.CurrentCell = dgvTraCuu.Rows[0].Cells[0];
+
+                    // Hiển thị chi tiết của dòng đầu tiên
+                    DisplayDetailInPanel(0);
+                }
+                else
+                {
+                    XtraMessageBox.Show("Không có dữ liệu để hiển thị!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Lỗi khi chuyển đến dòng đầu: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvTraCuu.Rows.Count > 0)
+                {
+                    int currentIndex = dgvTraCuu.CurrentRow?.Index ?? -1;
+
+                    if (currentIndex > 0)
+                    {
+                        dgvTraCuu.ClearSelection();
+                        dgvTraCuu.Rows[currentIndex - 1].Selected = true;
+                        dgvTraCuu.CurrentCell = dgvTraCuu.Rows[currentIndex - 1].Cells[0];
+
+                        // Hiển thị chi tiết của dòng trước
+                        DisplayDetailInPanel(currentIndex - 1);
+                    }
+                    else if (currentIndex == 0)
+                    {
+                        XtraMessageBox.Show("Đây là dòng đầu tiên!", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        // Nếu chưa chọn dòng nào, chọn dòng đầu tiên
+                        dgvTraCuu.Rows[0].Selected = true;
+                        dgvTraCuu.CurrentCell = dgvTraCuu.Rows[0].Cells[0];
+                        DisplayDetailInPanel(0);
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("Không có dữ liệu để hiển thị!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Lỗi khi chuyển đến dòng trước: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvTraCuu.Rows.Count > 0)
+                {
+                    int currentIndex = dgvTraCuu.CurrentRow?.Index ?? -1;
+                    int lastIndex = dgvTraCuu.Rows.Count - 1;
+
+                    if (currentIndex < lastIndex && currentIndex >= 0)
+                    {
+                        dgvTraCuu.ClearSelection();
+                        dgvTraCuu.Rows[currentIndex + 1].Selected = true;
+                        dgvTraCuu.CurrentCell = dgvTraCuu.Rows[currentIndex + 1].Cells[0];
+
+                        // Hiển thị chi tiết của dòng sau
+                        DisplayDetailInPanel(currentIndex + 1);
+                    }
+                    else if (currentIndex == lastIndex)
+                    {
+                        XtraMessageBox.Show("Đây là dòng cuối cùng!", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        // Nếu chưa chọn dòng nào, chọn dòng đầu tiên
+                        dgvTraCuu.Rows[0].Selected = true;
+                        dgvTraCuu.CurrentCell = dgvTraCuu.Rows[0].Cells[0];
+                        DisplayDetailInPanel(0);
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("Không có dữ liệu để hiển thị!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Lỗi khi chuyển đến dòng sau: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvTraCuu.Rows.Count > 0)
+                {
+                    int lastIndex = dgvTraCuu.Rows.Count - 1;
+
+                    dgvTraCuu.ClearSelection();
+                    dgvTraCuu.Rows[lastIndex].Selected = true;
+                    dgvTraCuu.CurrentCell = dgvTraCuu.Rows[lastIndex].Cells[0];
+
+                    // Hiển thị chi tiết của dòng cuối cùng
+                    DisplayDetailInPanel(lastIndex);
+                }
+                else
+                {
+                    XtraMessageBox.Show("Không có dữ liệu để hiển thị!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Lỗi khi chuyển đến dòng cuối: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
-    }
+}

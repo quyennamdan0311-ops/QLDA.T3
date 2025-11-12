@@ -45,12 +45,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grbThongTinDoAn = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNam = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.lblMoTa = new System.Windows.Forms.Label();
-            this.txtNgayBaoVe = new System.Windows.Forms.TextBox();
-            this.txtGVPB = new System.Windows.Forms.TextBox();
+            this.txtHocKy = new System.Windows.Forms.TextBox();
+            this.txtNgayNop = new System.Windows.Forms.TextBox();
             this.txtGVHD = new System.Windows.Forms.TextBox();
             this.txtTenDoAn = new System.Windows.Forms.TextBox();
             this.txtMaDoAn = new System.Windows.Forms.TextBox();
@@ -209,12 +209,12 @@
             // grbThongTinDoAn
             // 
             this.grbThongTinDoAn.Controls.Add(this.label16);
-            this.grbThongTinDoAn.Controls.Add(this.textBox1);
+            this.grbThongTinDoAn.Controls.Add(this.txtNam);
             this.grbThongTinDoAn.Controls.Add(this.label15);
             this.grbThongTinDoAn.Controls.Add(this.txtMoTa);
             this.grbThongTinDoAn.Controls.Add(this.lblMoTa);
-            this.grbThongTinDoAn.Controls.Add(this.txtNgayBaoVe);
-            this.grbThongTinDoAn.Controls.Add(this.txtGVPB);
+            this.grbThongTinDoAn.Controls.Add(this.txtHocKy);
+            this.grbThongTinDoAn.Controls.Add(this.txtNgayNop);
             this.grbThongTinDoAn.Controls.Add(this.txtGVHD);
             this.grbThongTinDoAn.Controls.Add(this.txtTenDoAn);
             this.grbThongTinDoAn.Controls.Add(this.txtMaDoAn);
@@ -240,13 +240,13 @@
             this.label16.TabIndex = 21;
             this.label16.Text = "Năm";
             // 
-            // textBox1
+            // txtNam
             // 
-            this.textBox1.Location = new System.Drawing.Point(314, 455);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(108, 34);
-            this.textBox1.TabIndex = 20;
+            this.txtNam.Location = new System.Drawing.Point(314, 455);
+            this.txtNam.Name = "txtNam";
+            this.txtNam.ReadOnly = true;
+            this.txtNam.Size = new System.Drawing.Size(108, 34);
+            this.txtNam.TabIndex = 20;
             // 
             // label15
             // 
@@ -275,21 +275,21 @@
             this.lblMoTa.TabIndex = 17;
             this.lblMoTa.Text = "Mô tả";
             // 
-            // txtNgayBaoVe
+            // txtHocKy
             // 
-            this.txtNgayBaoVe.Location = new System.Drawing.Point(314, 393);
-            this.txtNgayBaoVe.Name = "txtNgayBaoVe";
-            this.txtNgayBaoVe.ReadOnly = true;
-            this.txtNgayBaoVe.Size = new System.Drawing.Size(467, 34);
-            this.txtNgayBaoVe.TabIndex = 15;
+            this.txtHocKy.Location = new System.Drawing.Point(314, 393);
+            this.txtHocKy.Name = "txtHocKy";
+            this.txtHocKy.ReadOnly = true;
+            this.txtHocKy.Size = new System.Drawing.Size(467, 34);
+            this.txtHocKy.TabIndex = 15;
             // 
-            // txtGVPB
+            // txtNgayNop
             // 
-            this.txtGVPB.Location = new System.Drawing.Point(314, 312);
-            this.txtGVPB.Name = "txtGVPB";
-            this.txtGVPB.ReadOnly = true;
-            this.txtGVPB.Size = new System.Drawing.Size(467, 34);
-            this.txtGVPB.TabIndex = 13;
+            this.txtNgayNop.Location = new System.Drawing.Point(314, 312);
+            this.txtNgayNop.Name = "txtNgayNop";
+            this.txtNgayNop.ReadOnly = true;
+            this.txtNgayNop.Size = new System.Drawing.Size(467, 34);
+            this.txtNgayNop.TabIndex = 13;
             // 
             // txtGVHD
             // 
@@ -388,12 +388,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox grbThongTinDoAn;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNam;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtMoTa;
         private System.Windows.Forms.Label lblMoTa;
-        private System.Windows.Forms.TextBox txtNgayBaoVe;
-        private System.Windows.Forms.TextBox txtGVPB;
+        private System.Windows.Forms.TextBox txtHocKy;
+        private System.Windows.Forms.TextBox txtNgayNop;
         private System.Windows.Forms.TextBox txtGVHD;
         private System.Windows.Forms.TextBox txtTenDoAn;
         private System.Windows.Forms.TextBox txtMaDoAn;
