@@ -81,7 +81,7 @@ namespace QLĐA
                 switch (dataType)
                 {
                     case "SinhVien":
-                        query = @"SELECT SV.Ma_sinh_vien, SV.Ho_ten, SV.Gioi_tinh, SV.Lop, SV.Khoa, SV.Email, 
+                        query = @"SELECT SV.Ma_sinh_vien, SV.Ho_ten, SV.Ngay_sinh, SV.Gioi_tinh, SV.Lop, SV.Khoa, SV.Email, 
                                 GV.Ho_ten as Ten_giang_vien, CN.Ten_chuyen_nganh
                          FROM Sinh_vien SV
                          LEFT JOIN Giang_vien GV ON SV.Ma_giang_vien = GV.Ma_giang_vien
@@ -89,7 +89,7 @@ namespace QLĐA
                         break;
 
                     case "GiangVien":
-                        query = @"SELECT Ma_giang_vien, Ho_ten, Gioi_tinh, Bang_cap, Chuc_danh, Email 
+                        query = @"SELECT Ma_giang_vien, Ho_ten, Ngay_sinh, Gioi_tinh, Bang_cap, Chuc_danh, Email 
                          FROM Giang_vien";
                         break;
 
@@ -223,7 +223,7 @@ namespace QLĐA
             // Escape single quote để tránh lỗi SQL
             searchValue = searchValue.Replace("'", "''");
 
-            string baseQuery = @"SELECT SV.Ma_sinh_vien, SV.Ho_ten, SV.Gioi_tinh, SV.Lop, SV.Khoa, SV.Email, 
+            string baseQuery = @"SELECT SV.Ma_sinh_vien, SV.Ho_ten, SV.Ngay_sinh, SV.Gioi_tinh, SV.Lop, SV.Khoa, SV.Email, 
                                GV.Ho_ten as Ten_giang_vien, CN.Ten_chuyen_nganh
                         FROM Sinh_vien SV
                         LEFT JOIN Giang_vien GV ON SV.Ma_giang_vien = GV.Ma_giang_vien
@@ -236,6 +236,8 @@ namespace QLĐA
                     return baseQuery + $"SV.Ma_sinh_vien LIKE N'%{searchValue}%'";
                 case "Họ và tên":
                     return baseQuery + $"SV.Ho_ten LIKE N'%{searchValue}%'";
+                case "Ngày sinh":
+                    return baseQuery + $"CONVERT(VARCHAR, SV.Ngay_sinh, 103) LIKE N'%{searchValue}%'";
                 case "Giới tính":
                     return baseQuery + $"SV.Gioi_tinh = N'{searchValue}'";
                 case "Lớp":
@@ -252,7 +254,7 @@ namespace QLĐA
             // Escape single quote để tránh lỗi SQL
             searchValue = searchValue.Replace("'", "''");
 
-            string baseQuery = @"SELECT Ma_giang_vien, Ho_ten, Gioi_tinh, Bang_cap, Chuc_danh, Email 
+            string baseQuery = @"SELECT Ma_giang_vien, Ho_ten, Ngay_sinh, Gioi_tinh, Bang_cap, Chuc_danh, Email 
                         FROM Giang_vien WHERE ";
 
             switch (criterion)
@@ -261,6 +263,8 @@ namespace QLĐA
                     return baseQuery + $"Ma_giang_vien LIKE N'%{searchValue}%'";
                 case "Họ và tên":
                     return baseQuery + $"Ho_ten LIKE N'%{searchValue}%'";
+                case "Ngày sinh":
+                    return baseQuery + $"CONVERT(VARCHAR, Ngay_sinh, 103) LIKE N'%{searchValue}%'";
                 case "Giới tính":
                     return baseQuery + $"Gioi_tinh = N'{searchValue}'";
                 case "Bằng cấp":
@@ -316,6 +320,11 @@ namespace QLĐA
                         dgvTraCuu.Columns["Ma_sinh_vien"].HeaderText = "Mã SV";
                     if (dgvTraCuu.Columns["Ho_ten"] != null)
                         dgvTraCuu.Columns["Ho_ten"].HeaderText = "Họ và Tên";
+                    if (dgvTraCuu.Columns["Ngay_sinh"] != null)
+                    {
+                        dgvTraCuu.Columns["Ngay_sinh"].HeaderText = "Ngày Sinh";
+                        dgvTraCuu.Columns["Ngay_sinh"].DefaultCellStyle.Format = "dd/MM/yyyy";
+                    }
                     if (dgvTraCuu.Columns["Gioi_tinh"] != null)
                         dgvTraCuu.Columns["Gioi_tinh"].HeaderText = "Giới Tính";
                     if (dgvTraCuu.Columns["Lop"] != null)
@@ -335,6 +344,11 @@ namespace QLĐA
                         dgvTraCuu.Columns["Ma_giang_vien"].HeaderText = "Mã GV";
                     if (dgvTraCuu.Columns["Ho_ten"] != null)
                         dgvTraCuu.Columns["Ho_ten"].HeaderText = "Họ và Tên";
+                    if (dgvTraCuu.Columns["Ngay_sinh"] != null)
+                    {
+                        dgvTraCuu.Columns["Ngay_sinh"].HeaderText = "Ngày Sinh";
+                        dgvTraCuu.Columns["Ngay_sinh"].DefaultCellStyle.Format = "dd/MM/yyyy";
+                    }
                     if (dgvTraCuu.Columns["Gioi_tinh"] != null)
                         dgvTraCuu.Columns["Gioi_tinh"].HeaderText = "Giới Tính";
                     if (dgvTraCuu.Columns["Bang_cap"] != null)
@@ -353,7 +367,10 @@ namespace QLĐA
                     if (dgvTraCuu.Columns["Mo_ta"] != null)
                         dgvTraCuu.Columns["Mo_ta"].HeaderText = "Mô Tả";
                     if (dgvTraCuu.Columns["Ngay_nop"] != null)
+                    {
                         dgvTraCuu.Columns["Ngay_nop"].HeaderText = "Ngày Nộp";
+                        dgvTraCuu.Columns["Ngay_nop"].DefaultCellStyle.Format = "dd/MM/yyyy";
+                    }
                     if (dgvTraCuu.Columns["Hoc_ky"] != null)
                         dgvTraCuu.Columns["Hoc_ky"].HeaderText = "Học Kỳ";
                     if (dgvTraCuu.Columns["Nam"] != null)
@@ -526,6 +543,14 @@ namespace QLĐA
             if (pnlSinhVien.Controls["txtHoTenSV"] is TextBox txtHoTenSV)
                 txtHoTenSV.Text = row.Cells["Ho_ten"].Value?.ToString() ?? "";
 
+            if (pnlSinhVien.Controls["txtNgaySinhSV"] is TextBox txtNgaySinhSV)
+            {
+                if (row.Cells["Ngay_sinh"].Value != null && row.Cells["Ngay_sinh"].Value != DBNull.Value)
+                    txtNgaySinhSV.Text = Convert.ToDateTime(row.Cells["Ngay_sinh"].Value).ToString("dd/MM/yyyy");
+                else
+                    txtNgaySinhSV.Text = "";
+            }
+
             if (pnlSinhVien.Controls["txtGioiTinhSV"] is TextBox txtGioiTinhSV)
                 txtGioiTinhSV.Text = row.Cells["Gioi_tinh"].Value?.ToString() ?? "";
 
@@ -553,6 +578,14 @@ namespace QLĐA
 
             if (pnlGiangVien.Controls["txtHoTenGV"] is TextBox txtHoTenGV)
                 txtHoTenGV.Text = row.Cells["Ho_ten"].Value?.ToString() ?? "";
+
+            if (pnlGiangVien.Controls["txtNgaySinhGV"] is TextBox txtNgaySinhGV)
+            {
+                if (row.Cells["Ngay_sinh"].Value != null && row.Cells["Ngay_sinh"].Value != DBNull.Value)
+                    txtNgaySinhGV.Text = Convert.ToDateTime(row.Cells["Ngay_sinh"].Value).ToString("dd/MM/yyyy");
+                else
+                    txtNgaySinhGV.Text = "";
+            }
 
             if (pnlGiangVien.Controls["txtGioiTinhGV"] is TextBox txtGioiTinhGV)
                 txtGioiTinhGV.Text = row.Cells["Gioi_tinh"].Value?.ToString() ?? "";
