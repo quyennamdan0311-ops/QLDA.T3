@@ -374,6 +374,24 @@
     <Compile Include="UC_TraCuu.Designer.cs">
       <DependentUpon>UC_TraCuu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_TTGiangVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TTGiangVien.Designer.cs">
+      <DependentUpon>UC_TTGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_TTSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TTSinhVien.Designer.cs">
+      <DependentUpon>UC_TTSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_TTTruongKhoa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TTTruongKhoa.Designer.cs">
+      <DependentUpon>UC_TTTruongKhoa.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -410,6 +428,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_TraCuu.resx">
       <DependentUpon>UC_TraCuu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TTGiangVien.resx">
+      <DependentUpon>UC_TTGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TTSinhVien.resx">
+      <DependentUpon>UC_TTSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TTTruongKhoa.resx">
+      <DependentUpon>UC_TTTruongKhoa.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
