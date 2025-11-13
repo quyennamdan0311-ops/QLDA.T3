@@ -12,24 +12,16 @@ using System.Windows.Forms;
 
 namespace QLĐA
 {
-    public partial class frmTraCuu : DevExpress.XtraEditors.XtraForm
+    public partial class UC_TraCuu : UserControl
     {
         private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qlđatn_final;Integrated Security=True;Encrypt=False";
         private SqlConnection conn;
-        public frmTraCuu()
+        private bool isSearching = false;
+
+        public UC_TraCuu()
         {
             InitializeComponent();
             conn = new SqlConnection(connectionString);
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private string currentPlaceholder = "";
@@ -40,6 +32,9 @@ namespace QLĐA
         {
             if (rdoSinhVien != null && rdoSinhVien.Checked)
             {
+               
+                ClearDataGridView();
+
                 currentSearchType = "SinhVien";
                 UpdateSearchCriteria("SinhVien");
                 ShowPanel("SinhVien");
@@ -52,6 +47,9 @@ namespace QLĐA
         {
             if (rdoGiangVien != null && rdoGiangVien.Checked)
             {
+                // ✅ XÓA DỮ LIỆU CŨ
+                ClearDataGridView();
+
                 currentSearchType = "GiangVien";
                 UpdateSearchCriteria("GiangVien");
                 ShowPanel("GiangVien");
@@ -64,6 +62,9 @@ namespace QLĐA
         {
             if (rdoDoAn != null && rdoDoAn.Checked)
             {
+                // ✅ XÓA DỮ LIỆU CŨ
+                ClearDataGridView();
+
                 currentSearchType = "DoAn";
                 UpdateSearchCriteria("DoAn");
                 ShowPanel("DoAn");
@@ -71,6 +72,18 @@ namespace QLĐA
                 txtTuKhoa?.Focus();
             }
         }
+
+        
+        private void ClearDataGridView()
+        {
+            if (dgvTraCuu != null)
+            {
+                dgvTraCuu.DataSource = null;
+                dgvTraCuu.Rows.Clear();
+                dgvTraCuu.Columns.Clear();
+            }
+        }
+
         // ===== TẢI DỮ LIỆU TỪ DATABASE =====
         private void LoadAllData(string dataType)
         {
@@ -116,6 +129,7 @@ namespace QLĐA
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         // ===== TÌM KIẾM DỮ LIỆU =====
         private void PerformSearch()
         {
@@ -199,11 +213,7 @@ namespace QLĐA
                     XtraMessageBox.Show($"Không tìm thấy kết quả phù hợp với từ khóa: '{searchValue}'",
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else
-                {
-                    XtraMessageBox.Show($"Tìm thấy {dt.Rows.Count} kết quả!",
-                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+
             }
             catch (SqlException sqlEx)
             {
@@ -243,7 +253,7 @@ namespace QLĐA
                 case "Lớp":
                     return baseQuery + $"SV.Lop = N'{searchValue}'";
                 case "Chuyên ngành":
-                    return baseQuery + $"CN.Ten_chuyen_nganh LIKE N'%{searchValue}%'>";
+                    return baseQuery + $"CN.Ten_chuyen_nganh LIKE N'%{searchValue}%'";
                 default:
                     return baseQuery + $"(SV.Ma_sinh_vien LIKE N'%{searchValue}%' OR SV.Ho_ten LIKE N'%{searchValue}%')";
             }
@@ -280,6 +290,8 @@ namespace QLĐA
 
         private string BuildSearchQuery_DoAn(string criterion, string searchValue)
         {
+            searchValue = searchValue.Replace("'", "''");
+            
             string baseQuery = @"SELECT DA.Ma_do_an, DA.Ten_de_tai, DA.Mo_ta, DA.Ngay_nop, 
                                    DA.Hoc_ky, DA.Nam, SV.Ho_ten as Ten_sinh_vien
                             FROM Do_an DA
@@ -310,6 +322,10 @@ namespace QLĐA
 
             dgvTraCuu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvTraCuu.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            dgvTraCuu.RowPostPaint -= DgvTraCuu_RowPostPaint;  // Xóa event cũ nếu có
+            dgvTraCuu.RowPostPaint += DgvTraCuu_RowPostPaint;  // Thêm event mới
+
             dgvTraCuu.MultiSelect = false;
             dgvTraCuu.ReadOnly = true;
 
@@ -325,14 +341,15 @@ namespace QLĐA
                         dgvTraCuu.Columns["Ngay_sinh"].HeaderText = "Ngày Sinh";
                         dgvTraCuu.Columns["Ngay_sinh"].DefaultCellStyle.Format = "dd/MM/yyyy";
                     }
-                    if (dgvTraCuu.Columns["Khoa"] != null)
-                        dgvTraCuu.Columns["Khoa"].Visible = false;
                     if (dgvTraCuu.Columns["Gioi_tinh"] != null)
                         dgvTraCuu.Columns["Gioi_tinh"].HeaderText = "Giới Tính";
                     if (dgvTraCuu.Columns["Lop"] != null)
                         dgvTraCuu.Columns["Lop"].HeaderText = "Lớp";
                     if (dgvTraCuu.Columns["Khoa"] != null)
+                    {
                         dgvTraCuu.Columns["Khoa"].HeaderText = "Khoa";
+                        dgvTraCuu.Columns["Khoa"].Visible = false; // Ẩn cột Khoa giống frmTraCuu
+                    }
                     if (dgvTraCuu.Columns["Email"] != null)
                         dgvTraCuu.Columns["Email"].HeaderText = "Email";
                     if (dgvTraCuu.Columns["Ten_giang_vien"] != null)
@@ -381,11 +398,9 @@ namespace QLĐA
                         dgvTraCuu.Columns["Ten_sinh_vien"].HeaderText = "Sinh Viên";
                     break;
             }
+
+         
         }
-
-
-
-
 
         // ===== CẬP NHẬT TIÊU CHÍ TÌM KIẾM =====
         private void UpdateSearchCriteria(string objectType)
@@ -398,40 +413,77 @@ namespace QLĐA
             {
                 case "SinhVien":
                     cboTieuChi.Items.AddRange(new object[] {
-                "Mã sinh viên",
-                "Họ và tên",
-                "Giới tính",
-                "Lớp",
-                "Chuyên ngành"
-            });
+                        "Mã sinh viên",
+                        "Họ và tên",
+                        "Giới tính",
+                        "Lớp",
+                        "Chuyên ngành"
+                    });
                     UpdatePlaceholder("Nhập mã hoặc tên sinh viên...");
                     break;
 
                 case "GiangVien":
                     cboTieuChi.Items.AddRange(new object[] {
-                "Mã giảng viên",
-                "Họ và tên",
-                "Giới tính",
-                "Bằng cấp",
-                "Chức danh",
-                "Email"
-            });
+                        "Mã giảng viên",
+                        "Họ và tên",
+                        "Giới tính",
+                        "Bằng cấp",
+                        "Chức danh",
+                        "Email"
+                    });
                     UpdatePlaceholder("Nhập mã hoặc tên giảng viên...");
                     break;
 
                 case "DoAn":
                     cboTieuChi.Items.AddRange(new object[] {
-                "Mã đồ án",
-                "Tên đồ án",
-                "Ngày nộp",
-                "Học kỳ",
-                "Năm học"
-            });
+                        "Mã đồ án",
+                        "Tên đồ án",
+                        "Ngày nộp",
+                        "Học kỳ",
+                        "Năm học"
+                    });
                     UpdatePlaceholder("Nhập mã hoặc tên đồ án...");
                     break;
             }
 
             cboTieuChi.SelectedIndex = 0;
+        }
+        private void DgvTraCuu_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            try
+            {
+                // Số thứ tự bắt đầu từ 1
+                string rowNumber = (e.RowIndex + 1).ToString();
+
+                // Font và brush để vẽ
+                Font font = new Font("Segoe UI", 10F, FontStyle.Regular);
+                SolidBrush brush = new SolidBrush(dgvTraCuu.RowHeadersDefaultCellStyle.ForeColor);
+
+                // Vị trí vẽ (giữa ô header)
+                StringFormat format = new StringFormat()
+                {
+                    Alignment = StringAlignment.Center,
+                    LineAlignment = StringAlignment.Center
+                };
+
+                // Vẽ số thứ tự vào RowHeader
+                e.Graphics.DrawString(
+                    rowNumber,
+                    font,
+                    brush,
+                    e.RowBounds.Left + (dgvTraCuu.RowHeadersWidth / 2),
+                    e.RowBounds.Top + (e.RowBounds.Height / 2),
+                    format);
+
+                // Giải phóng tài nguyên
+                brush.Dispose();
+                font.Dispose();
+                format.Dispose();
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error in RowPostPaint: {ex.Message}");
+            }
         }
 
         private void UpdatePlaceholder(string text)
@@ -441,13 +493,10 @@ namespace QLĐA
             txtTuKhoa.GotFocus -= TxtTuKhoa_GotFocus;
             txtTuKhoa.LostFocus -= TxtTuKhoa_LostFocus;
 
-
             currentPlaceholder = text;
-
 
             txtTuKhoa.Text = currentPlaceholder;
             txtTuKhoa.ForeColor = Color.Gray;
-
 
             txtTuKhoa.GotFocus += TxtTuKhoa_GotFocus;
             txtTuKhoa.LostFocus += TxtTuKhoa_LostFocus;
@@ -470,6 +519,7 @@ namespace QLĐA
                 txtTuKhoa.ForeColor = Color.Gray;
             }
         }
+
         private void ShowPanel(string panelType)
         {
             // Ẩn tất cả các panel trước
@@ -578,7 +628,7 @@ namespace QLĐA
             if (pnlGiangVien.Controls["txtMaGV"] is TextBox txtMaGV)
                 txtMaGV.Text = row.Cells["Ma_giang_vien"].Value?.ToString() ?? "";
 
-            if (pnlGiangVien.Controls["txtHoTenGV"] is TextBox txtHoTenGV)
+            if (pnlGiangVien.Controls["txtHotenGV"] is TextBox txtHoTenGV)
                 txtHoTenGV.Text = row.Cells["Ho_ten"].Value?.ToString() ?? "";
 
             if (pnlGiangVien.Controls["txtNgaySinhGV"] is TextBox txtNgaySinhGV)
@@ -598,15 +648,14 @@ namespace QLĐA
             if (pnlGiangVien.Controls["txtChucDanh"] is TextBox txtChucDanh)
                 txtChucDanh.Text = row.Cells["Chuc_danh"].Value?.ToString() ?? "";
 
-            if (pnlGiangVien.Controls["txtEmailGV"] is TextBox txtEmailGV)
-                txtEmailGV.Text = row.Cells["Email"].Value?.ToString() ?? "";
+            // SỬA LẠI TÊN CONTROL: txtEmailGiangVien thay vì txtEmailGV
+            if (pnlGiangVien.Controls["txtEmailGiangVien"] is TextBox txtEmailGiangVien)
+                txtEmailGiangVien.Text = row.Cells["Email"].Value?.ToString() ?? "";
         }
 
         // ===== HIỂN THỊ CHI TIẾT ĐỒ ÁN =====
         private void DisplayDoAnDetail(DataGridViewRow row)
         {
-            // Tên control có thể là: txtMaDA, txtTenDeTai, txtMoTa, txtNgayNop, txtHocKy, txtNam, txtTenSinhVien
-
             if (pnlDoAn.Controls["txtMaDA"] is TextBox txtMaDA)
                 txtMaDA.Text = row.Cells["Ma_do_an"].Value?.ToString() ?? "";
 
@@ -634,46 +683,9 @@ namespace QLĐA
                 txtTenSinhVien.Text = row.Cells["Ten_sinh_vien"].Value?.ToString() ?? "";
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void pnlDoAn_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlGiangVien_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pnlSinhVien_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             PerformSearch();
-
-        }
-        // ===== ĐÓNG KẾT NỐI KHI ĐÓNG FORM =====
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            if (conn != null && conn.State == ConnectionState.Open)
-            {
-                conn.Close();
-            }
-            base.OnFormClosing(e);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -746,20 +758,31 @@ namespace QLĐA
             }
         }
 
-        private void frmTraCuu_Load(object sender, EventArgs e)
-        {
-            if (txtTuKhoa != null)
-            {
-                txtTuKhoa.KeyPress += TxtTuKhoa_KeyPress;
-            }
-        }
-
         private void TxtTuKhoa_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
-        }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;  // ← Ngăn Enter được xử lý tiếp
+               
 
- 
+                // Kiểm tra nếu đang tìm kiếm thì không làm gì
+                if (isSearching)
+                {
+                    System.Diagnostics.Debug.WriteLine("Already searching, skipping...");
+                    return;
+                }
+
+                isSearching = true;
+                try
+                {
+                    PerformSearch();
+                }
+                finally
+                {
+                    isSearching = false;
+                }
+            }
+        }
 
         private void btnFirst_Click(object sender, EventArgs e)
         {
@@ -770,8 +793,6 @@ namespace QLĐA
                     dgvTraCuu.ClearSelection();
                     dgvTraCuu.Rows[0].Selected = true;
                     dgvTraCuu.CurrentCell = dgvTraCuu.Rows[0].Cells[0];
-
-                    // Hiển thị chi tiết của dòng đầu tiên
                     DisplayDetailInPanel(0);
                 }
                 else
@@ -800,8 +821,6 @@ namespace QLĐA
                         dgvTraCuu.ClearSelection();
                         dgvTraCuu.Rows[currentIndex - 1].Selected = true;
                         dgvTraCuu.CurrentCell = dgvTraCuu.Rows[currentIndex - 1].Cells[0];
-
-                        // Hiển thị chi tiết của dòng trước
                         DisplayDetailInPanel(currentIndex - 1);
                     }
                     else if (currentIndex == 0)
@@ -811,7 +830,6 @@ namespace QLĐA
                     }
                     else
                     {
-                        // Nếu chưa chọn dòng nào, chọn dòng đầu tiên
                         dgvTraCuu.Rows[0].Selected = true;
                         dgvTraCuu.CurrentCell = dgvTraCuu.Rows[0].Cells[0];
                         DisplayDetailInPanel(0);
@@ -844,8 +862,6 @@ namespace QLĐA
                         dgvTraCuu.ClearSelection();
                         dgvTraCuu.Rows[currentIndex + 1].Selected = true;
                         dgvTraCuu.CurrentCell = dgvTraCuu.Rows[currentIndex + 1].Cells[0];
-
-                        // Hiển thị chi tiết của dòng sau
                         DisplayDetailInPanel(currentIndex + 1);
                     }
                     else if (currentIndex == lastIndex)
@@ -855,7 +871,6 @@ namespace QLĐA
                     }
                     else
                     {
-                        // Nếu chưa chọn dòng nào, chọn dòng đầu tiên
                         dgvTraCuu.Rows[0].Selected = true;
                         dgvTraCuu.CurrentCell = dgvTraCuu.Rows[0].Cells[0];
                         DisplayDetailInPanel(0);
@@ -885,8 +900,6 @@ namespace QLĐA
                     dgvTraCuu.ClearSelection();
                     dgvTraCuu.Rows[lastIndex].Selected = true;
                     dgvTraCuu.CurrentCell = dgvTraCuu.Rows[lastIndex].Cells[0];
-
-                    // Hiển thị chi tiết của dòng cuối cùng
                     DisplayDetailInPanel(lastIndex);
                 }
                 else
@@ -901,19 +914,27 @@ namespace QLĐA
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
-        private void txtTuKhoa_KeyPress_1(object sender, KeyPressEventArgs e)
+        private void UC_TraCuu_Load(object sender, EventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+            // Khởi tạo placeholder cho textbox
+            if (txtTuKhoa != null)
             {
-                e.Handled = true;
-                PerformSearch();
+                txtTuKhoa.KeyPress += TxtTuKhoa_KeyPress;
             }
-
+            
+            // Đặt radiobutton mặc định
+            if (rdoSinhVien != null)
+            {
+                rdoSinhVien.Checked = true;
+                currentSearchType = "SinhVien";
+                UpdateSearchCriteria("SinhVien");
+                ShowPanel("SinhVien");
+                LoadAllData("SinhVien");
+            }
         }
+
+       
+       
     }
 }

@@ -1,13 +1,13 @@
 ﻿namespace QLĐA
 {
-    partial class frmTraCuu
+    partial class UC_TraCuu
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,10 +20,10 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -39,13 +39,12 @@
             this.rdoSinhVien = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.cboTieuChi = new System.Windows.Forms.ComboBox();
-            this.dgvTraCuu = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pnlGiangVien = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.txtGioiTinhGV = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.txtEmailGV = new System.Windows.Forms.TextBox();
+            this.txtEmailGiangVien = new System.Windows.Forms.TextBox();
             this.txtHotenGV = new System.Windows.Forms.TextBox();
             this.txtBangCap = new System.Windows.Forms.TextBox();
             this.txtChucDanh = new System.Windows.Forms.TextBox();
@@ -91,13 +90,13 @@
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.dgvTraCuu = new System.Windows.Forms.DataGridView();
             this.grpDoiTuongTraCuu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTraCuu)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pnlGiangVien.SuspendLayout();
             this.pnlSinhVien.SuspendLayout();
             this.pnlDoAn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTraCuu)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -105,12 +104,11 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(693, -3);
+            this.label1.Location = new System.Drawing.Point(762, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(262, 45);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 5;
             this.label1.Text = "Tra cứu thông tin";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // grpDoiTuongTraCuu
             // 
@@ -125,10 +123,10 @@
             this.grpDoiTuongTraCuu.Controls.Add(this.label2);
             this.grpDoiTuongTraCuu.Controls.Add(this.cboTieuChi);
             this.grpDoiTuongTraCuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpDoiTuongTraCuu.Location = new System.Drawing.Point(1095, 47);
+            this.grpDoiTuongTraCuu.Location = new System.Drawing.Point(1201, 106);
             this.grpDoiTuongTraCuu.Name = "grpDoiTuongTraCuu";
             this.grpDoiTuongTraCuu.Size = new System.Drawing.Size(592, 300);
-            this.grpDoiTuongTraCuu.TabIndex = 1;
+            this.grpDoiTuongTraCuu.TabIndex = 6;
             this.grpDoiTuongTraCuu.TabStop = false;
             this.grpDoiTuongTraCuu.Text = "Tiêu chí tra cứu";
             // 
@@ -181,7 +179,7 @@
             this.txtTuKhoa.Name = "txtTuKhoa";
             this.txtTuKhoa.Size = new System.Drawing.Size(465, 39);
             this.txtTuKhoa.TabIndex = 5;
-            this.txtTuKhoa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTuKhoa_KeyPress_1);
+            this.txtTuKhoa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTuKhoa_KeyPress);
             // 
             // rdoGiangVien
             // 
@@ -226,20 +224,6 @@
             this.cboTieuChi.Size = new System.Drawing.Size(465, 40);
             this.cboTieuChi.TabIndex = 3;
             // 
-            // dgvTraCuu
-            // 
-            this.dgvTraCuu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvTraCuu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTraCuu.Location = new System.Drawing.Point(12, 60);
-            this.dgvTraCuu.Name = "dgvTraCuu";
-            this.dgvTraCuu.RowHeadersWidth = 62;
-            this.dgvTraCuu.RowTemplate.Height = 28;
-            this.dgvTraCuu.Size = new System.Drawing.Size(1063, 851);
-            this.dgvTraCuu.TabIndex = 3;
-            this.dgvTraCuu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTraCuu_CellContentClick);
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -247,20 +231,19 @@
             this.groupBox1.Controls.Add(this.pnlSinhVien);
             this.groupBox1.Controls.Add(this.pnlDoAn);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(1095, 355);
+            this.groupBox1.Location = new System.Drawing.Point(1201, 432);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(592, 556);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // pnlGiangVien
             // 
             this.pnlGiangVien.Controls.Add(this.label12);
             this.pnlGiangVien.Controls.Add(this.txtGioiTinhGV);
             this.pnlGiangVien.Controls.Add(this.label25);
-            this.pnlGiangVien.Controls.Add(this.txtEmailGV);
+            this.pnlGiangVien.Controls.Add(this.txtEmailGiangVien);
             this.pnlGiangVien.Controls.Add(this.txtHotenGV);
             this.pnlGiangVien.Controls.Add(this.txtBangCap);
             this.pnlGiangVien.Controls.Add(this.txtChucDanh);
@@ -274,7 +257,8 @@
             this.pnlGiangVien.Name = "pnlGiangVien";
             this.pnlGiangVien.Size = new System.Drawing.Size(592, 512);
             this.pnlGiangVien.TabIndex = 12;
-            this.pnlGiangVien.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGiangVien_Paint);
+            this.pnlGiangVien.Visible = false;
+            
             // 
             // label12
             // 
@@ -303,12 +287,12 @@
             this.label25.TabIndex = 14;
             this.label25.Text = "Mã giảng viên";
             // 
-            // txtEmailGV
+            // txtEmailGiangVien
             // 
-            this.txtEmailGV.Location = new System.Drawing.Point(204, 361);
-            this.txtEmailGV.Name = "txtEmailGV";
-            this.txtEmailGV.Size = new System.Drawing.Size(374, 39);
-            this.txtEmailGV.TabIndex = 11;
+            this.txtEmailGiangVien.Location = new System.Drawing.Point(204, 361);
+            this.txtEmailGiangVien.Name = "txtEmailGiangVien";
+            this.txtEmailGiangVien.Size = new System.Drawing.Size(374, 39);
+            this.txtEmailGiangVien.TabIndex = 11;
             // 
             // txtHotenGV
             // 
@@ -409,7 +393,6 @@
             this.pnlSinhVien.Name = "pnlSinhVien";
             this.pnlSinhVien.Size = new System.Drawing.Size(592, 512);
             this.pnlSinhVien.TabIndex = 0;
-            this.pnlSinhVien.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSinhVien_Paint);
             // 
             // label11
             // 
@@ -567,7 +550,7 @@
             this.pnlDoAn.Name = "pnlDoAn";
             this.pnlDoAn.Size = new System.Drawing.Size(592, 515);
             this.pnlDoAn.TabIndex = 14;
-            this.pnlDoAn.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDoAn_Paint);
+            this.pnlDoAn.Visible = false;
             // 
             // txtTenSinhVien
             // 
@@ -624,7 +607,6 @@
             this.txtMota.Name = "txtMota";
             this.txtMota.Size = new System.Drawing.Size(374, 116);
             this.txtMota.TabIndex = 9;
-            this.txtMota.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // txtNgayNop
             // 
@@ -696,10 +678,10 @@
             this.btnLast.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnLast.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLast.ForeColor = System.Drawing.Color.Black;
-            this.btnLast.Location = new System.Drawing.Point(701, 926);
+            this.btnLast.Location = new System.Drawing.Point(817, 1013);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(107, 52);
-            this.btnLast.TabIndex = 3;
+            this.btnLast.TabIndex = 11;
             this.btnLast.Text = "Cuối";
             this.btnLast.UseVisualStyleBackColor = false;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
@@ -710,10 +692,10 @@
             this.btnPrevious.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnPrevious.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.ForeColor = System.Drawing.Color.Black;
-            this.btnPrevious.Location = new System.Drawing.Point(309, 926);
+            this.btnPrevious.Location = new System.Drawing.Point(425, 1013);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(107, 52);
-            this.btnPrevious.TabIndex = 2;
+            this.btnPrevious.TabIndex = 10;
             this.btnPrevious.Text = "Trước";
             this.btnPrevious.UseVisualStyleBackColor = false;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
@@ -724,10 +706,10 @@
             this.btnNext.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.Black;
-            this.btnNext.Location = new System.Drawing.Point(504, 926);
+            this.btnNext.Location = new System.Drawing.Point(620, 1013);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(107, 52);
-            this.btnNext.TabIndex = 1;
+            this.btnNext.TabIndex = 9;
             this.btnNext.Text = "Sau ";
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -738,46 +720,46 @@
             this.btnFirst.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnFirst.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFirst.ForeColor = System.Drawing.Color.Black;
-            this.btnFirst.Location = new System.Drawing.Point(120, 926);
+            this.btnFirst.Location = new System.Drawing.Point(236, 1013);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(107, 52);
-            this.btnFirst.TabIndex = 0;
+            this.btnFirst.TabIndex = 8;
             this.btnFirst.Text = "Đầu";
             this.btnFirst.UseVisualStyleBackColor = false;
             this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
-            // btnExit
+            // dgvTraCuu
             // 
-            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(1544, 928);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(129, 56);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "Kết thúc";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.dgvTraCuu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTraCuu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTraCuu.Location = new System.Drawing.Point(58, 129);
+            this.dgvTraCuu.Name = "dgvTraCuu";
+            this.dgvTraCuu.RowHeadersWidth = 62;
+            this.dgvTraCuu.RowTemplate.Height = 28;
+            this.dgvTraCuu.Size = new System.Drawing.Size(1063, 851);
+            this.dgvTraCuu.TabIndex = 12;
+            this.dgvTraCuu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTraCuu_CellClick);
+          
             // 
-            // frmTraCuu
+            // UC_TraCuu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1707, 990);
-            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.dgvTraCuu);
             this.Controls.Add(this.btnLast);
             this.Controls.Add(this.btnPrevious);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.dgvTraCuu);
             this.Controls.Add(this.btnFirst);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpDoiTuongTraCuu);
             this.Controls.Add(this.label1);
-            this.Name = "frmTraCuu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tra cứu";
+            this.Name = "UC_TraCuu";
+            this.Size = new System.Drawing.Size(1807, 1088);
+            this.Load += new System.EventHandler(this.UC_TraCuu_Load);
             this.grpDoiTuongTraCuu.ResumeLayout(false);
             this.grpDoiTuongTraCuu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTraCuu)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.pnlGiangVien.ResumeLayout(false);
             this.pnlGiangVien.PerformLayout();
@@ -785,26 +767,48 @@
             this.pnlSinhVien.PerformLayout();
             this.pnlDoAn.ResumeLayout(false);
             this.pnlDoAn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTraCuu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox grpDoiTuongTraCuu;
-        private System.Windows.Forms.RadioButton rdoSinhVien;
-        private System.Windows.Forms.RadioButton rdoDoAn;
-        private System.Windows.Forms.RadioButton rdoGiangVien;
-        private System.Windows.Forms.ComboBox cboTieuChi;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTuKhoa;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.DataGridView dgvTraCuu;
+        private System.Windows.Forms.RadioButton rdoDoAn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtTuKhoa;
+        private System.Windows.Forms.RadioButton rdoGiangVien;
+        private System.Windows.Forms.RadioButton rdoSinhVien;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cboTieuChi;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel pnlGiangVien;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtGioiTinhGV;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox txtEmailGiangVien;
+        private System.Windows.Forms.TextBox txtHotenGV;
+        private System.Windows.Forms.TextBox txtBangCap;
+        private System.Windows.Forms.TextBox txtChucDanh;
+        private System.Windows.Forms.TextBox txtMaGV;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel pnlSinhVien;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtGioiTinhSV;
+        private System.Windows.Forms.TextBox txtChuyenNganh;
+        private System.Windows.Forms.TextBox txtGiangVienHD;
+        private System.Windows.Forms.TextBox txtEmailSV;
+        private System.Windows.Forms.TextBox txtHoTenSV;
+        private System.Windows.Forms.TextBox txtLop;
+        private System.Windows.Forms.TextBox txtKhoa;
         private System.Windows.Forms.TextBox txtMaSV;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -813,12 +817,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtGiangVienHD;
-        private System.Windows.Forms.TextBox txtEmailSV;
-        private System.Windows.Forms.TextBox txtHoTenSV;
-        private System.Windows.Forms.TextBox txtLop;
-        private System.Windows.Forms.TextBox txtKhoa;
         private System.Windows.Forms.Panel pnlDoAn;
+        private System.Windows.Forms.TextBox txtTenSinhVien;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox txtNam;
+        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txtHocKy;
         private System.Windows.Forms.TextBox txtTenDeTai;
         private System.Windows.Forms.TextBox txtMota;
@@ -829,32 +832,10 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Panel pnlGiangVien;
-        private System.Windows.Forms.TextBox txtEmailGV;
-        private System.Windows.Forms.TextBox txtHotenGV;
-        private System.Windows.Forms.TextBox txtBangCap;
-        private System.Windows.Forms.TextBox txtChucDanh;
-        private System.Windows.Forms.TextBox txtMaGV;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox txtNam;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox txtTenSinhVien;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox txtChuyenNganh;
-        private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtGioiTinhSV;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtGioiTinhGV;
         private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnFirst;
-        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.DataGridView dgvTraCuu;
     }
 }

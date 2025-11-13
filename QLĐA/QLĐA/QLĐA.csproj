@@ -336,6 +336,12 @@
     <Compile Include="frmStudent.Designer.cs">
       <DependentUpon>frmStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTestUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTestUC.Designer.cs">
+      <DependentUpon>frmTestUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTraCuu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -367,6 +373,12 @@
     <Compile Include="frmTTTruongKhoa.Designer.cs">
       <DependentUpon>frmTTTruongKhoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_TraCuu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TraCuu.Designer.cs">
+      <DependentUpon>UC_TraCuu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -375,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStudent.resx">
       <DependentUpon>frmStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTestUC.resx">
+      <DependentUpon>frmTestUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTraCuu.resx">
       <DependentUpon>frmTraCuu.cs</DependentUpon>
@@ -397,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTTTruongKhoa.resx">
       <DependentUpon>frmTTTruongKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TraCuu.resx">
+      <DependentUpon>UC_TraCuu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
