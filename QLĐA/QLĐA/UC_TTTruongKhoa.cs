@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLĐA
 {
-    public partial class Form1 : Form
+    public partial class UC_TTTruongKhoa : UserControl
     {
-        public Form1()
+        public UC_TTTruongKhoa()
         {
             InitializeComponent();
         }

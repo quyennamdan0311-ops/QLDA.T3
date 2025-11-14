@@ -318,18 +318,67 @@
     <Compile Include="Manhinhchinh.Designer.cs">
       <DependentUpon>Manhinhchinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTestUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTestUC.Designer.cs">
+      <DependentUpon>frmTestUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTraCuu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTraCuu.Designer.cs">
+      <DependentUpon>frmTraCuu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTTSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTTSinhVien.Designer.cs">
+      <DependentUpon>frmTTSinhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyDoAnTotNghiepDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyDoAnTotNghiepDataSet.xsd</DependentUpon>
+    <Compile Include="frmTTGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTTGiangVien.Designer.cs">
+      <DependentUpon>frmTTGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTTTruongKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTTTruongKhoa.Designer.cs">
+      <DependentUpon>frmTTTruongKhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_TraCuu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TraCuu.Designer.cs">
+      <DependentUpon>UC_TraCuu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_TTGiangVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TTGiangVien.Designer.cs">
+      <DependentUpon>UC_TTGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_TTSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TTSinhVien.Designer.cs">
+      <DependentUpon>UC_TTSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_TTTruongKhoa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TTTruongKhoa.Designer.cs">
+      <DependentUpon>UC_TTTruongKhoa.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_Capnhatdoan.cs">
       <SubType>UserControl</SubType>
@@ -346,6 +395,18 @@
     <EmbeddedResource Include="Manhinhchinh.resx">
       <DependentUpon>Manhinhchinh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTestUC.resx">
+      <DependentUpon>frmTestUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTraCuu.resx">
+      <DependentUpon>frmTraCuu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTTSinhVien.resx">
+      <DependentUpon>frmTTSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -357,11 +418,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UC_Capnhatdoan.resx">
-      <DependentUpon>UC_Capnhatdoan.cs</DependentUpon>
+    <EmbeddedResource Include="frmTTGiangVien.resx">
+      <DependentUpon>frmTTGiangVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_Saoluu.resx">
-      <DependentUpon>UC_Saoluu.cs</DependentUpon>
+    <EmbeddedResource Include="frmTTTruongKhoa.resx">
+      <DependentUpon>frmTTTruongKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TraCuu.resx">
+      <DependentUpon>UC_TraCuu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TTGiangVien.resx">
+      <DependentUpon>UC_TTGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TTSinhVien.resx">
+      <DependentUpon>UC_TTSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TTTruongKhoa.resx">
+      <DependentUpon>UC_TTTruongKhoa.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
