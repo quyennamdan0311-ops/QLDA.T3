@@ -41,6 +41,7 @@
             this.btnTraCuu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnCapNhatDoAn = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnQuanLyThongTinSinhVien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btnQuanLyThongTinGV = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnQuanLyPhanQuyen = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnBaoCao = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
@@ -54,7 +55,7 @@
             this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
-            this.btnQuanLyThongTinGV = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btnQLDA = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
@@ -165,6 +166,7 @@
             this.btnCapNhatDoAn,
             this.btnQuanLyThongTinSinhVien,
             this.btnQuanLyThongTinGV,
+            this.btnQLDA,
             this.btnQuanLyPhanQuyen,
             this.btnBaoCao});
             this.accordionControlElement3.Expanded = true;
@@ -213,6 +215,19 @@
             this.btnQuanLyThongTinSinhVien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnQuanLyThongTinSinhVien.Text = "Quản lý thông tin sinh viên";
             this.btnQuanLyThongTinSinhVien.Click += new System.EventHandler(this.btnQuanLyThongTinSinhVien_Click);
+            // 
+            // btnQuanLyThongTinGV
+            // 
+            this.btnQuanLyThongTinGV.Appearance.Default.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.btnQuanLyThongTinGV.Appearance.Default.Options.UseFont = true;
+            this.btnQuanLyThongTinGV.Appearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnQuanLyThongTinGV.Appearance.Hovered.Options.UseFont = true;
+            this.btnQuanLyThongTinGV.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.btnQuanLyThongTinGV.Appearance.Normal.Options.UseFont = true;
+            this.btnQuanLyThongTinGV.Name = "btnQuanLyThongTinGV";
+            this.btnQuanLyThongTinGV.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnQuanLyThongTinGV.Text = "Quản lý thông tin giảng viên";
+            this.btnQuanLyThongTinGV.Click += new System.EventHandler(this.btnQuanLyThongTinGV_Click);
             // 
             // btnQuanLyPhanQuyen
             // 
@@ -338,18 +353,18 @@
             this.barStaticItem4});
             this.fluentFormDefaultManager1.MaxItemId = 4;
             // 
-            // btnQuanLyThongTinGV
+            // btnQLDA
             // 
-            this.btnQuanLyThongTinGV.Appearance.Default.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.btnQuanLyThongTinGV.Appearance.Default.Options.UseFont = true;
-            this.btnQuanLyThongTinGV.Appearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnQuanLyThongTinGV.Appearance.Hovered.Options.UseFont = true;
-            this.btnQuanLyThongTinGV.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.btnQuanLyThongTinGV.Appearance.Normal.Options.UseFont = true;
-            this.btnQuanLyThongTinGV.Name = "btnQuanLyThongTinGV";
-            this.btnQuanLyThongTinGV.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btnQuanLyThongTinGV.Text = "Quản lý thông tin giảng viên";
-            this.btnQuanLyThongTinGV.Click += new System.EventHandler(this.btnQuanLyThongTinGV_Click);
+            this.btnQLDA.Appearance.Default.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.btnQLDA.Appearance.Default.Options.UseFont = true;
+            this.btnQLDA.Appearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnQLDA.Appearance.Hovered.Options.UseFont = true;
+            this.btnQLDA.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.btnQLDA.Appearance.Normal.Options.UseFont = true;
+            this.btnQLDA.Name = "btnQLDA";
+            this.btnQLDA.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnQLDA.Text = "Quản lý thông tin đồ án";
+            this.btnQLDA.Click += new System.EventHandler(this.btnQLDA_Click);
             // 
             // Manhinhchinh
             // 
@@ -399,5 +414,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator3;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnDangXuat;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnQuanLyThongTinGV;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btnQLDA;
     }
 }

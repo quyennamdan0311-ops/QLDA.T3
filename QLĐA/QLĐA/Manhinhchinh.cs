@@ -70,5 +70,11 @@ namespace QLĐA
             UC_CapNhatGiangVien uC_CapNhatGiangVien = new UC_CapNhatGiangVien();
             LoadUserControl(uC_CapNhatGiangVien);
         }
+
+        private void btnQLDA_Click(object sender, EventArgs e)
+        {
+            UC_QuanLyDoAn uC_QuanLyDoAn = new UC_QuanLyDoAn();
+            LoadUserControl(uC_QuanLyDoAn);
+        }
     }
 }
