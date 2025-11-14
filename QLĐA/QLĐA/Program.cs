@@ -1,8 +1,4 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 using Project_QLDA;
 
@@ -18,7 +14,7 @@ namespace QLĐA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Manhinhchinh());
+            Application.Run(new frmDangNhap());
         }
     }
 }

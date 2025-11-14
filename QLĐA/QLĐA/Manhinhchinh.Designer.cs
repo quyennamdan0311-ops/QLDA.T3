@@ -42,6 +42,7 @@
             this.btnCapNhatDoAn = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnQuanLyThongTinSinhVien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnQuanLyThongTinGV = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btnQLDA = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnQuanLyPhanQuyen = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnBaoCao = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
@@ -55,7 +56,6 @@
             this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
-            this.btnQLDA = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
@@ -202,6 +202,7 @@
             this.btnCapNhatDoAn.Name = "btnCapNhatDoAn";
             this.btnCapNhatDoAn.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnCapNhatDoAn.Text = "Cập nhật đồ án";
+            this.btnCapNhatDoAn.Click += new System.EventHandler(this.btnCapNhatDoAn_Click_1);
             // 
             // btnQuanLyThongTinSinhVien
             // 
@@ -229,6 +230,19 @@
             this.btnQuanLyThongTinGV.Text = "Quản lý thông tin giảng viên";
             this.btnQuanLyThongTinGV.Click += new System.EventHandler(this.btnQuanLyThongTinGV_Click);
             // 
+            // btnQLDA
+            // 
+            this.btnQLDA.Appearance.Default.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.btnQLDA.Appearance.Default.Options.UseFont = true;
+            this.btnQLDA.Appearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnQLDA.Appearance.Hovered.Options.UseFont = true;
+            this.btnQLDA.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.btnQLDA.Appearance.Normal.Options.UseFont = true;
+            this.btnQLDA.Name = "btnQLDA";
+            this.btnQLDA.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnQLDA.Text = "Quản lý thông tin đồ án";
+            this.btnQLDA.Click += new System.EventHandler(this.btnQLDA_Click);
+            // 
             // btnQuanLyPhanQuyen
             // 
             this.btnQuanLyPhanQuyen.Appearance.Default.Font = new System.Drawing.Font("Segoe UI", 13F);
@@ -240,6 +254,7 @@
             this.btnQuanLyPhanQuyen.Name = "btnQuanLyPhanQuyen";
             this.btnQuanLyPhanQuyen.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnQuanLyPhanQuyen.Text = "Quản lý phân quyền";
+            this.btnQuanLyPhanQuyen.Click += new System.EventHandler(this.btnQuanLyPhanQuyen_Click);
             // 
             // btnBaoCao
             // 
@@ -297,6 +312,7 @@
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click_1);
             // 
             // fluentDesignFormControl1
             // 
@@ -352,19 +368,6 @@
             this.barStaticItem3,
             this.barStaticItem4});
             this.fluentFormDefaultManager1.MaxItemId = 4;
-            // 
-            // btnQLDA
-            // 
-            this.btnQLDA.Appearance.Default.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.btnQLDA.Appearance.Default.Options.UseFont = true;
-            this.btnQLDA.Appearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnQLDA.Appearance.Hovered.Options.UseFont = true;
-            this.btnQLDA.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.btnQLDA.Appearance.Normal.Options.UseFont = true;
-            this.btnQLDA.Name = "btnQLDA";
-            this.btnQLDA.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btnQLDA.Text = "Quản lý thông tin đồ án";
-            this.btnQLDA.Click += new System.EventHandler(this.btnQLDA_Click);
             // 
             // Manhinhchinh
             // 

@@ -34,7 +34,7 @@
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkShowPassword = new System.Windows.Forms.CheckBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
@@ -69,7 +69,7 @@
             this.txtTenDangNhap.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTenDangNhap.Location = new System.Drawing.Point(166, 328);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(433, 21);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(433, 20);
             this.txtTenDangNhap.TabIndex = 5;
             // 
             // txtMatKhau
@@ -77,7 +77,7 @@
             this.txtMatKhau.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtMatKhau.Location = new System.Drawing.Point(166, 407);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(433, 21);
+            this.txtMatKhau.Size = new System.Drawing.Size(433, 20);
             this.txtMatKhau.TabIndex = 6;
             // 
             // label2
@@ -91,17 +91,17 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Mật khẩu";
             // 
-            // checkBox1
+            // chkShowPassword
             // 
-            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(67, 469);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(124, 24);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Hiện mật khẩu";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkShowPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.chkShowPassword.AutoSize = true;
+            this.chkShowPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkShowPassword.Location = new System.Drawing.Point(67, 469);
+            this.chkShowPassword.Name = "chkShowPassword";
+            this.chkShowPassword.Size = new System.Drawing.Size(124, 24);
+            this.chkShowPassword.TabIndex = 9;
+            this.chkShowPassword.Text = "Hiện mật khẩu";
+            this.chkShowPassword.UseVisualStyleBackColor = true;
             // 
             // linkLabel1
             // 
@@ -145,15 +145,14 @@
             // 
             // frmLoginPopUp
             // 
-            this.Appearance.BackColor = System.Drawing.Color.PowderBlue;
-            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(865, 615);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chkShowPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.txtTenDangNhap);
@@ -174,7 +173,7 @@
         private System.Windows.Forms.TextBox txtTenDangNhap;
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkShowPassword;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Button btnThoat;

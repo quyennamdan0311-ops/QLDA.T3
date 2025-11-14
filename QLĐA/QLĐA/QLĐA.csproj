@@ -350,6 +350,12 @@
     <Compile Include="frmTTTruongKhoa.Designer.cs">
       <DependentUpon>frmTTTruongKhoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_QuanLyPhanQuyen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanLyPhanQuyen.Designer.cs">
+      <DependentUpon>UC_QuanLyPhanQuyen.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_QuanLyDoAn.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -410,6 +416,9 @@
     <Compile Include="UC_CapNhatGiangVien.Designer.cs">
       <DependentUpon>UC_CapNhatGiangVien.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC_QuanLyPhanQuyen.resx">
+      <DependentUpon>UC_QuanLyPhanQuyen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_CapNhatGiangVien.resx">
       <DependentUpon>UC_CapNhatGiangVien.cs</DependentUpon>
     </EmbeddedResource>
