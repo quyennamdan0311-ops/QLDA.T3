@@ -349,6 +349,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyDoAnTotNghiepDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="UC_Capnhatdoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Capnhatdoan.Designer.cs">
+      <DependentUpon>UC_Capnhatdoan.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmLoginPopUp.resx">
       <DependentUpon>frmLoginPopUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -371,6 +377,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC_Capnhatdoan.resx">
+      <DependentUpon>UC_Capnhatdoan.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
