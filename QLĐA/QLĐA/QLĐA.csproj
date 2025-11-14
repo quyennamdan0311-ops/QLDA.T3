@@ -324,11 +324,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLoginPopUp.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLoginPopUp.Designer.cs">
-      <DependentUpon>frmLoginPopUp.cs</DependentUpon>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
@@ -350,16 +350,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyDoAnTotNghiepDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyDoAnTotNghiepDataSet.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="FluentDesignForm1.resx">
       <DependentUpon>FluentDesignForm1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLoginPopUp.resx">
-      <DependentUpon>frmLoginPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
@@ -390,17 +385,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="QuanLyDoAnTotNghiepDataSet.xsc">
-      <DependentUpon>QuanLyDoAnTotNghiepDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QuanLyDoAnTotNghiepDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QuanLyDoAnTotNghiepDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QuanLyDoAnTotNghiepDataSet.xss">
-      <DependentUpon>QuanLyDoAnTotNghiepDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
