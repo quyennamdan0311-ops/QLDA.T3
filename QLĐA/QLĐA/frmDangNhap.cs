@@ -124,11 +124,7 @@ namespace Project_QLDA
 
         private void btnDangNhap_ItemClick_2(object sender, ItemClickEventArgs e)
         {
-            using (frmLogin frm = new frmLogin())
-            {
-                frm.StartPosition = FormStartPosition.CenterScreen;
-                frm.ShowDialog();
-            }
+
         }
 
         private void ribbonStatusBar_Click(object sender, EventArgs e)
@@ -138,11 +134,7 @@ namespace Project_QLDA
 
         private void btnTraCuu_ItemClick(object sender, ItemClickEventArgs e)
         {
-            using (frmTraCuu frm = new frmTraCuu())
-            {
-                frm.StartPosition = FormStartPosition.CenterScreen;
-                frm.ShowDialog();
-            }
+
         }
     }
 }

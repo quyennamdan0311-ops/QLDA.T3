@@ -330,12 +330,6 @@
     <Compile Include="frmTestUC.Designer.cs">
       <DependentUpon>frmTestUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTraCuu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTraCuu.Designer.cs">
-      <DependentUpon>frmTraCuu.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmTTSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -400,9 +394,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTestUC.resx">
       <DependentUpon>frmTestUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTraCuu.resx">
-      <DependentUpon>frmTraCuu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTTSinhVien.resx">
       <DependentUpon>frmTTSinhVien.cs</DependentUpon>
