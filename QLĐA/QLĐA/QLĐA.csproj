@@ -312,6 +312,12 @@
     <Reference Include="Web.DemoData.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Manhinhchinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manhinhchinh.Designer.cs">
+      <DependentUpon>Manhinhchinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -361,6 +367,9 @@
     <Compile Include="UC_Saoluu.Designer.cs">
       <DependentUpon>UC_Saoluu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Manhinhchinh.resx">
+      <DependentUpon>Manhinhchinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLoginPopUp.resx">
       <DependentUpon>frmLoginPopUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -382,6 +391,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UC_Capnhatdoan.resx">
       <DependentUpon>UC_Capnhatdoan.cs</DependentUpon>
@@ -412,6 +422,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bannerkhoahtttql679x130.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tuyensinh2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
