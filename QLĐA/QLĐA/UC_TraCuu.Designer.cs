@@ -103,12 +103,13 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MediumBlue;
             this.label1.Location = new System.Drawing.Point(762, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(262, 45);
+            this.label1.Size = new System.Drawing.Size(348, 45);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Tra cứu thông tin";
+            this.label1.Text = "TRA CỨU THÔNG TIN";
             // 
             // grpDoiTuongTraCuu
             // 
@@ -122,7 +123,7 @@
             this.grpDoiTuongTraCuu.Controls.Add(this.rdoSinhVien);
             this.grpDoiTuongTraCuu.Controls.Add(this.label2);
             this.grpDoiTuongTraCuu.Controls.Add(this.cboTieuChi);
-            this.grpDoiTuongTraCuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpDoiTuongTraCuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDoiTuongTraCuu.Location = new System.Drawing.Point(1201, 106);
             this.grpDoiTuongTraCuu.Name = "grpDoiTuongTraCuu";
             this.grpDoiTuongTraCuu.Size = new System.Drawing.Size(592, 300);
@@ -132,6 +133,7 @@
             // 
             // btnRefresh
             // 
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.Location = new System.Drawing.Point(330, 246);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(196, 39);
@@ -155,6 +157,7 @@
             // 
             this.rdoDoAn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoDoAn.AutoSize = true;
+            this.rdoDoAn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoDoAn.Location = new System.Drawing.Point(427, 49);
             this.rdoDoAn.Name = "rdoDoAn";
             this.rdoDoAn.Size = new System.Drawing.Size(143, 36);
@@ -185,6 +188,7 @@
             // 
             this.rdoGiangVien.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rdoGiangVien.AutoSize = true;
+            this.rdoGiangVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoGiangVien.Location = new System.Drawing.Point(212, 49);
             this.rdoGiangVien.Name = "rdoGiangVien";
             this.rdoGiangVien.Size = new System.Drawing.Size(193, 36);
@@ -197,6 +201,7 @@
             // 
             this.rdoSinhVien.AutoSize = true;
             this.rdoSinhVien.Checked = true;
+            this.rdoSinhVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoSinhVien.Location = new System.Drawing.Point(19, 49);
             this.rdoSinhVien.Name = "rdoSinhVien";
             this.rdoSinhVien.Size = new System.Drawing.Size(178, 36);
@@ -230,7 +235,7 @@
             this.groupBox1.Controls.Add(this.pnlGiangVien);
             this.groupBox1.Controls.Add(this.pnlSinhVien);
             this.groupBox1.Controls.Add(this.pnlDoAn);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(1201, 432);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(592, 556);
@@ -258,7 +263,6 @@
             this.pnlGiangVien.Size = new System.Drawing.Size(592, 512);
             this.pnlGiangVien.TabIndex = 12;
             this.pnlGiangVien.Visible = false;
-            
             // 
             // label12
             // 
@@ -675,8 +679,8 @@
             // btnLast
             // 
             this.btnLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLast.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.btnLast.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLast.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnLast.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLast.ForeColor = System.Drawing.Color.Black;
             this.btnLast.Location = new System.Drawing.Point(817, 1013);
             this.btnLast.Name = "btnLast";
@@ -689,8 +693,8 @@
             // btnPrevious
             // 
             this.btnPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnPrevious.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.btnPrevious.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnPrevious.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.ForeColor = System.Drawing.Color.Black;
             this.btnPrevious.Location = new System.Drawing.Point(425, 1013);
             this.btnPrevious.Name = "btnPrevious";
@@ -703,8 +707,8 @@
             // btnNext
             // 
             this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNext.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.Black;
             this.btnNext.Location = new System.Drawing.Point(620, 1013);
             this.btnNext.Name = "btnNext";
@@ -717,8 +721,8 @@
             // btnFirst
             // 
             this.btnFirst.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnFirst.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.btnFirst.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnFirst.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFirst.ForeColor = System.Drawing.Color.Black;
             this.btnFirst.Location = new System.Drawing.Point(236, 1013);
             this.btnFirst.Name = "btnFirst";
@@ -733,6 +737,7 @@
             this.dgvTraCuu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTraCuu.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvTraCuu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTraCuu.Location = new System.Drawing.Point(58, 129);
             this.dgvTraCuu.Name = "dgvTraCuu";
@@ -741,12 +746,12 @@
             this.dgvTraCuu.Size = new System.Drawing.Size(1063, 851);
             this.dgvTraCuu.TabIndex = 12;
             this.dgvTraCuu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTraCuu_CellClick);
-          
             // 
             // UC_TraCuu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Controls.Add(this.dgvTraCuu);
             this.Controls.Add(this.btnLast);
             this.Controls.Add(this.btnPrevious);
