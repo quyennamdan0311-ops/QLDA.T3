@@ -67,10 +67,10 @@
             this.fluentDesignFormContainer1.Controls.Add(this.panel2);
             this.fluentDesignFormContainer1.Controls.Add(this.panel1);
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(283, 31);
-            this.fluentDesignFormContainer1.Margin = new System.Windows.Forms.Padding(6);
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(424, 46);
+            this.fluentDesignFormContainer1.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(937, 673);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1406, 983);
             this.fluentDesignFormContainer1.TabIndex = 0;
             this.fluentDesignFormContainer1.Click += new System.EventHandler(this.fluentDesignFormContainer1_Click);
             // 
@@ -79,10 +79,10 @@
             this.panel2.BackgroundImage = global::QLĐA.Properties.Resources.Tuyensinh2;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 272);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6);
+            this.panel2.Location = new System.Drawing.Point(0, 398);
+            this.panel2.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(937, 401);
+            this.panel2.Size = new System.Drawing.Size(1406, 585);
             this.panel2.TabIndex = 1;
             // 
             // panel1
@@ -91,9 +91,9 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(937, 272);
+            this.panel1.Size = new System.Drawing.Size(1406, 398);
             this.panel1.TabIndex = 0;
             // 
             // accordionControl1
@@ -107,11 +107,11 @@
             this.accordionControlElement2,
             this.accordionControlSeparator3,
             this.btnDangXuat});
-            this.accordionControl1.Location = new System.Drawing.Point(0, 31);
-            this.accordionControl1.Margin = new System.Windows.Forms.Padding(6);
+            this.accordionControl1.Location = new System.Drawing.Point(0, 46);
+            this.accordionControl1.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(283, 673);
+            this.accordionControl1.Size = new System.Drawing.Size(424, 983);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -282,6 +282,7 @@
             this.accordionControlElement2.Appearance.Normal.Options.UseFont = true;
             this.accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.btnSaoLuu});
+            this.accordionControlElement2.Expanded = true;
             this.accordionControlElement2.Name = "accordionControlElement2";
             this.accordionControlElement2.Text = "Cài đặt";
             // 
@@ -296,6 +297,7 @@
             this.btnSaoLuu.Name = "btnSaoLuu";
             this.btnSaoLuu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnSaoLuu.Text = "Sao lưu dữ liệu";
+            this.btnSaoLuu.Click += new System.EventHandler(this.btnSaoLuu_Click);
             // 
             // accordionControlSeparator3
             // 
@@ -324,9 +326,9 @@
             this.barStaticItem4});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
-            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1220, 31);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1830, 46);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem3);
@@ -371,16 +373,16 @@
             // 
             // Manhinhchinh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 704);
+            this.ClientSize = new System.Drawing.Size(1830, 1029);
             this.ControlContainer = this.fluentDesignFormContainer1;
             this.Controls.Add(this.fluentDesignFormContainer1);
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Manhinhchinh.IconOptions.SvgImage")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Manhinhchinh";
             this.NavigationControl = this.accordionControl1;
             this.fluentDesignFormContainer1.ResumeLayout(false);

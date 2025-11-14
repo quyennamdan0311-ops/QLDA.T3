@@ -457,6 +457,9 @@
     <EmbeddedResource Include="UC_QuanLyDoAn.resx">
       <DependentUpon>UC_QuanLyDoAn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_Saoluu.resx">
+      <DependentUpon>UC_Saoluu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_TraCuu.resx">
       <DependentUpon>UC_TraCuu.cs</DependentUpon>
     </EmbeddedResource>

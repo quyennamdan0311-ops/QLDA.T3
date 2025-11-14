@@ -215,5 +215,11 @@ namespace QLĐA
             LoadUserControl(uC_Capnhatdoan);
 
         }
+
+        private void btnSaoLuu_Click(object sender, EventArgs e)
+        {
+            UC_Saoluu uC_Saoluu = new UC_Saoluu();
+            LoadUserControl(uC_Saoluu);
+        }
     }
 }
