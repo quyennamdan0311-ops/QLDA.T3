@@ -1,23 +1,28 @@
-﻿using DevExpress.XtraBars;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLĐA
 {
-    public partial class FluentDesignForm1 : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
+    public partial class UC_Capnhatdoan : UserControl
     {
-        public FluentDesignForm1()
+        public UC_Capnhatdoan()
         {
             InitializeComponent();
         }
 
-        private void fluentDesignFormContainer1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
