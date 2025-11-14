@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLĐA
 {
-    public partial class FluentDesignForm1 : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
+    public partial class Manhinhchinh : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
-        public FluentDesignForm1()
+        public Manhinhchinh()
         {
             InitializeComponent();
         }
