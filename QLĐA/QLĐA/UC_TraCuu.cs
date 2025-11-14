@@ -47,7 +47,7 @@ namespace QLĐA
         {
             if (rdoGiangVien != null && rdoGiangVien.Checked)
             {
-                // ✅ XÓA DỮ LIỆU CŨ
+                
                 ClearDataGridView();
 
                 currentSearchType = "GiangVien";
@@ -62,7 +62,7 @@ namespace QLĐA
         {
             if (rdoDoAn != null && rdoDoAn.Checked)
             {
-                // ✅ XÓA DỮ LIỆU CŨ
+               
                 ClearDataGridView();
 
                 currentSearchType = "DoAn";
