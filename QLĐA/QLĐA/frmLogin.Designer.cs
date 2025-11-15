@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTenDangNhap = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.chkShowPassword = new System.Windows.Forms.CheckBox();
@@ -91,13 +91,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên đăng nhập";
             // 
-            // txtTenDangNhap
+            // txtUsername
             // 
-            this.txtTenDangNhap.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTenDangNhap.Location = new System.Drawing.Point(97, 252);
-            this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(616, 26);
-            this.txtTenDangNhap.TabIndex = 3;
+            this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtUsername.Location = new System.Drawing.Point(97, 252);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(616, 26);
+            this.txtUsername.TabIndex = 3;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
             // label3
             // 
@@ -170,7 +171,7 @@
             this.Controls.Add(this.chkShowPassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtTenDangNhap);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -188,11 +189,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTenDangNhap;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.CheckBox chkShowPassword;
         private System.Windows.Forms.LinkLabel linkForgot;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnDangNhap;
     }
 }

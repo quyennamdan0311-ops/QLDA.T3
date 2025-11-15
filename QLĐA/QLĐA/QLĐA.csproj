@@ -312,11 +312,11 @@
     <Reference Include="Web.DemoData.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Manhinhchinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Manhinhchinh.Designer.cs">
+      <DependentUpon>Manhinhchinh.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBaoCaoTongHop.cs">
       <SubType>Form</SubType>
@@ -325,55 +325,121 @@
       <DependentUpon>frmBaoCaoTongHop.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
+    <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="frmTestUC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="frmTestUC.Designer.cs">
+      <DependentUpon>frmTestUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmStudent.cs">
+    <Compile Include="frmTTSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmStudent.Designer.cs">
-      <DependentUpon>frmStudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTraCuu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTraCuu.Designer.cs">
-      <DependentUpon>frmTraCuu.cs</DependentUpon>
+    <Compile Include="frmTTSinhVien.Designer.cs">
+      <DependentUpon>frmTTSinhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyDoAnTotNghiepDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyDoAnTotNghiepDataSet.xsd</DependentUpon>
+    <Compile Include="frmTTGiangVien.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_qlđatn_final__4_DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_qlđatn_final__4_DataSet.xsd</DependentUpon>
+    <Compile Include="frmTTGiangVien.Designer.cs">
+      <DependentUpon>frmTTGiangVien.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmBaoCaoTongHop.resx">
-      <DependentUpon>frmBaoCaoTongHop.cs</DependentUpon>
+    <Compile Include="frmTTTruongKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTTTruongKhoa.Designer.cs">
+      <DependentUpon>frmTTTruongKhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QuanLyPhanQuyen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanLyPhanQuyen.Designer.cs">
+      <DependentUpon>UC_QuanLyPhanQuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QuanLyDoAn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanLyDoAn.Designer.cs">
+      <DependentUpon>UC_QuanLyDoAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_TraCuu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TraCuu.Designer.cs">
+      <DependentUpon>UC_TraCuu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_TTGiangVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TTGiangVien.Designer.cs">
+      <DependentUpon>UC_TTGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_TTSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TTSinhVien.Designer.cs">
+      <DependentUpon>UC_TTSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_TTTruongKhoa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TTTruongKhoa.Designer.cs">
+      <DependentUpon>UC_TTTruongKhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Capnhatdoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Capnhatdoan.Designer.cs">
+      <DependentUpon>UC_Capnhatdoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Saoluu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Saoluu.Designer.cs">
+      <DependentUpon>UC_Saoluu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoginPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoginPopUp.Designer.cs">
+      <DependentUpon>frmLoginPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_CapNhatSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_CapNhatSinhVien.Designer.cs">
+      <DependentUpon>UC_CapNhatSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_CapNhatGiangVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_CapNhatGiangVien.Designer.cs">
+      <DependentUpon>UC_CapNhatGiangVien.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UC_QuanLyPhanQuyen.resx">
+      <DependentUpon>UC_QuanLyPhanQuyen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="UC_CapNhatGiangVien.resx">
+      <DependentUpon>UC_CapNhatGiangVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="Manhinhchinh.resx">
+      <DependentUpon>Manhinhchinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmStudent.resx">
-      <DependentUpon>frmStudent.cs</DependentUpon>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTraCuu.resx">
-      <DependentUpon>frmTraCuu.cs</DependentUpon>
+    <EmbeddedResource Include="frmTestUC.resx">
+      <DependentUpon>frmTestUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTTSinhVien.resx">
+      <DependentUpon>frmTTSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -384,7 +450,41 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="frmTTGiangVien.resx">
+      <DependentUpon>frmTTGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTTTruongKhoa.resx">
+      <DependentUpon>frmTTTruongKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Capnhatdoan.resx">
+      <DependentUpon>UC_Capnhatdoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuanLyDoAn.resx">
+      <DependentUpon>UC_QuanLyDoAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Saoluu.resx">
+      <DependentUpon>UC_Saoluu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TraCuu.resx">
+      <DependentUpon>UC_TraCuu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TTGiangVien.resx">
+      <DependentUpon>UC_TTGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TTSinhVien.resx">
+      <DependentUpon>UC_TTSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TTTruongKhoa.resx">
+      <DependentUpon>UC_TTTruongKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoginPopUp.resx">
+      <DependentUpon>frmLoginPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_CapNhatSinhVien.resx">
+      <DependentUpon>UC_CapNhatSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -394,31 +494,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="QuanLyDoAnTotNghiepDataSet.xsc">
-      <DependentUpon>QuanLyDoAnTotNghiepDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QuanLyDoAnTotNghiepDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QuanLyDoAnTotNghiepDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QuanLyDoAnTotNghiepDataSet.xss">
-      <DependentUpon>QuanLyDoAnTotNghiepDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="_qlđatn_final__4_DataSet.xsc">
-      <DependentUpon>_qlđatn_final__4_DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="_qlđatn_final__4_DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>_qlđatn_final__4_DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_qlđatn_final__4_DataSet.xss">
-      <DependentUpon>_qlđatn_final__4_DataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bannerkhoahtttql679x130.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tuyensinh2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
