@@ -327,6 +327,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(-22, -22);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 27);
             this.textBox1.TabIndex = 10;
@@ -350,8 +351,8 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(921, 260);
-            this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(779, 688);
+            this.panel1.Size = new System.Drawing.Size(519, 472);
             this.panel1.TabIndex = 13;
             // 
             // pictureBox2
@@ -360,26 +361,39 @@
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(779, 688);
+            this.pictureBox2.Size = new System.Drawing.Size(519, 472);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // frmDangNhap
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "barButtonItem4";
+            this.barButtonItem4.Id = 21;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "barButtonItem5";
+            this.barButtonItem5.Id = 22;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(1700, 984);
+            this.ClientSize = new System.Drawing.Size(1133, 673);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.ribbonStatusBar);
-            this.Controls.Add(this.ribbon);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "frmDangNhap";
             this.Name = "frmDangNhap";
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
