@@ -318,6 +318,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBaoCaoTongHop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoTongHop.Designer.cs">
+      <DependentUpon>frmBaoCaoTongHop.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +355,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyDoAnTotNghiepDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_qlđatn_final__4_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_qlđatn_final__4_DataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmBaoCaoTongHop.resx">
+      <DependentUpon>frmBaoCaoTongHop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -390,6 +404,17 @@
     </None>
     <None Include="QuanLyDoAnTotNghiepDataSet.xss">
       <DependentUpon>QuanLyDoAnTotNghiepDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_qlđatn_final__4_DataSet.xsc">
+      <DependentUpon>_qlđatn_final__4_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_qlđatn_final__4_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_qlđatn_final__4_DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_qlđatn_final__4_DataSet.xss">
+      <DependentUpon>_qlđatn_final__4_DataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

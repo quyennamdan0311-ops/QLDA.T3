@@ -33,5 +33,16 @@ namespace QLĐA.Properties {
                 return ((string)(this["QuanLyDoAnTotNghiepConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-V7L4VIL;Initial Catalog=\"qlđatn_final (4)\";Integrated Securit" +
+            "y=True;Encrypt=False")]
+        public string qlđatn_final__4_ConnectionString {
+            get {
+                return ((string)(this["qlđatn_final__4_ConnectionString"]));
+            }
+        }
     }
 }
