@@ -221,5 +221,15 @@ namespace QLĐA
             UC_Saoluu uC_Saoluu = new UC_Saoluu();
             LoadUserControl(uC_Saoluu);
         }
+
+        private void accordionControlElement2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accordionControlElement3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -2200,7 +2200,7 @@
   <data name="barButtonItem2.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        0wAADdMBvdUcagAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEy/SURBVHhe7d15
+        0gAADdIBb5L+jgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEy/SURBVHhe7d15
         nBXVnf9/szh5/CaP6ORrMsZkTDKTmSxqosYkM0ncomHfobvZZQdZRKNGVECUVUWRHUHZQQRBQVFAQBAQ
         ZVGIiIDKvnWzN5sgTZ/fOVeuuTSfXm7fqjqnql5/PBMtm6b71qnzft+6VacuUkol/PdvOv/bT37bafGV
         17Y78qNrWhf+8OpWyiv/8eu26mf/e6/6xZ+6qF/e1E39Cr645tYe6q93jAMQcn9p9PwXN+WM2Pl/tQd1
@@ -2581,7 +2581,7 @@
   <data name="btnTraCuu.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAHyuSURBVHhe7d0F
+        vgAADr4B6kKxwAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAHyuSURBVHhe7d0F
         uBXF3wfwl3uBS3d3p3R3SktLqUh3dxggBphgAGJhoBiAIoJIioQ00h12oShg6++dWb38ie+9zNk4Z885
         39/zfJ7nff8gszs7O/M7u7Mz/+dClFQGK88rm5UvlHOKEFFU+Uv5UnlH6arEKAwGI8Iin3K3clxBHQER
         0W6liMJgMCIgCin6l/4fCrrhiYgud1appDAYjDCN5Mqdyi8KusmJiBLyg1JZYTAYYRb6cf8WBd3YREQm
