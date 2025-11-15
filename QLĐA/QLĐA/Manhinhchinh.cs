@@ -194,18 +194,46 @@ namespace QLĐA
 
         private void btnDangXuat_Click_1(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-     "Bạn có chắc chắn muốn đăng xuất?",
-     "Xác nhận đăng xuất",
-     MessageBoxButtons.YesNo,
-     MessageBoxIcon.Question
- );
+            
+            
+                DialogResult result = MessageBox.Show(
+                    "Bạn có chắc chắn muốn đăng xuất?",
+                    "Xác nhận đăng xuất",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
 
-            if (result == DialogResult.Yes)
-            {
-                // Đóng form hiện tại và quay lại màn hình đăng nhập
-                this.Close();
-            }
+                if (result == DialogResult.Yes)
+                {
+                    // Đóng form hiện tại
+                    this.Hide();
+
+                    // Hỏi người dùng có muốn đăng nhập lại không
+                    DialogResult loginAgainResult = MessageBox.Show(
+                        "Bạn có muốn đăng nhập lại?",
+                        "Đăng nhập lại",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                    );
+
+                    if (loginAgainResult == DialogResult.Yes)
+                    {
+                        // Hiển thị form đăng nhập
+                        frmLoginPopUp loginForm = new frmLoginPopUp();
+                        DialogResult loginResult = loginForm.ShowDialog();
+
+                        // Nếu đăng nhập thành công, form Manhinhchinh mới sẽ được mở từ frmLoginPopUp
+                        // Form hiện tại sẽ đóng
+                        this.Close();
+                    }
+                    else
+                    {
+                        // Thoát ứng dụng hoàn toàn
+                        this.Close();
+                        Application.Exit();
+                    }
+                }
+            
 
         }
 
@@ -220,6 +248,31 @@ namespace QLĐA
         {
             UC_Saoluu uC_Saoluu = new UC_Saoluu();
             LoadUserControl(uC_Saoluu);
+        }
+
+        private void accordionControlElement2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accordionControlElement3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

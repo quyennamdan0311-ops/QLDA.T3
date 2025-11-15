@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using Project_QLDA;
 
 namespace QLĐA
 {
@@ -14,7 +13,7 @@ namespace QLĐA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDangNhap());
+            Application.Run(new frmWelcome());
         }
     }
 }
