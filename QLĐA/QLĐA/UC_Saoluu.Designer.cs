@@ -38,7 +38,6 @@
             this.txtDuongDanLoadFile = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
@@ -81,6 +80,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox2.Controls.Add(this.btnBrowseLoad);
             this.groupBox2.Controls.Add(this.btnRestore);
             this.groupBox2.Controls.Add(this.txtDuongDanLoadFile);
@@ -138,6 +138,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Navy;
@@ -146,14 +147,6 @@
             this.label1.Size = new System.Drawing.Size(416, 38);
             this.label1.TabIndex = 2;
             this.label1.Text = "SAO LƯU - PHỤC HỒI DỮ LIỆU";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
             // 
             // groupBox3
             // 
@@ -166,6 +159,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox4.Controls.Add(this.txtDuongDanLuuFile);
             this.groupBox4.Controls.Add(this.btnBrowseSave);
             this.groupBox4.Controls.Add(this.btnBackup);
@@ -183,7 +177,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Name = "UC_Saoluu";
@@ -208,7 +201,6 @@
         private System.Windows.Forms.Button btnRestore;
         private System.Windows.Forms.TextBox txtDuongDanLoadFile;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
     }
