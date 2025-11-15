@@ -318,13 +318,6 @@
     <Compile Include="Manhinhchinh.Designer.cs">
       <DependentUpon>Manhinhchinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBaoCaoTongHop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBaoCaoTongHop.Designer.cs">
-      <DependentUpon>frmBaoCaoTongHop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmLogin.cs">
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>

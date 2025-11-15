@@ -95,8 +95,7 @@
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsMenuMinWidth = 220;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1,
-            this.ribbonPage2});
+    this.ribbonPage1});
             this.ribbon.Size = new System.Drawing.Size(1699, 260);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
