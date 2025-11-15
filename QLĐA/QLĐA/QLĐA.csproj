@@ -312,6 +312,12 @@
     <Reference Include="Web.DemoData.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWelcome.Designer.cs">
+      <DependentUpon>frmWelcome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manhinhchinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -410,6 +416,9 @@
     <Compile Include="UC_CapNhatGiangVien.Designer.cs">
       <DependentUpon>UC_CapNhatGiangVien.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmWelcome.resx">
+      <DependentUpon>frmWelcome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_QuanLyPhanQuyen.resx">
       <DependentUpon>UC_QuanLyPhanQuyen.cs</DependentUpon>
     </EmbeddedResource>

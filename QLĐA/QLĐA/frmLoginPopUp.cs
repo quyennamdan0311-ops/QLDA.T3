@@ -104,6 +104,9 @@ namespace QLĐA
                                 LoggedInUserName = username;
                                 LoginSuccess = true;
 
+                                // Đóng kết nối trước khi hiển thị form mới
+                                conn.Close();
+
                                 // Thông báo thành công
                                 string roleDisplay = "";
                                 if (loaiNguoiDung.Contains("sinh viên") || loaiNguoiDung.Contains("sinh_vien"))
@@ -116,13 +119,20 @@ namespace QLĐA
                                     roleDisplay = "Quản trị viên";
 
                                 MessageBox.Show(
-                                    "Đăng nhập thành công!",
+                                    $"Đăng nhập thành công!",
                                     "Thành công",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Information
                                 );
 
-                                this.DialogResult = DialogResult.OK;
+                                // Ẩn form đăng nhập
+                                this.Hide();
+
+                                // Mở form Manhinhchinh với thông tin đã phân quyền
+                                Manhinhchinh mainForm = new Manhinhchinh(LoggedInUserType, LoggedInUserId, LoggedInUserName);
+                                mainForm.ShowDialog();
+
+                                // Sau khi đóng Manhinhchinh, đóng form đăng nhập
                                 this.Close();
                             }
                             else
