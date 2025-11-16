@@ -274,5 +274,18 @@ namespace QLĐA
         {
 
         }
+
+        private void Manhinhchinh_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBaoCao_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();                         // Xóa nội dung cũ
+            uctDanhSachBaoCao uc = new uctDanhSachBaoCao();   // Tạo UC mới
+            uc.Dock = DockStyle.Fill;                         // Cho full panel
+            panel2.Controls.Add(uc);                          // Thêm vào panel2
+        }
     }
 }

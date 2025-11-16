@@ -150,5 +150,10 @@ namespace QLĐA
         {
             // Xử lý khi click vào cell (nếu cần)
         }
+
+        private void frmTTGiangVien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
