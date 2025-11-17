@@ -204,7 +204,11 @@ namespace QLĐA
                     XtraMessageBox.Show($"Không tìm thấy kết quả phù hợp với từ khóa: '{searchValue}'",
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
+                else
+                {
+                    XtraMessageBox.Show($"Tìm thấy {dt.Rows.Count} kết quả ! ",
+                        "Kết quả tìm kiếm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
             }
             catch (SqlException sqlEx)
@@ -759,7 +763,7 @@ namespace QLĐA
                
                 if (isSearching)
                 {
-                    System.Diagnostics.Debug.WriteLine("Already searching, skipping...");
+                   
                     return;
                 }
 
@@ -909,10 +913,7 @@ namespace QLĐA
         private void UC_TraCuu_Load(object sender, EventArgs e)
         {
             
-            if (txtTuKhoa != null)
-            {
-                txtTuKhoa.KeyPress += TxtTuKhoa_KeyPress;
-            }
+       
             
            
             if (rdoSinhVien != null)
