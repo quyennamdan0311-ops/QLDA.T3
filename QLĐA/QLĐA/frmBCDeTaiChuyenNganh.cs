@@ -21,7 +21,7 @@ namespace QLĐA
         public frmBCDeTaiChuyenNganh()
         {
             InitializeComponent();
-            // KHÔNG khởi tạo lại conn ở đây nữa
+          
         }
 
 
@@ -105,7 +105,7 @@ namespace QLĐA
 
         }
 
-        // ====== LOAD DỮ LIỆU LỌC ======
+        // LOAD DỮ LIỆU LỌC
 
         private void LoadChuyenNganh()
         {
@@ -180,7 +180,7 @@ namespace QLĐA
 
                     cmd.CommandText = sql;
 
-                    // Lấy dữ liệu
+                    
                     DataTable dt = new DataTable();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(dt);

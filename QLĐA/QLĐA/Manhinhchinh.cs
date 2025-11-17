@@ -10,7 +10,7 @@ namespace QLĐA
         private string currentUserId = "";
         private string currentUserName = "";
 
-        // Constructor mặc định (giữ lại để tránh lỗi Designer)
+       
         public Manhinhchinh()
         {
             InitializeComponent();
@@ -23,19 +23,19 @@ namespace QLĐA
             currentUserId = userId;
             currentUserName = userName;
 
-            // Cấu hình khi form load
+            
             this.Load += Manhinhchinh_Load;
         }
 
         private void Manhinhchinh_Load(object sender, EventArgs e)
         {
-            // Hiển thị thông tin người dùng trên status bar (nếu có)
+           
             this.Text = $"Quản lý đồ án - Xin chào: {currentUserName}";
 
-            // Cấu hình menu theo quyền
+       
             ConfigureMenuByRole();
 
-            // Hiển thị UC thông tin cá nhân tương ứng
+         
             ShowPersonalInfo();
         }
 
@@ -51,7 +51,7 @@ namespace QLĐA
 
             if (currentUserType.Contains("sinh viên") || currentUserType.Contains("sinh_vien") || currentUserType == "sinhvien")
             {
-                // === SINH VIÊN ===
+                // SINH VIÊN 
                 // Chỉ có quyền: Thông tin cá nhân, Tra cứu
                 btnThongTinCaNhan.Visible = true;
                 btnTraCuu.Visible = true;
@@ -65,7 +65,7 @@ namespace QLĐA
             }
             else if (currentUserType.Contains("giảng viên") || currentUserType.Contains("giang_vien") || currentUserType == "giangvien")
             {
-                // === GIẢNG VIÊN ===
+                //GIẢNG VIÊN
                 // Có quyền: Thông tin cá nhân, Tra cứu, Cập nhật đồ án
                 btnThongTinCaNhan.Visible = true;
                 btnTraCuu.Visible = true;
@@ -80,7 +80,7 @@ namespace QLĐA
             else if (currentUserType.Contains("trưởng khoa") || currentUserType.Contains("truong_khoa") || 
                      currentUserType == "truongkhoa" || currentUserType == "admin")
             {
-                // === TRƯỞNG KHOA / ADMIN ===
+                // TRƯỞNG KHOA / ADMIN 
                 // Có tất cả quyền
                 btnThongTinCaNhan.Visible = true;
                 btnTraCuu.Visible = true;
@@ -126,7 +126,7 @@ namespace QLĐA
             userControl.BringToFront();
         }
 
-        // === SỰ KIỆN CÁC NÚT MENU ===
+        // SỰ KIỆN CÁC NÚT MENU 
 
         private void accordionControlElement7_Click(object sender, EventArgs e)
         {
@@ -175,21 +175,20 @@ namespace QLĐA
  
         }
 
-        // === CÁC SỰ KIỆN KHÁC ===
-
+        
         private void accordionControlElement1_Click(object sender, EventArgs e)
         {
-            // Có thể để trống
+            
         }
 
         private void fluentDesignFormContainer1_Click(object sender, EventArgs e)
         {
-            // Có thể để trống
+            
         }
 
         private void barStaticItem3_ItemClick(object sender, ItemClickEventArgs e)
         {
-            // Có thể để trống
+            
         }
 
         private void btnDangXuat_Click_1(object sender, EventArgs e)
@@ -205,10 +204,10 @@ namespace QLĐA
 
                 if (result == DialogResult.Yes)
                 {
-                    // Đóng form hiện tại
+                   
                     this.Hide();
 
-                    // Hỏi người dùng có muốn đăng nhập lại không
+                   
                     DialogResult loginAgainResult = MessageBox.Show(
                         "Bạn có muốn đăng nhập lại?",
                         "Đăng nhập lại",
@@ -218,17 +217,16 @@ namespace QLĐA
 
                     if (loginAgainResult == DialogResult.Yes)
                     {
-                        // Hiển thị form đăng nhập
+                       
                         frmLoginPopUp loginForm = new frmLoginPopUp();
                         DialogResult loginResult = loginForm.ShowDialog();
 
-                        // Nếu đăng nhập thành công, form Manhinhchinh mới sẽ được mở từ frmLoginPopUp
-                        // Form hiện tại sẽ đóng
+                     
                         this.Close();
                     }
                     else
                     {
-                        // Thoát ứng dụng hoàn toàn
+                       
                         this.Close();
                         Application.Exit();
                     }
@@ -281,10 +279,9 @@ namespace QLĐA
         }
 
         private void btnBaoCao_Click(object sender, EventArgs e)
-        {
-            panel2.Controls.Clear();                         // Xóa nội dung cũ
+        {                       
             uctDanhSachBaoCao uc_DanhSachBaoCao = new uctDanhSachBaoCao();
-            LoadUserControl(uc_DanhSachBaoCao);// Tạo UC mới
+            LoadUserControl(uc_DanhSachBaoCao);
                                     
                                      
         }

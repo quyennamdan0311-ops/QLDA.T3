@@ -14,7 +14,7 @@ namespace QLĐA
 {               
     public partial class UC_QuanLyDoAn : DevExpress.XtraEditors.XtraUserControl
     {
-        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qlđatn_final;Integrated Security=True;Encrypt=False";
+        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qldatn_final;Integrated Security=True;Encrypt=False";
         private SqlConnection conn;
         private DataTable dtDoAn;
         private string currentAction = ""; // "Add", "Edit", "Delete", ""
@@ -76,7 +76,7 @@ namespace QLĐA
             dgvDoAn.ReadOnly = true;
             dgvDoAn.AllowUserToAddRows = false;
 
-            // Đặt tiêu đề cột
+            
             if (dgvDoAn.Columns["Ma_do_an"] != null)
                 dgvDoAn.Columns["Ma_do_an"].HeaderText = "Mã đồ án";
             if (dgvDoAn.Columns["Ten_de_tai"] != null)
@@ -95,7 +95,7 @@ namespace QLĐA
             if (dgvDoAn.Columns["Ma_sinh_vien"] != null)
                 dgvDoAn.Columns["Ma_sinh_vien"].HeaderText = "Mã sinh viên";
 
-            // Đăng ký sự kiện CellClick
+            
             dgvDoAn.CellClick += DgvDoAn_CellClick;
         }
 
@@ -106,12 +106,12 @@ namespace QLĐA
             {
                 selectedRowIndex = e.RowIndex;
                 
-                // Chỉ hiển thị dữ liệu khi đang ở chế độ bình thường hoặc đang sửa/xóa
+             
                 if (currentAction == "" || currentAction == "Edit" || currentAction == "Delete")
                 {
                     DisplayDataInTextBoxes(e.RowIndex);
                     
-                    // Cập nhật trạng thái nút Sửa và Xóa khi chọn dòng (chỉ khi ở chế độ bình thường)
+                 
                     if (currentAction == "")
                     {
                         btnSua.Enabled = true;
@@ -167,7 +167,7 @@ namespace QLĐA
         // Thiết lập trạng thái ReadOnly cho TextBox
         private void SetTextBoxesReadOnly(bool isReadOnly)
         {
-            // Mã đồ án luôn ReadOnly khi sửa
+          
             if (currentAction == "Edit")
             {
                 txtMaDoAn.ReadOnly = true;
@@ -190,29 +190,28 @@ namespace QLĐA
         {
             currentAction = "";
             
-            // Tất cả nút Thêm luôn enabled
+           
             btnThem.Enabled = true;
             
-            // Nút Sửa và Xóa chỉ enabled khi có dòng được chọn
+            
             btnSua.Enabled = selectedRowIndex >= 0;
             btnXoa.Enabled = selectedRowIndex >= 0;
             
-            // Nút Cập nhật disable ở chế độ bình thường
+           
             btnCapNhat.Enabled = false;
             
-            // TextBox ở chế độ ReadOnly
             SetTextBoxesReadOnly(true);
         }
 
         // Thiết lập trạng thái đang thao tác (Thêm/Sửa/Xóa)
         private void SetActionState()
         {
-            // Disable các nút Thêm, Sửa, Xóa khi đang thao tác
+           
             btnThem.Enabled = false;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
             
-            // Enable nút Cập nhật
+          
             btnCapNhat.Enabled = true;
         }
 
@@ -305,21 +304,21 @@ namespace QLĐA
             }
             finally
             {
-                // Trở về trạng thái bình thường
+                
                 SetNormalState();
             }
         }
 
-        // Thêm đồ án mới
+       
         private void ThemDoAn()
         {
-            // Validate dữ liệu
+            
             if (string.IsNullOrWhiteSpace(txtMaDoAn.Text))
             {
                 MessageBox.Show("Vui lòng nhập mã đồ án!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaDoAn.Focus();
-                throw new Exception(); // Để không reset trạng thái
+                throw new Exception(); 
             }
 
             if (string.IsNullOrWhiteSpace(txtTenDeTai.Text))
@@ -327,7 +326,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập tên đề tài!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenDeTai.Focus();
-                throw new Exception(); // Để không reset trạng thái
+                throw new Exception(); 
             }
 
             try
@@ -336,7 +335,7 @@ namespace QLĐA
                 {
                     conn.Open();
 
-                    // Kiểm tra mã đồ án đã tồn tại chưa
+                    
                     string checkQuery = "SELECT COUNT(*) FROM Do_an WHERE Ma_do_an = @maDoAn";
                     using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                     {
@@ -348,11 +347,11 @@ namespace QLĐA
                             MessageBox.Show("Mã đồ án đã tồn tại!", "Lỗi",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtMaDoAn.Focus();
-                            throw new Exception(); // Để không reset trạng thái
+                            throw new Exception(); 
                         }
                     }
 
-                    // Kiểm tra mã sinh viên có tồn tại không (nếu có nhập)
+                   
                     if (!string.IsNullOrWhiteSpace(MaSV.Text))
                     {
                         string checkSVQuery = "SELECT COUNT(*) FROM Sinh_vien WHERE Ma_sinh_vien = @maSV";
@@ -366,12 +365,12 @@ namespace QLĐA
                                 MessageBox.Show("Mã sinh viên không tồn tại trong hệ thống!\nVui lòng kiểm tra lại.", "Lỗi",
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 MaSV.Focus();
-                                throw new Exception(); // Để không reset trạng thái
+                                throw new Exception(); 
                             }
                         }
                     }
 
-                    // Parse ngày nộp
+                    
                     DateTime? ngayNop = null;
                     if (!string.IsNullOrWhiteSpace(txtNgayNop.Text))
                     {
@@ -383,7 +382,7 @@ namespace QLĐA
                         }
                     }
 
-                    // Insert đồ án mới
+                    
                     string insertQuery = @"INSERT INTO Do_an 
                 (Ma_do_an, Ten_de_tai, Mo_ta, Ngay_nop, Hoc_ky, Nam, Ma_sinh_vien)
                 VALUES (@maDoAn, @tenDeTai, @moTa, @ngayNop, @hocKy, @nam, @maSV)";
@@ -413,7 +412,7 @@ namespace QLĐA
             }
             catch (SqlException sqlEx)
             {
-                if (sqlEx.Number == 547) // Foreign key constraint error
+                if (sqlEx.Number == 547) 
                 {
                     MessageBox.Show("Lỗi: Mã sinh viên không hợp lệ hoặc không tồn tại trong hệ thống!", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -423,7 +422,7 @@ namespace QLĐA
                     MessageBox.Show("Lỗi SQL: " + sqlEx.Message, "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                throw; // Để không reset trạng thái
+                throw; 
             }
         }
 
@@ -434,7 +433,7 @@ namespace QLĐA
             {
                 MessageBox.Show("Vui lòng chọn đồ án cần sửa!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                throw new Exception(); // Để không reset trạng thái
+                throw new Exception(); 
             }
 
             if (string.IsNullOrWhiteSpace(txtTenDeTai.Text))
@@ -442,7 +441,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập tên đề tài!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenDeTai.Focus();
-                throw new Exception(); // Để không reset trạng thái
+                throw new Exception(); 
             }
 
             try
@@ -451,7 +450,7 @@ namespace QLĐA
                 {
                     conn.Open();
 
-                    // Parse ngày nộp
+                  
                     DateTime? ngayNop = null;
                     if (!string.IsNullOrWhiteSpace(txtNgayNop.Text))
                     {
@@ -490,7 +489,7 @@ namespace QLĐA
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LoadDanhSachDoAn();
 
-                            // Giữ dòng đã chọn
+                           
                             if (selectedRowIndex < dgvDoAn.Rows.Count)
                             {
                                 dgvDoAn.Rows[selectedRowIndex].Selected = true;
@@ -504,7 +503,7 @@ namespace QLĐA
             {
                 MessageBox.Show("Lỗi SQL: " + sqlEx.Message, "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw; // Để không reset trạng thái
+                throw; 
             }
         }
 
@@ -515,7 +514,7 @@ namespace QLĐA
             {
                 MessageBox.Show("Vui lòng chọn đồ án cần xóa!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                throw new Exception(); // Để không reset trạng thái
+                throw new Exception(); 
             }
 
             try
@@ -545,7 +544,7 @@ namespace QLĐA
             }
             catch (SqlException sqlEx)
             {
-                if (sqlEx.Number == 547) // Foreign key constraint error
+                if (sqlEx.Number == 547) 
                 {
                     MessageBox.Show("Không thể xóa đồ án này vì đang có dữ liệu liên quan!",
                         "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -555,7 +554,7 @@ namespace QLĐA
                     MessageBox.Show("Lỗi SQL: " + sqlEx.Message, "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                throw; // Để không reset trạng thái
+                throw; 
             }
         }
 

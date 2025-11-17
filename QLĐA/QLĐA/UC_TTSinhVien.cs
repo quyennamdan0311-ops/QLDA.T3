@@ -1,13 +1,15 @@
-﻿using System;
+﻿using DevExpress.ExpressApp.Kpi;
+using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Net.NetworkInformation;
 using System.Windows.Forms;
 
 namespace QLĐA
 {
     public partial class UC_TTSinhVien : UserControl
     {
-        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qlđatn_final;Integrated Security=True;Encrypt=False";
+        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qldatn_final;Integrated Security=True;Encrypt=False";
         private string maSinhVien;
 
         public UC_TTSinhVien()
@@ -15,7 +17,7 @@ namespace QLĐA
             InitializeComponent();
         }
 
-        // Constructor với mã sinh viên
+
         public UC_TTSinhVien(string maSV) : this()
         {
             this.maSinhVien = maSV;
@@ -35,7 +37,7 @@ namespace QLĐA
                                SV.Khoa, SV.Email, 
                                CN.Ten_chuyen_nganh,
                                DA.Ma_do_an, DA.Ten_de_tai, DA.Mo_ta, DA.Hoc_ky, DA.Ngay_nop, DA.Nam,
-                               GV.Ho_ten as Ten_giang_vien
+                               GV.Ho_ten_gv as Ten_giang_vien
                         FROM Sinh_vien SV
                         LEFT JOIN Chuyen_nganh CN ON SV.Ma_chuyen_nganh = CN.Ma_chuyen_nganh
                         LEFT JOIN Do_an DA ON SV.Ma_sinh_vien = DA.Ma_sinh_vien

@@ -7,9 +7,9 @@ namespace QLĐA
 {
     public partial class UC_Saoluu : UserControl
     {
-        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qlđatn_final;Integrated Security=True;Encrypt=False";
+        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qldatn_final;Integrated Security=True;Encrypt=False";
         private string serverName = "DESKTOP-OREV608\\SQLEXPRESS";
-        private string databaseName = "qlđatn_final";
+        private string databaseName = "qldatn_final";
 
         public UC_Saoluu()
         {
@@ -84,14 +84,14 @@ namespace QLĐA
         {
             try
             {
-                // Tạo thư mục nếu chưa tồn tại
+                
                 string directory = Path.GetDirectoryName(txtDuongDanLuuFile.Text);
                 if (!Directory.Exists(directory))
                 {
                     Directory.CreateDirectory(directory);
                 }
 
-                // Kiểm tra file đã tồn tại
+               
                 if (File.Exists(txtDuongDanLuuFile.Text))
                 {
                     DialogResult overwriteResult = MessageBox.Show(
@@ -120,10 +120,10 @@ namespace QLĐA
 
                     using (SqlCommand cmd = new SqlCommand(backupQuery, conn))
                     {
-                        cmd.CommandTimeout = 300; // 5 phút timeout
+                        cmd.CommandTimeout = 300; 
                         cmd.Parameters.AddWithValue("@backupPath", txtDuongDanLuuFile.Text);
 
-                        // Hiển thị progress
+                       
                         this.Cursor = Cursors.WaitCursor;
                         this.Enabled = false;
 
@@ -144,7 +144,7 @@ namespace QLĐA
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
 
-                        // Cập nhật đường dẫn cho lần backup tiếp theo
+                       
                         string newBackupPath = Path.Combine(
                             directory,
                             $"Backup_{databaseName}_{DateTime.Now:yyyyMMdd_HHmmss}.bak"
@@ -187,18 +187,18 @@ namespace QLĐA
         {
             try
             {
-                // Connection string tới master database để restore
+              
                 string masterConnectionString = $"Data Source={serverName};Initial Catalog=master;Integrated Security=True;Encrypt=False";
 
                 using (SqlConnection conn = new SqlConnection(masterConnectionString))
                 {
                     conn.Open();
 
-                    // Hiển thị progress
+                   
                     this.Cursor = Cursors.WaitCursor;
                     this.Enabled = false;
 
-                    // Đóng tất cả kết nối tới database
+                   
                     string closeConnectionsQuery = $@"
                         ALTER DATABASE [{databaseName}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;";
 
@@ -207,7 +207,7 @@ namespace QLĐA
                         closeCmd.ExecuteNonQuery();
                     }
 
-                    // Restore database
+                 
                     string restoreQuery = $@"
                         RESTORE DATABASE [{databaseName}] 
                         FROM DISK = @backupPath 
@@ -215,13 +215,13 @@ namespace QLĐA
 
                     using (SqlCommand cmd = new SqlCommand(restoreQuery, conn))
                     {
-                        cmd.CommandTimeout = 600; // 10 phút timeout
+                        cmd.CommandTimeout = 600; 
                         cmd.Parameters.AddWithValue("@backupPath", txtDuongDanLoadFile.Text);
 
                         cmd.ExecuteNonQuery();
                     }
 
-                    // Đưa database về chế độ MULTI_USER sau khi restore xong
+                    
                     string multiUserQuery = $"ALTER DATABASE [{databaseName}] SET MULTI_USER;";
                     using (SqlCommand multiUserCmd = new SqlCommand(multiUserQuery, conn))
                     {
@@ -229,7 +229,7 @@ namespace QLĐA
                     }
                 }
 
-                // Reset UI sau khi đã đóng connection
+              
                 this.Cursor = Cursors.Default;
                 this.Enabled = true;
 
@@ -243,10 +243,10 @@ namespace QLĐA
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
 
-                // Xóa đường dẫn load sau khi phục hồi thành công
+             
                 txtDuongDanLoadFile.Clear();
 
-                // Đóng form chính và khởi động lại
+              
                 Application.Restart();
             }
             catch (SqlException sqlEx)
@@ -254,7 +254,7 @@ namespace QLĐA
                 this.Cursor = Cursors.Default;
                 this.Enabled = true;
 
-                // Cố gắng đưa database về chế độ MULTI_USER
+              
                 try
                 {
                     string masterConnectionString = $"Data Source={serverName};Initial Catalog=master;Integrated Security=True;Encrypt=False";
@@ -317,7 +317,7 @@ namespace QLĐA
                 saveDialog.FileName = $"Backup_{databaseName}_{DateTime.Now:yyyyMMdd_HHmmss}.bak";
                 saveDialog.DefaultExt = "bak";
 
-                // Đặt thư mục mặc định
+               
                 string defaultFolder = Path.Combine(
                     Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
                     "QLDA_Backup"
@@ -348,7 +348,7 @@ namespace QLĐA
                 openDialog.CheckFileExists = true;
                 openDialog.CheckPathExists = true;
 
-                // Đặt thư mục mặc định
+               
                 string defaultFolder = Path.Combine(
                     Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
                     "QLDA_Backup"
@@ -367,7 +367,7 @@ namespace QLĐA
                 {
                     txtDuongDanLoadFile.Text = openDialog.FileName;
 
-                    // Hiển thị thông tin file đã chọn
+                    
                     FileInfo fileInfo = new FileInfo(openDialog.FileName);
                     MessageBox.Show(
                         $"Đã chọn file backup:\n\n" +
@@ -420,7 +420,7 @@ namespace QLĐA
 
             if (confirmResult == DialogResult.Yes)
             {
-                // Xác nhận lần 2 để tránh nhầm lẫn
+                
                 DialogResult confirmResult2 = MessageBox.Show(
                     "Xác nhận lần cuối!\n\n" +
                     "Hành động này KHÔNG THỂ HOÀN TÁC!\n\n" +

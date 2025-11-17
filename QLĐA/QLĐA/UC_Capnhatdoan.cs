@@ -8,7 +8,7 @@ namespace QLĐA
 {
     public partial class UC_Capnhatdoan : UserControl
     {
-        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qlđatn_final;Integrated Security=True;Encrypt=False";
+        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qldatn_final;Integrated Security=True;Encrypt=False";
         private SqlConnection conn;
         private DataTable dtDoAn;
         private string currentAction = ""; // "Add", "Edit", "Delete", ""

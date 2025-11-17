@@ -14,7 +14,7 @@ namespace QLĐA
 {
     public partial class UC_CapNhatGiangVien : DevExpress.XtraEditors.XtraUserControl
     {
-        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qlđatn_final;Integrated Security=True;Encrypt=False";
+        private string connectionString =  "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qldatn_final;Integrated Security=True;Encrypt=False";
         private SqlConnection conn;
         private DataTable dtGiangVien;
         private bool isAddingNew = false;
@@ -41,7 +41,7 @@ namespace QLĐA
         {
             try
             {
-                string query = @"SELECT Ma_giang_vien, Ho_ten, Gioi_tinh, Ngay_sinh, 
+                string query = @"SELECT Ma_giang_vien, Ho_ten_gv, Gioi_tinh, Ngay_sinh, 
                                 Email, Bang_cap, Chuc_danh
                          FROM Giang_vien
                          ORDER BY Ma_giang_vien";
@@ -74,8 +74,8 @@ namespace QLĐA
             // Đặt tên hiển thị cho các cột
             if (dgvGiangVien.Columns["Ma_giang_vien"] != null)
                 dgvGiangVien.Columns["Ma_giang_vien"].HeaderText = "Mã giảng viên";
-            if (dgvGiangVien.Columns["Ho_ten"] != null)
-                dgvGiangVien.Columns["Ho_ten"].HeaderText = "Họ tên";
+            if (dgvGiangVien.Columns["Ho_ten_gv"] != null)
+                dgvGiangVien.Columns["Ho_ten_gv"].HeaderText = "Họ tên";
             if (dgvGiangVien.Columns["Gioi_tinh"] != null)
                 dgvGiangVien.Columns["Gioi_tinh"].HeaderText = "Giới tính";
             if (dgvGiangVien.Columns["Ngay_sinh"] != null)
@@ -118,7 +118,7 @@ namespace QLĐA
                 DataGridViewRow row = dgvGiangVien.Rows[rowIndex];
 
                 txtMaGV.Text = row.Cells["Ma_giang_vien"].Value?.ToString() ?? "";
-                txtHoTenGV.Text = row.Cells["Ho_ten"].Value?.ToString() ?? "";
+                txtHoTenGV.Text = row.Cells["Ho_ten_gv"].Value?.ToString() ?? "";
                 txtGioiTinh.Text = row.Cells["Gioi_tinh"].Value?.ToString() ?? "";
                 
                 if (row.Cells["Ngay_sinh"].Value != null && row.Cells["Ngay_sinh"].Value != DBNull.Value)
@@ -385,9 +385,9 @@ namespace QLĐA
                         }
                     }
 
-                    // Thêm giảng viên mới
+                    // Thêm giảng viên mới - SỬA: Ho_ten thành Ho_ten_gv
                     string insertQuery = @"INSERT INTO Giang_vien 
-                                          (Ma_giang_vien, Ho_ten, Gioi_tinh, Ngay_sinh, Email, Bang_cap, Chuc_danh)
+                                          (Ma_giang_vien, Ho_ten_gv, Gioi_tinh, Ngay_sinh, Email, Bang_cap, Chuc_danh)
                                           VALUES (@maGV, @hoTen, @gioiTinh, @ngaySinh, @email, @bangCap, @chucDanh)";
 
                     using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
@@ -450,8 +450,9 @@ namespace QLĐA
                 {
                     conn.Open();
 
+                    // SỬA: Ho_ten thành Ho_ten_gv
                     string updateQuery = @"UPDATE Giang_vien 
-                                          SET Ho_ten = @hoTen, 
+                                          SET Ho_ten_gv = @hoTen, 
                                               Gioi_tinh = @gioiTinh, 
                                               Ngay_sinh = @ngaySinh, 
                                               Email = @email, 

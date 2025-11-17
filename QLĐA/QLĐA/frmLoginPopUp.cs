@@ -6,7 +6,7 @@ namespace QLĐA
 {
     public partial class frmLoginPopUp : Form
     {
-        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qlđatn_final;Integrated Security=True;Encrypt=False";
+        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qldatn_final;Integrated Security=True;Encrypt=False";
 
         // Properties để lưu thông tin đăng nhập
         public string LoggedInUserType { get; private set; }
@@ -19,14 +19,14 @@ namespace QLĐA
             InitializeComponent();
             LoginSuccess = false;
             
-            // Gắn sự kiện
+            
             this.btnDangNhap.Click += new EventHandler(btnDangNhap_Click);
             this.btnThoat.Click += new EventHandler(btnThoat_Click);
             this.chkShowPassword.CheckedChanged += new EventHandler(chkShowPassword_CheckedChanged);
             
-            // Cấu hình form
+            
             txtMatKhau.UseSystemPasswordChar = true;
-            this.AcceptButton = btnDangNhap; // Nhấn Enter = Đăng nhập
+            this.AcceptButton = btnDangNhap; 
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace QLĐA
                 return;
             }
 
-            // Xác thực với database
+           
             AuthenticateUser(username);
         }
 
@@ -98,25 +98,15 @@ namespace QLĐA
                                     maNguoiDung = reader["Ma_giang_vien"].ToString();
                                 }
 
-                                // Lưu thông tin đăng nhập
+                               
                                 LoggedInUserType = loaiNguoiDung;
                                 LoggedInUserId = maNguoiDung;
                                 LoggedInUserName = username;
                                 LoginSuccess = true;
 
-                                // Đóng kết nối trước khi hiển thị form mới
                                 conn.Close();
 
-                                // Thông báo thành công
-                                string roleDisplay = "";
-                                if (loaiNguoiDung.Contains("sinh viên") || loaiNguoiDung.Contains("sinh_vien"))
-                                    roleDisplay = "Sinh viên";
-                                else if (loaiNguoiDung.Contains("giảng viên") || loaiNguoiDung.Contains("giang_vien"))
-                                    roleDisplay = "Giảng viên";
-                                else if (loaiNguoiDung.Contains("trưởng khoa") || loaiNguoiDung.Contains("truong_khoa"))
-                                    roleDisplay = "Trưởng khoa";
-                                else if (loaiNguoiDung.Contains("admin"))
-                                    roleDisplay = "Quản trị viên";
+
 
                                 MessageBox.Show(
                                     $"Đăng nhập thành công!",
@@ -125,14 +115,13 @@ namespace QLĐA
                                     MessageBoxIcon.Information
                                 );
 
-                                // Ẩn form đăng nhập
+                               
                                 this.Hide();
 
-                                // Mở form Manhinhchinh với thông tin đã phân quyền
+                                
                                 Manhinhchinh mainForm = new Manhinhchinh(LoggedInUserType, LoggedInUserId, LoggedInUserName);
                                 mainForm.ShowDialog();
 
-                                // Sau khi đóng Manhinhchinh, đóng form đăng nhập
                                 this.Close();
                             }
                             else

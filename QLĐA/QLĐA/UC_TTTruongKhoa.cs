@@ -7,7 +7,7 @@ namespace QLĐA
 {
     public partial class UC_TTTruongKhoa : UserControl
     {
-        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qlđatn_final;Integrated Security=True;Encrypt=False";
+        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qldatn_final;Integrated Security=True;Encrypt=False";
         private string maTruongKhoa;
 
         public UC_TTTruongKhoa()
@@ -15,7 +15,6 @@ namespace QLĐA
             InitializeComponent();
         }
 
-        // Constructor với mã trưởng khoa
         public UC_TTTruongKhoa(string maTK) : this()
         {
             this.maTruongKhoa = maTK;
@@ -31,7 +30,7 @@ namespace QLĐA
                     conn.Open();
 
                     string query = @"
-                        SELECT Ma_giang_vien, Ho_ten, Ngay_sinh, Gioi_tinh, Bang_cap, Chuc_danh, Email
+                        SELECT Ma_giang_vien, Ho_ten_gv, Ngay_sinh, Gioi_tinh, Bang_cap, Chuc_danh, Email
                         FROM Giang_vien
                         WHERE Ma_giang_vien = @maTK";
 
@@ -44,7 +43,7 @@ namespace QLĐA
                             if (reader.Read())
                             {
                                 SetTextBoxValue("txtMaGV", reader["Ma_giang_vien"].ToString());
-                                SetTextBoxValue("txtHoTen", reader["Ho_ten"].ToString());
+                                SetTextBoxValue("txtHoTen", reader["Ho_ten_gv"].ToString());
                                 
                                 if (reader["Ngay_sinh"] != DBNull.Value)
                                     SetTextBoxValue("txtNgaySinh", Convert.ToDateTime(reader["Ngay_sinh"]).ToString("dd/MM/yyyy"));

@@ -17,9 +17,9 @@ namespace QLĐA
             InitializeComponent();
         }
 
-        //=========================================================
+        
         // FORM LOAD → LOAD GIẢNG VIÊN
-        //=========================================================
+   
         private void frmBaoCaoGiangVien_Load(object sender, EventArgs e)
         {
             LoadGiangVien();
@@ -58,9 +58,9 @@ namespace QLĐA
             cboGiangVien.Enabled = !chkAllGiangVien.Checked;
         }
 
-        //=========================================================
+      
         // NÚT XEM BÁO CÁO
-        //=========================================================
+        
         private void btnXemBaoCao_Click(object sender, EventArgs e)
         {
             try
@@ -123,9 +123,9 @@ namespace QLĐA
             }
         }
 
-        //=========================================================
+        
         // NÚT IN BÁO CÁO
-        //=========================================================
+        
         private void btnInBaoCao_Click(object sender, EventArgs e)
         {
             try

@@ -14,7 +14,7 @@ namespace QLĐA
 {
     public partial class UC_TraCuu : UserControl
     {
-        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qlđatn_final;Integrated Security=True;Encrypt=False";
+        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qldatn_final;Integrated Security=True;Encrypt=False";
         private SqlConnection conn;
         private bool isSearching = false;
 
@@ -95,14 +95,14 @@ namespace QLĐA
                 {
                     case "SinhVien":
                         query = @"SELECT SV.Ma_sinh_vien, SV.Ho_ten, SV.Ngay_sinh, SV.Gioi_tinh, SV.Lop, SV.Khoa, SV.Email, 
-                                GV.Ho_ten as Ten_giang_vien, CN.Ten_chuyen_nganh
+                                GV.Ho_ten_gv as Ten_giang_vien, CN.Ten_chuyen_nganh
                          FROM Sinh_vien SV
                          LEFT JOIN Giang_vien GV ON SV.Ma_giang_vien = GV.Ma_giang_vien
                          LEFT JOIN Chuyen_nganh CN ON SV.Ma_chuyen_nganh = CN.Ma_chuyen_nganh";
                         break;
 
                     case "GiangVien":
-                        query = @"SELECT Ma_giang_vien, Ho_ten, Ngay_sinh, Gioi_tinh, Bang_cap, Chuc_danh, Email 
+                        query = @"SELECT Ma_giang_vien, Ho_ten_gv, Ngay_sinh, Gioi_tinh, Bang_cap, Chuc_danh, Email 
                          FROM Giang_vien";
                         break;
 
@@ -133,7 +133,7 @@ namespace QLĐA
         // ===== TÌM KIẾM DỮ LIỆU =====
         private void PerformSearch()
         {
-            // Kiểm tra đối tượng đã được chọn chưa
+           
             if (string.IsNullOrEmpty(currentSearchType))
             {
                 XtraMessageBox.Show("Vui lòng chọn đối tượng tra cứu (Sinh viên/Giảng viên/Đồ án)!",
@@ -141,7 +141,7 @@ namespace QLĐA
                 return;
             }
 
-            // Kiểm tra tiêu chí đã được chọn chưa
+            
             if (cboTieuChi?.SelectedItem == null)
             {
                 XtraMessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm!",
@@ -149,10 +149,10 @@ namespace QLĐA
                 return;
             }
 
-            // Kiểm tra từ khóa có hợp lệ không
+            
             string searchValue = txtTuKhoa?.Text?.Trim() ?? "";
 
-            // Nếu từ khóa rỗng hoặc là placeholder → Load toàn bộ dữ liệu
+           
             if (string.IsNullOrWhiteSpace(searchValue) ||
                 searchValue == currentPlaceholder ||
                 txtTuKhoa.ForeColor == Color.Gray)
@@ -166,7 +166,7 @@ namespace QLĐA
                 string query = "";
                 string criterion = cboTieuChi.SelectedItem.ToString();
 
-                // Debug info
+               
                 System.Diagnostics.Debug.WriteLine($"=== SEARCH DEBUG ===");
                 System.Diagnostics.Debug.WriteLine($"Search Type: {currentSearchType}");
                 System.Diagnostics.Debug.WriteLine($"Criterion: {criterion}");
@@ -195,7 +195,7 @@ namespace QLĐA
                     return;
                 }
 
-                // Debug: In ra câu query
+              
                 System.Diagnostics.Debug.WriteLine($"Query: {query}");
 
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
@@ -235,11 +235,11 @@ namespace QLĐA
         // ===== XÂY DỰNG TRUY VẤN TÌM KIẾM =====
         private string BuildSearchQuery_SinhVien(string criterion, string searchValue)
         {
-            // Escape single quote để tránh lỗi SQL
+            
             searchValue = searchValue.Replace("'", "''");
 
             string baseQuery = @"SELECT SV.Ma_sinh_vien, SV.Ho_ten, SV.Ngay_sinh, SV.Gioi_tinh, SV.Lop, SV.Khoa, SV.Email, 
-                               GV.Ho_ten as Ten_giang_vien, CN.Ten_chuyen_nganh
+                               GV.Ho_ten_gv as Ten_giang_vien, CN.Ten_chuyen_nganh
                         FROM Sinh_vien SV
                         LEFT JOIN Giang_vien GV ON SV.Ma_giang_vien = GV.Ma_giang_vien
                         LEFT JOIN Chuyen_nganh CN ON SV.Ma_chuyen_nganh = CN.Ma_chuyen_nganh
@@ -266,10 +266,10 @@ namespace QLĐA
 
         private string BuildSearchQuery_GiangVien(string criterion, string searchValue)
         {
-            // Escape single quote để tránh lỗi SQL
+          
             searchValue = searchValue.Replace("'", "''");
 
-            string baseQuery = @"SELECT Ma_giang_vien, Ho_ten, Ngay_sinh, Gioi_tinh, Bang_cap, Chuc_danh, Email 
+            string baseQuery = @"SELECT Ma_giang_vien, Ho_ten_gv, Ngay_sinh, Gioi_tinh, Bang_cap, Chuc_danh, Email 
                         FROM Giang_vien WHERE ";
 
             switch (criterion)
@@ -277,7 +277,7 @@ namespace QLĐA
                 case "Mã giảng viên":
                     return baseQuery + $"Ma_giang_vien LIKE N'%{searchValue}%'";
                 case "Họ và tên":
-                    return baseQuery + $"Ho_ten LIKE N'%{searchValue}%'";
+                    return baseQuery + $"Ho_ten_gv LIKE N'%{searchValue}%'";
                 case "Ngày sinh":
                     return baseQuery + $"CONVERT(VARCHAR, Ngay_sinh, 103) LIKE N'%{searchValue}%'";
                 case "Giới tính":
@@ -289,7 +289,7 @@ namespace QLĐA
                 case "Email":
                     return baseQuery + $"Email LIKE N'%{searchValue}%'";
                 default:
-                    return baseQuery + $"(Ma_giang_vien LIKE N'%{searchValue}%' OR Ho_ten LIKE N'%{searchValue}%')";
+                    return baseQuery + $"(Ma_giang_vien LIKE N'%{searchValue}%' OR Ho_ten_gv LIKE N'%{searchValue}%')";
             }
         }
 
@@ -328,8 +328,8 @@ namespace QLĐA
             dgvTraCuu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvTraCuu.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            dgvTraCuu.RowPostPaint -= DgvTraCuu_RowPostPaint;  // Xóa event cũ nếu có
-            dgvTraCuu.RowPostPaint += DgvTraCuu_RowPostPaint;  // Thêm event mới
+            dgvTraCuu.RowPostPaint -= DgvTraCuu_RowPostPaint;  
+            dgvTraCuu.RowPostPaint += DgvTraCuu_RowPostPaint;  
 
             dgvTraCuu.MultiSelect = false;
             dgvTraCuu.ReadOnly = true;
@@ -353,7 +353,7 @@ namespace QLĐA
                     if (dgvTraCuu.Columns["Khoa"] != null)
                     {
                         dgvTraCuu.Columns["Khoa"].HeaderText = "Khoa";
-                        dgvTraCuu.Columns["Khoa"].Visible = false; // Ẩn cột Khoa giống frmTraCuu
+                        dgvTraCuu.Columns["Khoa"].Visible = false; 
                     }
                     if (dgvTraCuu.Columns["Email"] != null)
                         dgvTraCuu.Columns["Email"].HeaderText = "Email";
@@ -366,8 +366,8 @@ namespace QLĐA
                 case "GiangVien":
                     if (dgvTraCuu.Columns["Ma_giang_vien"] != null)
                         dgvTraCuu.Columns["Ma_giang_vien"].HeaderText = "Mã GV";
-                    if (dgvTraCuu.Columns["Ho_ten"] != null)
-                        dgvTraCuu.Columns["Ho_ten"].HeaderText = "Họ và Tên";
+                    if (dgvTraCuu.Columns["Ho_ten_gv"] != null)
+                        dgvTraCuu.Columns["Ho_ten_gv"].HeaderText = "Họ và Tên";
                     if (dgvTraCuu.Columns["Ngay_sinh"] != null)
                     {
                         dgvTraCuu.Columns["Ngay_sinh"].HeaderText = "Ngày Sinh";
@@ -457,21 +457,21 @@ namespace QLĐA
         {
             try
             {
-                // Số thứ tự bắt đầu từ 1
+               
                 string rowNumber = (e.RowIndex + 1).ToString();
 
-                // Font và brush để vẽ
+                
                 Font font = new Font("Segoe UI", 10F, FontStyle.Regular);
                 SolidBrush brush = new SolidBrush(dgvTraCuu.RowHeadersDefaultCellStyle.ForeColor);
 
-                // Vị trí vẽ (giữa ô header)
+              
                 StringFormat format = new StringFormat()
                 {
                     Alignment = StringAlignment.Center,
                     LineAlignment = StringAlignment.Center
                 };
 
-                // Vẽ số thứ tự vào RowHeader
+                
                 e.Graphics.DrawString(
                     rowNumber,
                     font,
@@ -480,7 +480,6 @@ namespace QLĐA
                     e.RowBounds.Top + (e.RowBounds.Height / 2),
                     format);
 
-                // Giải phóng tài nguyên
                 brush.Dispose();
                 font.Dispose();
                 format.Dispose();
@@ -634,7 +633,7 @@ namespace QLĐA
                 txtMaGV.Text = row.Cells["Ma_giang_vien"].Value?.ToString() ?? "";
 
             if (pnlGiangVien.Controls["txtHotenGV"] is TextBox txtHoTenGV)
-                txtHoTenGV.Text = row.Cells["Ho_ten"].Value?.ToString() ?? "";
+                txtHoTenGV.Text = row.Cells["Ho_ten_gv"].Value?.ToString() ?? "";
 
             if (pnlGiangVien.Controls["txtNgaySinhGV"] is TextBox txtNgaySinhGV)
             {
@@ -653,7 +652,7 @@ namespace QLĐA
             if (pnlGiangVien.Controls["txtChucDanh"] is TextBox txtChucDanh)
                 txtChucDanh.Text = row.Cells["Chuc_danh"].Value?.ToString() ?? "";
 
-            // SỬA LẠI TÊN CONTROL: txtEmailGiangVien thay vì txtEmailGV
+            
             if (pnlGiangVien.Controls["txtEmailGiangVien"] is TextBox txtEmailGiangVien)
                 txtEmailGiangVien.Text = row.Cells["Email"].Value?.ToString() ?? "";
         }
@@ -746,7 +745,7 @@ namespace QLĐA
                 }
                 else
                 {
-                    // Nếu chưa chọn đối tượng nào, xóa DataGridView
+                    
                     if (dgvTraCuu != null)
                     {
                         dgvTraCuu.DataSource = null;
@@ -767,10 +766,10 @@ namespace QLĐA
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                e.Handled = true;  // ← Ngăn Enter được xử lý tiếp
+                e.Handled = true;  
                
 
-                // Kiểm tra nếu đang tìm kiếm thì không làm gì
+               
                 if (isSearching)
                 {
                     System.Diagnostics.Debug.WriteLine("Already searching, skipping...");
@@ -922,13 +921,13 @@ namespace QLĐA
 
         private void UC_TraCuu_Load(object sender, EventArgs e)
         {
-            // Khởi tạo placeholder cho textbox
+            
             if (txtTuKhoa != null)
             {
                 txtTuKhoa.KeyPress += TxtTuKhoa_KeyPress;
             }
             
-            // Đặt radiobutton mặc định
+           
             if (rdoSinhVien != null)
             {
                 rdoSinhVien.Checked = true;

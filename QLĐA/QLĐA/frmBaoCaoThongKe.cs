@@ -17,9 +17,9 @@ namespace QLĐA
             InitializeComponent();
         }
 
-        // =============================================================
+      
         // FORM LOAD
-        // =============================================================
+      
         private void frmBaoCaoThongKe_Load(object sender, EventArgs e)
         {
             LoadChuyenNganh();
@@ -31,9 +31,9 @@ namespace QLĐA
             chkAllNam.Checked = true;
         }
 
-        // =============================================================
+        
         // LOAD DỮ LIỆU CHUYÊN NGÀNH
-        // =============================================================
+     
         private void LoadChuyenNganh()
         {
             try
@@ -59,9 +59,9 @@ namespace QLĐA
             }
         }
 
-        // =============================================================
+      
         // LOAD HỌC KỲ
-        // =============================================================
+     
         private void LoadHocKy()
         {
             try
@@ -87,9 +87,9 @@ namespace QLĐA
             }
         }
 
-        // =============================================================
+    
         // LOAD NĂM
-        // =============================================================
+       
         private void LoadNam()
         {
             try
@@ -115,9 +115,9 @@ namespace QLĐA
             }
         }
 
-        // =============================================================
+        
         // CHECKBOX TẤT CẢ
-        // =============================================================
+       
         private void chkAllChuyenNganh_CheckedChanged(object sender, EventArgs e)
         {
             cboChuyenNganh.Enabled = !chkAllChuyenNganh.Checked;
@@ -133,9 +133,9 @@ namespace QLĐA
             cboNam.Enabled = !chkAllNam.Checked;
         }
 
-        // =============================================================
+        
         // NÚT XEM BÁO CÁO
-        // =============================================================
+        
         private void btnXemBaoCao_Click(object sender, EventArgs e)
         {
             try
@@ -159,7 +159,7 @@ namespace QLĐA
                 {
                     cmd.Connection = conn;
 
-                    // --- Lọc chuyên ngành ---
+                    // Lọc chuyên ngành
                     if (!chkAllChuyenNganh.Checked)
                     {
                         sql += " AND cn.Ma_chuyen_nganh = @MaCN";
@@ -168,7 +168,7 @@ namespace QLĐA
                     }
                     else dkText.Add("Chuyên ngành = Tất cả");
 
-                    // --- Lọc học kỳ ---
+                    // Lọc học kỳ
                     if (!chkAllHocKy.Checked)
                     {
                         sql += " AND da.Hoc_ky = @HocKy";
@@ -177,7 +177,7 @@ namespace QLĐA
                     }
                     else dkText.Add("Học kỳ = Tất cả");
 
-                    // --- Lọc năm ---
+                    // Lọc năm
                     if (!chkAllNam.Checked)
                     {
                         sql += " AND da.Nam = @Nam";
@@ -186,7 +186,7 @@ namespace QLĐA
                     }
                     else dkText.Add("Năm = Tất cả");
 
-                    // NHỚ: GROUP BY trước, ORDER BY sau
+                  
                     sql += @"
         GROUP BY 
             cn.Ten_chuyen_nganh,
@@ -246,7 +246,7 @@ namespace QLĐA
                 {
                     cmd.Connection = conn;
 
-                    // --- Lọc chuyên ngành ---
+                    // Lọc chuyên ngành
                     if (!chkAllChuyenNganh.Checked)
                     {
                         sql += " AND cn.Ma_chuyen_nganh = @MaCN";
@@ -255,7 +255,7 @@ namespace QLĐA
                     }
                     else dkText.Add("Chuyên ngành = Tất cả");
 
-                    // --- Lọc học kỳ ---
+                    //Lọc học kỳ
                     if (!chkAllHocKy.Checked)
                     {
                         sql += " AND da.Hoc_ky = @HocKy";
@@ -264,7 +264,7 @@ namespace QLĐA
                     }
                     else dkText.Add("Học kỳ = Tất cả");
 
-                    // --- Lọc năm ---
+                    //  Lọc năm
                     if (!chkAllNam.Checked)
                     {
                         sql += " AND da.Nam = @Nam";

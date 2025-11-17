@@ -14,7 +14,7 @@ namespace QLĐA
 {
     public partial class UC_CapNhatSinhVien : DevExpress.XtraEditors.XtraUserControl
     {
-        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qlđatn_final;Integrated Security=True;Encrypt=False";
+        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qldatn_final;Integrated Security=True;Encrypt=False";
         private SqlConnection conn;
         private DataTable dtSinhVien;
         private string currentAction = ""; // "Add", "Edit", "Delete", ""
@@ -77,7 +77,7 @@ namespace QLĐA
             dgvSinhVien.ReadOnly = true;
             dgvSinhVien.AllowUserToAddRows = false;
 
-            // Đặt tiêu đề cột
+            
             if (dgvSinhVien.Columns["Ma_sinh_vien"] != null)
                 dgvSinhVien.Columns["Ma_sinh_vien"].HeaderText = "Mã sinh viên";
             if (dgvSinhVien.Columns["Ho_ten"] != null)
@@ -126,7 +126,7 @@ namespace QLĐA
             }
         }
 
-        // Hiển thị dữ liệu vào GroupBox
+       
         private void DisplayDataInTextBoxes(int rowIndex)
         {
             try
@@ -138,7 +138,7 @@ namespace QLĐA
                 txtLop.Text = row.Cells["Lop"].Value?.ToString() ?? "";
                 txtKhoa.Text = row.Cells["Khoa"].Value?.ToString() ?? "";
                 
-                // Sửa lại phần Email - tách riêng Email và Ma_giang_vien
+                
                 if (this.Controls.Find("txtEmail", true).Length > 0)
                 {
                     TextBox txtEmail = (TextBox)this.Controls.Find("txtEmail", true)[0];
@@ -336,12 +336,12 @@ namespace QLĐA
             }
             finally
             {
-                // Trở về trạng thái bình thường
+                
                 SetNormalState();
             }
         }
 
-        // Thêm sinh viên mới
+       
         private void ThemSinhVien()
         {
             // Validate dữ liệu
@@ -350,7 +350,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập mã sinh viên!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaSV.Focus();
-                throw new Exception(); // Để không reset trạng thái
+                throw new Exception(); 
             }
 
             if (string.IsNullOrWhiteSpace(txtHoTenSV.Text))
@@ -358,7 +358,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập họ tên sinh viên!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtHoTenSV.Focus();
-                throw new Exception(); // Để không reset trạng thái
+                throw new Exception(); 
             }
 
             try
@@ -367,7 +367,6 @@ namespace QLĐA
                 {
                     conn.Open();
 
-                    // Kiểm tra mã sinh viên đã tồn tại chưa
                     string checkQuery = "SELECT COUNT(*) FROM Sinh_vien WHERE Ma_sinh_vien = @maSV";
                     using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                     {
@@ -379,7 +378,7 @@ namespace QLĐA
                             MessageBox.Show("Mã sinh viên đã tồn tại!", "Lỗi",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtMaSV.Focus();
-                            throw new Exception(); // Để không reset trạng thái
+                            throw new Exception(); 
                         }
                     }
 
@@ -448,7 +447,7 @@ namespace QLĐA
             {
                 MessageBox.Show("Vui lòng chọn sinh viên cần sửa!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                throw new Exception(); // Để không reset trạng thái
+                throw new Exception(); 
             }
 
             if (string.IsNullOrWhiteSpace(txtHoTenSV.Text))
@@ -456,7 +455,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập họ tên sinh viên!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtHoTenSV.Focus();
-                throw new Exception(); // Để không reset trạng thái
+                throw new Exception(); 
             }
 
             try
@@ -530,18 +529,18 @@ namespace QLĐA
             {
                 MessageBox.Show("Lỗi SQL: " + sqlEx.Message, "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw; // Để không reset trạng thái
+                throw; 
             }
         }
 
-        // Xóa sinh viên
+       
         private void XoaSinhVien()
         {
             if (selectedRowIndex < 0)
             {
                 MessageBox.Show("Vui lòng chọn sinh viên cần xóa!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                throw new Exception(); // Để không reset trạng thái
+                throw new Exception(); 
             }
 
             try
@@ -571,7 +570,7 @@ namespace QLĐA
             }
             catch (SqlException sqlEx)
             {
-                if (sqlEx.Number == 547) // Foreign key constraint error
+                if (sqlEx.Number == 547) 
                 {
                     MessageBox.Show("Không thể xóa sinh viên này vì đang có dữ liệu liên quan (đồ án, tài khoản...)!",
                         "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -581,7 +580,7 @@ namespace QLĐA
                     MessageBox.Show("Lỗi SQL: " + sqlEx.Message, "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                throw; // Để không reset trạng thái
+                throw; 
             }
         }
 
