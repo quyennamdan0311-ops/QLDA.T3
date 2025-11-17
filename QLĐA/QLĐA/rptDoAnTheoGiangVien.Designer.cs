@@ -225,15 +225,15 @@
             this.xrLabel4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "WidthF", "[DataSource.CurrentRowIndex]+1"),
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DataSource.CurrentRowIndex]+1")});
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(9.999996F, 0F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(42.29762F, 35.00001F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(32.29762F, 35.00002F);
             this.xrLabel4.StylePriority.UseBorders = false;
             this.xrLabel4.StylePriority.UseTextAlignment = false;
             this.xrLabel4.Text = "xrLabel3";
-            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrTableCell11
             // 
@@ -323,7 +323,7 @@
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel1.SizeF = new System.Drawing.SizeF(278.125F, 33.41665F);
             this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "TRƯỜNG ĐẠI HỌC KINH TẾ QUỐC DÂN \r\nKHOA HỆ THỐNG THÔGN TIN QUẢN LÝ\r\n\r\n";
+            this.xrLabel1.Text = "TRƯỜNG ĐẠI HỌC KINH TẾ QUỐC DÂN \r\nKHOA HỆ THỐNG THÔNG TIN QUẢN LÝ\r\n\r\n";
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel2

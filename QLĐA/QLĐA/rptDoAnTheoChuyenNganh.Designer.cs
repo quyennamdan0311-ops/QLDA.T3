@@ -400,8 +400,8 @@
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel1.SizeF = new System.Drawing.SizeF(278.125F, 33.41665F);
             this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "TRƯỜNG ĐẠI HỌC KINH TẾ QUỐC DÂN \r\nKHOA HỆ THỐNG THÔGN TIN QUẢN LÝ\r\n\r\n";
-            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrLabel1.Text = "TRƯỜNG ĐẠI HỌC KINH TẾ QUỐC DÂN \r\nKHOA HỆ THỐNG THÔNG TIN QUẢN LÝ\r\n\r\n";
+            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // ReportFooter
             // 

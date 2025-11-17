@@ -96,7 +96,7 @@
             this.pnContainer.Controls.Add(this.pnBCNamKy);
             this.pnContainer.Controls.Add(this.pnBCGiangVien);
             this.pnContainer.Controls.Add(this.pnBCChuyenNganh);
-            this.pnContainer.Location = new System.Drawing.Point(160, 60);
+            this.pnContainer.Location = new System.Drawing.Point(125, 56);
             this.pnContainer.Name = "pnContainer";
             this.pnContainer.Size = new System.Drawing.Size(800, 400);
             this.pnContainer.TabIndex = 0;
@@ -109,7 +109,7 @@
             this.pnBCNamKy.Controls.Add(this.lblBCNamKy);
             this.pnBCNamKy.Controls.Add(this.pictureBox2);
             this.pnBCNamKy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnBCNamKy.Location = new System.Drawing.Point(20, 211);
+            this.pnBCNamKy.Location = new System.Drawing.Point(20, 283);
             this.pnBCNamKy.Name = "pnBCNamKy";
             this.pnBCNamKy.Size = new System.Drawing.Size(760, 70);
             this.pnBCNamKy.TabIndex = 3;
@@ -156,7 +156,7 @@
             this.pnBCGiangVien.Controls.Add(this.lblBCGiangVien);
             this.pnBCGiangVien.Controls.Add(this.pictureBox1);
             this.pnBCGiangVien.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnBCGiangVien.Location = new System.Drawing.Point(20, 110);
+            this.pnBCGiangVien.Location = new System.Drawing.Point(20, 155);
             this.pnBCGiangVien.Name = "pnBCGiangVien";
             this.pnBCGiangVien.Size = new System.Drawing.Size(760, 70);
             this.pnBCGiangVien.TabIndex = 3;
@@ -203,7 +203,7 @@
             this.pnBCChuyenNganh.Controls.Add(this.lblBCChuyenNganh);
             this.pnBCChuyenNganh.Controls.Add(this.picCN);
             this.pnBCChuyenNganh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnBCChuyenNganh.Location = new System.Drawing.Point(20, 20);
+            this.pnBCChuyenNganh.Location = new System.Drawing.Point(20, 30);
             this.pnBCChuyenNganh.Name = "pnBCChuyenNganh";
             this.pnBCChuyenNganh.Size = new System.Drawing.Size(760, 70);
             this.pnBCChuyenNganh.TabIndex = 0;

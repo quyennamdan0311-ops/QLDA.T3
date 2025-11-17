@@ -50,7 +50,6 @@
             this.accordionControlSeparator3 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.btnDangXuat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
@@ -59,7 +58,6 @@
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
-            this.fluentDesignFormControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,10 +65,10 @@
             // 
             this.fluentDesignFormContainer1.Controls.Add(this.panel2);
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(450, 46);
-            this.fluentDesignFormContainer1.Margin = new System.Windows.Forms.Padding(108, 105, 108, 105);
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(675, 46);
+            this.fluentDesignFormContainer1.Margin = new System.Windows.Forms.Padding(162, 158, 162, 158);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1367, 1018);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1142, 1018);
             this.fluentDesignFormContainer1.TabIndex = 0;
             this.fluentDesignFormContainer1.Click += new System.EventHandler(this.fluentDesignFormContainer1_Click);
             // 
@@ -80,9 +78,9 @@
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(72);
+            this.panel2.Margin = new System.Windows.Forms.Padding(108);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1367, 1018);
+            this.panel2.Size = new System.Drawing.Size(1142, 1018);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -98,10 +96,10 @@
             this.accordionControlSeparator3,
             this.btnDangXuat});
             this.accordionControl1.Location = new System.Drawing.Point(0, 46);
-            this.accordionControl1.Margin = new System.Windows.Forms.Padding(72);
+            this.accordionControl1.Margin = new System.Windows.Forms.Padding(108);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(450, 1018);
+            this.accordionControl1.Size = new System.Drawing.Size(675, 1018);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -163,6 +161,7 @@
             this.btnQuanLyPhanQuyen,
             this.btnBaoCao});
             this.accordionControlElement3.Expanded = true;
+            this.accordionControlElement3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement3.ImageOptions.Image")));
             this.accordionControlElement3.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Squeeze;
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Text = "Chức năng";
@@ -333,7 +332,6 @@
             // 
             // fluentDesignFormControl1
             // 
-            this.fluentDesignFormControl1.Controls.Add(this.panel1);
             this.fluentDesignFormControl1.FluentDesignForm = this;
             this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barStaticItem1,
@@ -350,17 +348,6 @@
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem3);
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem1);
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem2);
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::QLĐA.Properties.Resources.bannerkhoahtttql679x130;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(474, 45);
-            this.panel1.Margin = new System.Windows.Forms.Padding(48);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2420, 626);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // barStaticItem1
             // 
@@ -417,7 +404,6 @@
             this.fluentDesignFormContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
-            this.fluentDesignFormControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();
             this.ResumeLayout(false);
 
@@ -449,6 +435,5 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnQuanLyThongTinGV;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnQLDA;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
     }
 }

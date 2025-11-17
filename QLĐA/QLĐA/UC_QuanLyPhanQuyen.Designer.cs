@@ -34,15 +34,23 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvDoAn = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMaGiangVien = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtMaSinhVien = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTenVaiTro = new System.Windows.Forms.TextBox();
+            this.txtTenDangNhap = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtMaVaiTro = new System.Windows.Forms.TextBox();
             this.txtMaTaiKhoan = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtTenDangNhap = new System.Windows.Forms.TextBox();
-            this.txtTenVaiTro = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtLoaiNguoiDung = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoAn)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -125,6 +133,14 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox1.Controls.Add(this.txtLoaiNguoiDung);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.txtMatKhau);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtMaGiangVien);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.txtMaSinhVien);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtTenVaiTro);
             this.groupBox1.Controls.Add(this.txtTenDangNhap);
             this.groupBox1.Controls.Add(this.label5);
@@ -134,12 +150,70 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(275, 163);
+            this.groupBox1.Location = new System.Drawing.Point(244, 88);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1291, 189);
+            this.groupBox1.Size = new System.Drawing.Size(1466, 268);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết";
+            // 
+            // txtMaGiangVien
+            // 
+            this.txtMaGiangVien.Location = new System.Drawing.Point(198, 202);
+            this.txtMaGiangVien.Name = "txtMaGiangVien";
+            this.txtMaGiangVien.Size = new System.Drawing.Size(352, 37);
+            this.txtMaGiangVien.TabIndex = 23;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(26, 202);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(154, 30);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Mã giảng viên";
+            // 
+            // txtMaSinhVien
+            // 
+            this.txtMaSinhVien.Location = new System.Drawing.Point(198, 150);
+            this.txtMaSinhVien.Name = "txtMaSinhVien";
+            this.txtMaSinhVien.Size = new System.Drawing.Size(352, 37);
+            this.txtMaSinhVien.TabIndex = 21;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(26, 150);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(139, 30);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Mã sinh viên";
+            // 
+            // txtTenVaiTro
+            // 
+            this.txtTenVaiTro.Location = new System.Drawing.Point(787, 140);
+            this.txtTenVaiTro.Name = "txtTenVaiTro";
+            this.txtTenVaiTro.Size = new System.Drawing.Size(515, 37);
+            this.txtTenVaiTro.TabIndex = 19;
+            // 
+            // txtTenDangNhap
+            // 
+            this.txtTenDangNhap.Location = new System.Drawing.Point(787, 34);
+            this.txtTenDangNhap.Name = "txtTenDangNhap";
+            this.txtTenDangNhap.Size = new System.Drawing.Size(352, 37);
+            this.txtTenDangNhap.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(604, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 30);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Tên đăng nhập";
             // 
             // txtMaVaiTro
             // 
@@ -186,39 +260,49 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "QUẢN LÝ PHÂN QUYỀN";
             // 
-            // label3
+            // label8
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(604, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 30);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Tên đăng nhập";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(604, 88);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(107, 30);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Mật khẩu";
+            // 
+            // txtMatKhau
+            // 
+            this.txtMatKhau.Location = new System.Drawing.Point(787, 88);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Size = new System.Drawing.Size(352, 37);
+            this.txtMatKhau.TabIndex = 25;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(605, 101);
+            this.label5.Location = new System.Drawing.Point(604, 143);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(117, 30);
             this.label5.TabIndex = 17;
             this.label5.Text = "Tên vai trò";
             // 
-            // txtTenDangNhap
+            // label9
             // 
-            this.txtTenDangNhap.Location = new System.Drawing.Point(770, 34);
-            this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(352, 37);
-            this.txtTenDangNhap.TabIndex = 18;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(604, 202);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(177, 30);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Loại người dùng";
             // 
-            // txtTenVaiTro
+            // txtLoaiNguoiDung
             // 
-            this.txtTenVaiTro.Location = new System.Drawing.Point(770, 94);
-            this.txtTenVaiTro.Name = "txtTenVaiTro";
-            this.txtTenVaiTro.Size = new System.Drawing.Size(515, 37);
-            this.txtTenVaiTro.TabIndex = 19;
+            this.txtLoaiNguoiDung.Location = new System.Drawing.Point(787, 202);
+            this.txtLoaiNguoiDung.Name = "txtLoaiNguoiDung";
+            this.txtLoaiNguoiDung.Size = new System.Drawing.Size(515, 37);
+            this.txtLoaiNguoiDung.TabIndex = 27;
             // 
             // UC_QuanLyPhanQuyen
             // 
@@ -233,7 +317,7 @@
             this.Controls.Add(this.dgvDoAn);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_QuanLyPhanQuyen";
             this.Size = new System.Drawing.Size(1809, 1098);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoAn)).EndInit();
@@ -259,7 +343,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTenVaiTro;
         private System.Windows.Forms.TextBox txtTenDangNhap;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtMaSinhVien;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtMaGiangVien;
+        private System.Windows.Forms.TextBox txtMatKhau;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtLoaiNguoiDung;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label5;
     }
 }
