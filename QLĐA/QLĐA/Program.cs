@@ -13,7 +13,7 @@ namespace QLĐA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Manhinhchinh());
+            Application.Run(new frmWelcome());
         }
     }
 }

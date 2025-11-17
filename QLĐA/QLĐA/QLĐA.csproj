@@ -324,11 +324,11 @@
     <Compile Include="frmBaoCaoThongKe.Designer.cs">
       <DependentUpon>frmBaoCaoThongKe.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBaoCaoTongHop.cs">
+    <Compile Include="UC_BaoCaoTongHop.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmBaoCaoTongHop.Designer.cs">
-      <DependentUpon>frmBaoCaoTongHop.cs</DependentUpon>
+    <Compile Include="UC_BaoCaoTongHop.Designer.cs">
+      <DependentUpon>UC_BaoCaoTongHop.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBCDeTaiChuyenNganh.cs">
       <SubType>Form</SubType>
@@ -474,8 +474,8 @@
     <EmbeddedResource Include="frmBaoCaoThongKe.resx">
       <DependentUpon>frmBaoCaoThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBaoCaoTongHop.resx">
-      <DependentUpon>frmBaoCaoTongHop.cs</DependentUpon>
+    <EmbeddedResource Include="UC_BaoCaoTongHop.resx">
+      <DependentUpon>UC_BaoCaoTongHop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBCDeTaiChuyenNganh.resx">
       <DependentUpon>frmBCDeTaiChuyenNganh.cs</DependentUpon>
