@@ -312,6 +312,30 @@
     <Reference Include="Web.DemoData.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBaoCaoGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoGiangVien.Designer.cs">
+      <DependentUpon>frmBaoCaoGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBaoCaoThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoThongKe.Designer.cs">
+      <DependentUpon>frmBaoCaoThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBaoCaoTongHop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoTongHop.Designer.cs">
+      <DependentUpon>frmBaoCaoTongHop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBCDeTaiChuyenNganh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBCDeTaiChuyenNganh.Designer.cs">
+      <DependentUpon>frmBCDeTaiChuyenNganh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +373,29 @@
     </Compile>
     <Compile Include="frmTTTruongKhoa.Designer.cs">
       <DependentUpon>frmTTTruongKhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="qldatn_final_4DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qldatn_final_4DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="rptBaoCaoThongKe.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBaoCaoThongKe.Designer.cs">
+      <DependentUpon>rptBaoCaoThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptDoAnTheoChuyenNganh.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDoAnTheoChuyenNganh.Designer.cs">
+      <DependentUpon>rptDoAnTheoChuyenNganh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptDoAnTheoGiangVien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDoAnTheoGiangVien.Designer.cs">
+      <DependentUpon>rptDoAnTheoGiangVien.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_QuanLyPhanQuyen.cs">
       <SubType>UserControl</SubType>
@@ -416,8 +463,34 @@
     <Compile Include="UC_CapNhatGiangVien.Designer.cs">
       <DependentUpon>UC_CapNhatGiangVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="_qlđatn_final__4_DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_qlđatn_final__4_DataSet1.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmBaoCaoGiangVien.resx">
+      <DependentUpon>frmBaoCaoGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBaoCaoThongKe.resx">
+      <DependentUpon>frmBaoCaoThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBaoCaoTongHop.resx">
+      <DependentUpon>frmBaoCaoTongHop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBCDeTaiChuyenNganh.resx">
+      <DependentUpon>frmBCDeTaiChuyenNganh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmWelcome.resx">
       <DependentUpon>frmWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptBaoCaoThongKe.resx">
+      <DependentUpon>rptBaoCaoThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDoAnTheoChuyenNganh.resx">
+      <DependentUpon>rptDoAnTheoChuyenNganh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDoAnTheoGiangVien.resx">
+      <DependentUpon>rptDoAnTheoGiangVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_QuanLyPhanQuyen.resx">
       <DependentUpon>UC_QuanLyPhanQuyen.cs</DependentUpon>
@@ -487,6 +560,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="qldatn_final_4DataSet.xsc">
+      <DependentUpon>qldatn_final_4DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="qldatn_final_4DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>qldatn_final_4DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="qldatn_final_4DataSet.xss">
+      <DependentUpon>qldatn_final_4DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_qlđatn_final__4_DataSet1.xsc">
+      <DependentUpon>_qlđatn_final__4_DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_qlđatn_final__4_DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_qlđatn_final__4_DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_qlđatn_final__4_DataSet1.xss">
+      <DependentUpon>_qlđatn_final__4_DataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

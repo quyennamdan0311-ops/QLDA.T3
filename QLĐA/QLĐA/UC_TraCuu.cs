@@ -213,6 +213,11 @@ namespace QLĐA
                     XtraMessageBox.Show($"Không tìm thấy kết quả phù hợp với từ khóa: '{searchValue}'",
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    XtraMessageBox.Show($"Tìm thấy {dt.Rows.Count} kết quả ! ",
+                        "Kết quả tìm kiếm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
             }
             catch (SqlException sqlEx)
