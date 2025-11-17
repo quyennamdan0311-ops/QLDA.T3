@@ -204,11 +204,7 @@ namespace QLĐA
                     XtraMessageBox.Show($"Không tìm thấy kết quả phù hợp với từ khóa: '{searchValue}'",
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else
-                {
-                    XtraMessageBox.Show($"Tìm thấy {dt.Rows.Count} kết quả ! ",
-                        "Kết quả tìm kiếm", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+
 
             }
             catch (SqlException sqlEx)
@@ -693,7 +689,7 @@ namespace QLĐA
         {
             try
             {
-                // Xóa từ khóa tìm kiếm
+                
                 if (txtTuKhoa != null)
                 {
                     txtTuKhoa.GotFocus -= TxtTuKhoa_GotFocus;
@@ -706,18 +702,18 @@ namespace QLĐA
                     txtTuKhoa.LostFocus += TxtTuKhoa_LostFocus;
                 }
 
-                // Reset tiêu chí về mặc định
+                
                 if (cboTieuChi != null && cboTieuChi.Items.Count > 0)
                 {
                     cboTieuChi.SelectedIndex = 0;
                 }
 
-                // Tải lại dữ liệu theo đối tượng đang chọn
+                
                 if (!string.IsNullOrEmpty(currentSearchType))
                 {
                     LoadAllData(currentSearchType);
 
-                    // Đặt lại placeholder
+                    
                     switch (currentSearchType)
                     {
                         case "SinhVien":
