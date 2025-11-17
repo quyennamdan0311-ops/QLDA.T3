@@ -120,7 +120,7 @@ namespace QLĐA
                                 LoggedInUserType = loaiNguoiDung;
                                 LoggedInUserId = maNguoiDung;
                                 LoggedInUserName = username;
-                                UserEntityType = entityType; // Thêm dòng này
+                                UserEntityType = entityType; 
                                 LoginSuccess = true;
 
                                 conn.Close();

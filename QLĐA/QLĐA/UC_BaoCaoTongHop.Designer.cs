@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uctDanhSachBaoCao));
             this.pnHeader = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnList = new System.Windows.Forms.Panel();
@@ -138,9 +139,12 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(20, 15);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -182,9 +186,12 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(20, 15);
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(17, 15);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.Size = new System.Drawing.Size(57, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -226,9 +233,12 @@
             // 
             // picCN
             // 
+            this.picCN.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.picCN.Image = ((System.Drawing.Image)(resources.GetObject("picCN.Image")));
             this.picCN.Location = new System.Drawing.Point(20, 15);
             this.picCN.Name = "picCN";
-            this.picCN.Size = new System.Drawing.Size(40, 40);
+            this.picCN.Size = new System.Drawing.Size(54, 50);
+            this.picCN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCN.TabIndex = 0;
             this.picCN.TabStop = false;
             // 

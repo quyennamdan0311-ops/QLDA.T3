@@ -50,7 +50,7 @@ namespace QLĐA
             btnQuanLyPhanQuyen.Visible = false;
             btnBaoCao.Visible = false;
 
-            // Chuẩn hóa tên vai trò
+            
             string role = currentUserType.Trim().ToLower();
 
             switch (role)
