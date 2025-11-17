@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLĐA", "QLĐA\QLĐA.csproj", "{A39F80F8-0889-4EE4-82A1-559511C0A43D}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QLDA_Setup", "QLDA_Setup\QLDA_Setup.vdproj", "{BB37F4EA-BDB5-3ECF-2085-DD2ADCFB2DB2}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QLĐA_Setup", "QLĐA_Setup\QLĐA_Setup.vdproj", "{450A157B-9805-409C-A748-7C35DEEDF916}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,9 @@ Global
 		{A39F80F8-0889-4EE4-82A1-559511C0A43D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A39F80F8-0889-4EE4-82A1-559511C0A43D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A39F80F8-0889-4EE4-82A1-559511C0A43D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BB37F4EA-BDB5-3ECF-2085-DD2ADCFB2DB2}.Debug|Any CPU.ActiveCfg = Debug
-		{BB37F4EA-BDB5-3ECF-2085-DD2ADCFB2DB2}.Release|Any CPU.ActiveCfg = Release
+		{450A157B-9805-409C-A748-7C35DEEDF916}.Debug|Any CPU.ActiveCfg = Debug
+		{450A157B-9805-409C-A748-7C35DEEDF916}.Release|Any CPU.ActiveCfg = Release
+		{450A157B-9805-409C-A748-7C35DEEDF916}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
