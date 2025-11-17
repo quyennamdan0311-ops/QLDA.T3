@@ -41,6 +41,8 @@
             this.cboTieuChi = new System.Windows.Forms.ComboBox();
             this.grpThongTinChiTiet = new System.Windows.Forms.GroupBox();
             this.pnlGiangVien = new System.Windows.Forms.Panel();
+            this.txtNgaySinhGV = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtGioiTinhGV = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -55,6 +57,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.pnlSinhVien = new System.Windows.Forms.Panel();
+            this.txtNgaySinhSV = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtGioiTinhSV = new System.Windows.Forms.TextBox();
             this.txtChuyenNganh = new System.Windows.Forms.TextBox();
@@ -91,10 +95,6 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
             this.dgvTraCuu = new System.Windows.Forms.DataGridView();
-            this.label26 = new System.Windows.Forms.Label();
-            this.txtNgaySinhSV = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txtNgaySinhGV = new System.Windows.Forms.TextBox();
             this.grpDoiTuongTraCuu.SuspendLayout();
             this.grpThongTinChiTiet.SuspendLayout();
             this.pnlGiangVien.SuspendLayout();
@@ -184,7 +184,7 @@
             // 
             this.txtTuKhoa.Location = new System.Drawing.Point(104, 188);
             this.txtTuKhoa.Name = "txtTuKhoa";
-            this.txtTuKhoa.Size = new System.Drawing.Size(464, 39);
+            this.txtTuKhoa.Size = new System.Drawing.Size(452, 39);
             this.txtTuKhoa.TabIndex = 5;
             this.txtTuKhoa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTuKhoa_KeyPress);
             // 
@@ -230,7 +230,7 @@
             this.cboTieuChi.FormattingEnabled = true;
             this.cboTieuChi.Location = new System.Drawing.Point(104, 132);
             this.cboTieuChi.Name = "cboTieuChi";
-            this.cboTieuChi.Size = new System.Drawing.Size(464, 40);
+            this.cboTieuChi.Size = new System.Drawing.Size(452, 40);
             this.cboTieuChi.TabIndex = 3;
             // 
             // grpThongTinChiTiet
@@ -269,6 +269,23 @@
             this.pnlGiangVien.Size = new System.Drawing.Size(570, 474);
             this.pnlGiangVien.TabIndex = 12;
             this.pnlGiangVien.Visible = false;
+            // 
+            // txtNgaySinhGV
+            // 
+            this.txtNgaySinhGV.Location = new System.Drawing.Point(204, 209);
+            this.txtNgaySinhGV.Name = "txtNgaySinhGV";
+            this.txtNgaySinhGV.Size = new System.Drawing.Size(374, 39);
+            this.txtNgaySinhGV.TabIndex = 18;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(4, 209);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(121, 32);
+            this.label27.TabIndex = 17;
+            this.label27.Text = "Ngày sinh";
             // 
             // label12
             // 
@@ -405,6 +422,23 @@
             this.pnlSinhVien.Name = "pnlSinhVien";
             this.pnlSinhVien.Size = new System.Drawing.Size(570, 458);
             this.pnlSinhVien.TabIndex = 0;
+            // 
+            // txtNgaySinhSV
+            // 
+            this.txtNgaySinhSV.Location = new System.Drawing.Point(212, 187);
+            this.txtNgaySinhSV.Name = "txtNgaySinhSV";
+            this.txtNgaySinhSV.Size = new System.Drawing.Size(374, 39);
+            this.txtNgaySinhSV.TabIndex = 17;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(4, 187);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(121, 32);
+            this.label26.TabIndex = 16;
+            this.label26.Text = "Ngày sinh";
             // 
             // label11
             // 
@@ -754,40 +788,6 @@
             this.dgvTraCuu.Size = new System.Drawing.Size(1361, 907);
             this.dgvTraCuu.TabIndex = 12;
             this.dgvTraCuu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTraCuu_CellClick);
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(4, 187);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(121, 32);
-            this.label26.TabIndex = 16;
-            this.label26.Text = "Ngày sinh";
-            // 
-            // txtNgaySinhSV
-            // 
-            this.txtNgaySinhSV.Location = new System.Drawing.Point(212, 187);
-            this.txtNgaySinhSV.Name = "txtNgaySinhSV";
-            this.txtNgaySinhSV.Size = new System.Drawing.Size(374, 39);
-            this.txtNgaySinhSV.TabIndex = 17;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(4, 209);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(121, 32);
-            this.label27.TabIndex = 17;
-            this.label27.Text = "Ngày sinh";
-            // 
-            // txtNgaySinhGV
-            // 
-            this.txtNgaySinhGV.Location = new System.Drawing.Point(204, 209);
-            this.txtNgaySinhGV.Name = "txtNgaySinhGV";
-            this.txtNgaySinhGV.Size = new System.Drawing.Size(374, 39);
-            this.txtNgaySinhGV.TabIndex = 18;
             // 
             // UC_TraCuu
             // 

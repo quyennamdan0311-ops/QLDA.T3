@@ -18,7 +18,7 @@ namespace QLĐA
             this.Dock = DockStyle.Fill;
 
             // ===== CHỈ GÁN CURSOR VÀ CLICK CHO CÁC CONTROL CON =====
-            // (Panels đã được gán sự kiện trong Designer rồi, không gán lại nữa!)
+         
             
             lblBCChuyenNganh.Cursor = Cursors.Hand;
             lblBCChuyenNganh.Click += pnBCChuyenNganh_Click;
@@ -43,9 +43,9 @@ namespace QLĐA
 
         }
 
-        // =============================================================
+        
         // XỬ LÝ MỞ BÁO CÁO THEO CHUYÊN NGÀNH
-        // =============================================================
+      
         private void pnBCChuyenNganh_Click(object sender, EventArgs e)
         {
             try
@@ -62,9 +62,9 @@ namespace QLĐA
             }
         }
 
-        // =============================================================
+        
         // XỬ LÝ MỞ BÁO CÁO THEO GIẢNG VIÊN
-        // =============================================================
+      
         private void pnBCGiangVien_Click(object sender, EventArgs e)
         {
             try
@@ -81,9 +81,9 @@ namespace QLĐA
             }
         }
 
-        // =============================================================
+        
         // XỬ LÝ MỞ BÁO CÁO TỔNG HỢP THEO NĂM/KỲ
-        // =============================================================
+       
         private void pnBCNamKy_Click(object sender, EventArgs e)
         {
             try

@@ -167,12 +167,7 @@ namespace QLĐA
                 string criterion = cboTieuChi.SelectedItem.ToString();
 
                
-                System.Diagnostics.Debug.WriteLine($"=== SEARCH DEBUG ===");
-                System.Diagnostics.Debug.WriteLine($"Search Type: {currentSearchType}");
-                System.Diagnostics.Debug.WriteLine($"Criterion: {criterion}");
-                System.Diagnostics.Debug.WriteLine($"Search Value: '{searchValue}'");
-                System.Diagnostics.Debug.WriteLine($"Text Color: {txtTuKhoa.ForeColor}");
-
+             
                 switch (currentSearchType)
                 {
                     case "SinhVien":
@@ -194,16 +189,12 @@ namespace QLĐA
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
-              
-                System.Diagnostics.Debug.WriteLine($"Query: {query}");
+               
 
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
 
-                System.Diagnostics.Debug.WriteLine($"Rows found: {dt.Rows.Count}");
-                System.Diagnostics.Debug.WriteLine($"===================");
 
                 dgvTraCuu.DataSource = dt;
                 FormatDataGridView(currentSearchType);
@@ -258,7 +249,7 @@ namespace QLĐA
                 case "Lớp":
                     return baseQuery + $"SV.Lop = N'{searchValue}'";
                 case "Chuyên ngành":
-                    return baseQuery + $"CN.Ten_chuyen_nganh LIKE N'%{searchValue}%'";
+                    return baseQuery + $"CN.Ten_chuyen_nganh = N'{searchValue}'";
                 default:
                     return baseQuery + $"(SV.Ma_sinh_vien LIKE N'%{searchValue}%' OR SV.Ho_ten LIKE N'%{searchValue}%')";
             }
