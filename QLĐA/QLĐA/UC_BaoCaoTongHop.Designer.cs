@@ -102,6 +102,7 @@
             // 
             // pnBCNamKy
             // 
+            this.pnBCNamKy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnBCNamKy.BackColor = System.Drawing.Color.LightBlue;
             this.pnBCNamKy.Controls.Add(this.label4);
             this.pnBCNamKy.Controls.Add(this.lblBCNamKy);
@@ -145,6 +146,7 @@
             // 
             // pnBCGiangVien
             // 
+            this.pnBCGiangVien.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnBCGiangVien.BackColor = System.Drawing.Color.LightBlue;
             this.pnBCGiangVien.Controls.Add(this.label2);
             this.pnBCGiangVien.Controls.Add(this.lblBCGiangVien);
@@ -188,6 +190,7 @@
             // 
             // pnBCChuyenNganh
             // 
+            this.pnBCChuyenNganh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnBCChuyenNganh.BackColor = System.Drawing.Color.LightBlue;
             this.pnBCChuyenNganh.Controls.Add(this.label1);
             this.pnBCChuyenNganh.Controls.Add(this.lblBCChuyenNganh);

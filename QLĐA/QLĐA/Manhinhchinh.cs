@@ -9,6 +9,7 @@ namespace QLĐA
         private string currentUserType = "";
         private string currentUserId = "";
         private string currentUserName = "";
+        private string currentUserEntityType = ""; // "SinhVien" hoặc "GiangVien"
 
        
         public Manhinhchinh()
@@ -17,12 +18,12 @@ namespace QLĐA
         }
 
         // Constructor với thông tin đăng nhập
-        public Manhinhchinh(string userType, string userId, string userName) : this()
+        public Manhinhchinh(string userType, string userId, string userName, string entityType) : this()
         {
             currentUserType = userType?.ToLower() ?? "";
             currentUserId = userId;
             currentUserName = userName;
-
+            currentUserEntityType = entityType;
             
             this.Load += Manhinhchinh_Load;
         }
@@ -49,47 +50,46 @@ namespace QLĐA
             btnQuanLyPhanQuyen.Visible = false;
             btnBaoCao.Visible = false;
 
-            if (currentUserType.Contains("sinh viên") || currentUserType.Contains("sinh_vien") || currentUserType == "sinhvien")
-            {
-                // SINH VIÊN 
-                // Chỉ có quyền: Thông tin cá nhân, Tra cứu
-                btnThongTinCaNhan.Visible = true;
-                btnTraCuu.Visible = true;
+            // Chuẩn hóa tên vai trò
+            string role = currentUserType.Trim().ToLower();
 
-                btnCapNhatDoAn.Visible = false;
-                btnQuanLyThongTinSinhVien.Visible = false;
-                btnQuanLyThongTinGV.Visible = false;
-                btnQLDA.Visible = false;
-                btnQuanLyPhanQuyen.Visible = false;
-                btnBaoCao.Visible = false;
-            }
-            else if (currentUserType.Contains("giảng viên") || currentUserType.Contains("giang_vien") || currentUserType == "giangvien")
+            switch (role)
             {
-                //GIẢNG VIÊN
-                // Có quyền: Thông tin cá nhân, Tra cứu, Cập nhật đồ án
-                btnThongTinCaNhan.Visible = true;
-                btnTraCuu.Visible = true;
-                btnCapNhatDoAn.Visible = true;
+                case "view_info_search":
+                    // SINH VIÊN - Chỉ xem thông tin cá nhân và tra cứu
+                    btnThongTinCaNhan.Visible = true;
+                    btnTraCuu.Visible = true;
+                    break;
 
-                btnQuanLyThongTinSinhVien.Visible = false;
-                btnQuanLyThongTinGV.Visible = false;
-                btnQLDA.Visible = false;
-                btnQuanLyPhanQuyen.Visible = false;
-                btnBaoCao.Visible = false;
-            }
-            else if (currentUserType.Contains("trưởng khoa") || currentUserType.Contains("truong_khoa") || 
-                     currentUserType == "truongkhoa" || currentUserType == "admin")
-            {
-                // TRƯỞNG KHOA / ADMIN 
-                // Có tất cả quyền
-                btnThongTinCaNhan.Visible = true;
-                btnTraCuu.Visible = true;
-                btnCapNhatDoAn.Visible = false;
-                btnQuanLyThongTinSinhVien.Visible = true;
-                btnQuanLyThongTinGV.Visible = true;
-                btnQLDA.Visible = true;
-                btnQuanLyPhanQuyen.Visible = true;
-                btnBaoCao.Visible = true;
+                case "view_search_update_project":
+                    // GIẢNG VIÊN - Xem, tra cứu và cập nhật đồ án
+                    btnThongTinCaNhan.Visible = true;
+                    btnTraCuu.Visible = true;
+                    btnCapNhatDoAn.Visible = true;
+                    break;
+
+                case "fullaccess":
+                    // ADMIN/TRƯỞNG KHOA - Toàn quyền
+                    btnThongTinCaNhan.Visible = true;
+                    btnTraCuu.Visible = true;
+                    btnQuanLyThongTinSinhVien.Visible = true;
+                    btnQuanLyThongTinGV.Visible = true;
+                    btnQLDA.Visible = true;
+                    btnQuanLyPhanQuyen.Visible = true;
+                    btnBaoCao.Visible = true;
+                    break;
+
+                default:
+                    // Vai trò không xác định
+                    btnThongTinCaNhan.Visible = true;
+                    btnTraCuu.Visible = true;
+                    MessageBox.Show(
+                        $"Vai trò '{currentUserType}' chưa được cấu hình.\n\n" +
+                        "Chỉ có quyền xem Thông tin cá nhân và Tra cứu.",
+                        "Cảnh báo",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    break;
             }
         }
 
@@ -97,18 +97,35 @@ namespace QLĐA
         {
             UserControl uc = null;
 
-            if (currentUserType.Contains("sinh viên") || currentUserType.Contains("sinh_vien") || currentUserType == "sinhvien")
+            // Dựa vào loại thực thể để load UC đúng
+            switch (currentUserEntityType)
             {
-                uc = new UC_TTSinhVien(currentUserId);
-            }
-            else if (currentUserType.Contains("giảng viên") || currentUserType.Contains("giang_vien") || currentUserType == "giangvien")
-            {
-                uc = new UC_TTGiangVien(currentUserId);
-            }
-            else if (currentUserType.Contains("trưởng khoa") || currentUserType.Contains("truong_khoa") || 
-                     currentUserType == "truongkhoa" || currentUserType == "admin")
-            {
-                uc = new UC_TTTruongKhoa(currentUserId);
+                case "SinhVien":
+                    uc = new UC_TTSinhVien(currentUserId);
+                    break;
+
+                case "GiangVien":
+                    // Kiểm tra vai trò:
+                    // - Nếu là fullaccess (trưởng khoa) 
+                    // - Nếu không → dùng UC_TTGiangVien
+                    if (currentUserType.Trim().ToLower() == "fullaccess")
+                    {
+                        uc = new UC_TTTruongKhoa(currentUserId);
+                    }
+                    else
+                    {
+                        uc = new UC_TTGiangVien(currentUserId);
+                    }
+                    break;
+
+                default:
+                    MessageBox.Show(
+                        "Không xác định được loại người dùng!\n\n" +
+                        "Vui lòng liên hệ quản trị viên.",
+                        "Lỗi",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return;
             }
 
             if (uc != null)
@@ -287,3 +304,4 @@ namespace QLĐA
         }
     }
 }
+    

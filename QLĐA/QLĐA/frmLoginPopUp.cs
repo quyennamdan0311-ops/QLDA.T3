@@ -13,6 +13,7 @@ namespace QLĐA
         public string LoggedInUserId { get; private set; }
         public string LoggedInUserName { get; private set; }
         public bool LoginSuccess { get; private set; }
+        public string UserEntityType { get; private set; } // "SinhVien" hoặc "GiangVien"
 
         public frmLoginPopUp()
         {
@@ -72,10 +73,14 @@ namespace QLĐA
                 {
                     conn.Open();
 
-                    string query = @"SELECT Ma_tai_khoan, Ten_dang_nhap, Loai_nguoi_dung, 
-                                     Ma_sinh_vien, Ma_giang_vien 
-                                     FROM Tai_khoan 
-                                     WHERE Ten_dang_nhap = @username";
+                    // Lấy thông tin tài khoản và vai trò từ bảng TK_vai_tro
+                    string query = @"SELECT TK.Ma_tai_khoan, TK.Ten_dang_nhap, 
+                                     VT.Ten_vai_tro as Loai_nguoi_dung,
+                                     TK.Ma_sinh_vien, TK.Ma_giang_vien 
+                                     FROM Tai_khoan TK
+                                     LEFT JOIN TK_vai_tro TKV ON TK.Ma_tai_khoan = TKV.Ma_tai_khoan
+                                     LEFT JOIN Vai_tro VT ON TKV.Ma_vai_tro = VT.Ma_vai_tro
+                                     WHERE TK.Ten_dang_nhap = @username";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -85,28 +90,40 @@ namespace QLĐA
                         {
                             if (reader.Read())
                             {
+                                // Lấy vai trò từ bảng Vai_tro (thông qua TK_vai_tro)
                                 string loaiNguoiDung = reader["Loai_nguoi_dung"]?.ToString()?.ToLower() ?? "";
-                                string maNguoiDung = "";
+                                
+                                // Nếu không có vai trò trong TK_vai_tro, báo lỗi
+                                if (string.IsNullOrEmpty(loaiNguoiDung))
+                                {
+                                    MessageBox.Show("Tài khoản chưa được phân quyền!\nVui lòng liên hệ quản trị viên.",
+                                        "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    txtTenDangNhap.Focus();
+                                    return;
+                                }
 
-                                // Xác định mã người dùng
+                                string maNguoiDung = "";
+                                string entityType = "";
+
+                                // Xác định loại thực thể (Sinh viên hay Giảng viên)
                                 if (reader["Ma_sinh_vien"] != DBNull.Value)
                                 {
                                     maNguoiDung = reader["Ma_sinh_vien"].ToString();
+                                    entityType = "SinhVien";
                                 }
                                 else if (reader["Ma_giang_vien"] != DBNull.Value)
                                 {
                                     maNguoiDung = reader["Ma_giang_vien"].ToString();
+                                    entityType = "GiangVien";
                                 }
 
-                               
                                 LoggedInUserType = loaiNguoiDung;
                                 LoggedInUserId = maNguoiDung;
                                 LoggedInUserName = username;
+                                UserEntityType = entityType; // Thêm dòng này
                                 LoginSuccess = true;
 
                                 conn.Close();
-
-
 
                                 MessageBox.Show(
                                     $"Đăng nhập thành công!",
@@ -115,11 +132,14 @@ namespace QLĐA
                                     MessageBoxIcon.Information
                                 );
 
-                               
                                 this.Hide();
 
-                                
-                                Manhinhchinh mainForm = new Manhinhchinh(LoggedInUserType, LoggedInUserId, LoggedInUserName);
+                                // Truyền thêm UserEntityType
+                                Manhinhchinh mainForm = new Manhinhchinh(
+                                    LoggedInUserType, 
+                                    LoggedInUserId, 
+                                    LoggedInUserName,
+                                    UserEntityType);
                                 mainForm.ShowDialog();
 
                                 this.Close();

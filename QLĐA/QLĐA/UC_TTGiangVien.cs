@@ -15,7 +15,6 @@ namespace QLĐA
             InitializeComponent();
         }
 
-      
         public UC_TTGiangVien(string maGV) : this()
         {
             this.maGiangVien = maGV;
@@ -44,7 +43,6 @@ namespace QLĐA
                         {
                             if (reader.Read())
                             {
-                                
                                 SetTextBoxValue("txtMaGV", reader["Ma_giang_vien"].ToString());
                                 SetTextBoxValue("txtHoTen", reader["Ho_ten_gv"].ToString());
                                 
@@ -76,12 +74,9 @@ namespace QLĐA
         {
             try
             {
-                // Tìm DataGridView trong UserControl
                 DataGridView dgv = FindControlRecursive<DataGridView>(this, "dgvDoAnHD");
                 if (dgv == null)
                 {
-                    MessageBox.Show("Không tìm thấy DataGridView dgvDoAnHD!", "Lỗi",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -126,7 +121,6 @@ namespace QLĐA
             dgv.ReadOnly = true;
             dgv.RowHeadersVisible = true;
 
-            // Đặt tên hiển thị cho các cột
             if (dgv.Columns["Ma_do_an"] != null)
                 dgv.Columns["Ma_do_an"].HeaderText = "Mã ĐA";
             if (dgv.Columns["Ten_de_tai"] != null)

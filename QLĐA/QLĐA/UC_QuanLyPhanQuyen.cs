@@ -41,10 +41,14 @@ namespace QLĐA
             try
             {
                 string query = @"SELECT 
-                    Ma_tai_khoan, 
-                    Ma_vai_tro
-                FROM TK_vai_tro
-                ORDER BY Ma_tai_khoan";
+                    TKV.Ma_tai_khoan, 
+                    TK.Ten_dang_nhap,
+                    TKV.Ma_vai_tro,
+                    VT.Ten_vai_tro
+                FROM TK_vai_tro TKV
+                INNER JOIN Tai_khoan TK ON TKV.Ma_tai_khoan = TK.Ma_tai_khoan
+                INNER JOIN Vai_tro VT ON TKV.Ma_vai_tro = VT.Ma_vai_tro
+                ORDER BY TKV.Ma_tai_khoan";
 
                 using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
                 {
@@ -71,13 +75,17 @@ namespace QLĐA
             dgvDoAn.ReadOnly = true;
             dgvDoAn.AllowUserToAddRows = false;
 
-            // Đặt tiêu đề cột
+            
             if (dgvDoAn.Columns["Ma_tai_khoan"] != null)
                 dgvDoAn.Columns["Ma_tai_khoan"].HeaderText = "Mã tài khoản";
+            if (dgvDoAn.Columns["Ten_dang_nhap"] != null)
+                dgvDoAn.Columns["Ten_dang_nhap"].HeaderText = "Tên đăng nhập";
             if (dgvDoAn.Columns["Ma_vai_tro"] != null)
                 dgvDoAn.Columns["Ma_vai_tro"].HeaderText = "Mã vai trò";
+            if (dgvDoAn.Columns["Ten_vai_tro"] != null)
+                dgvDoAn.Columns["Ten_vai_tro"].HeaderText = "Tên vai trò";
 
-            // Đăng ký sự kiện CellClick
+           
             dgvDoAn.CellClick += DgvDoAn_CellClick;
         }
 
@@ -88,12 +96,12 @@ namespace QLĐA
             {
                 selectedRowIndex = e.RowIndex;
 
-                // Chỉ hiển thị dữ liệu khi đang ở chế độ bình thường hoặc đang sửa/xóa
+              
                 if (currentAction == "" || currentAction == "Edit" || currentAction == "Delete")
                 {
                     DisplayDataInTextBoxes(e.RowIndex);
 
-                    // Cập nhật trạng thái nút Sửa và Xóa khi chọn dòng (chỉ khi ở chế độ bình thường)
+                    
                     if (currentAction == "")
                     {
                         btnSua.Enabled = true;
@@ -111,7 +119,9 @@ namespace QLĐA
                 DataGridViewRow row = dgvDoAn.Rows[rowIndex];
 
                 txtMaTaiKhoan.Text = row.Cells["Ma_tai_khoan"].Value?.ToString() ?? "";
+                txtTenDangNhap.Text = row.Cells["Ten_dang_nhap"].Value?.ToString() ?? "";
                 txtMaVaiTro.Text = row.Cells["Ma_vai_tro"].Value?.ToString() ?? "";
+                txtTenVaiTro.Text = row.Cells["Ten_vai_tro"].Value?.ToString() ?? "";
             }
             catch (Exception ex)
             {
@@ -127,7 +137,7 @@ namespace QLĐA
             txtMaVaiTro.Clear();
         }
 
-        // Thiết lập trạng thái ReadOnly cho TextBox
+        
         private void SetTextBoxesReadOnly(bool isReadOnly)
         {
             // Mã tài khoản luôn ReadOnly khi sửa
@@ -148,29 +158,29 @@ namespace QLĐA
         {
             currentAction = "";
 
-            // Nút Thêm luôn enabled
+         
             btnThem.Enabled = true;
 
-            // Nút Sửa và Xóa chỉ enabled khi có dòng được chọn
+          
             btnSua.Enabled = selectedRowIndex >= 0;
             btnXoa.Enabled = selectedRowIndex >= 0;
 
-            // Nút Cập nhật disable ở chế độ bình thường
+           
             btnCapNhat.Enabled = false;
 
-            // TextBox ở chế độ ReadOnly
+        
             SetTextBoxesReadOnly(true);
         }
 
         // Thiết lập trạng thái đang thao tác (Thêm/Sửa/Xóa)
         private void SetActionState()
         {
-            // Disable các nút Thêm, Sửa, Xóa khi đang thao tác
+            
             btnThem.Enabled = false;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
 
-            // Enable nút Cập nhật
+        
             btnCapNhat.Enabled = true;
         }
 
@@ -263,7 +273,7 @@ namespace QLĐA
             }
             finally
             {
-                // Trở về trạng thái bình thường
+                
                 SetNormalState();
             }
         }
@@ -277,7 +287,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập mã tài khoản!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaTaiKhoan.Focus();
-                throw new Exception(); // Để không reset trạng thái
+                throw new Exception(); 
             }
 
             if (string.IsNullOrWhiteSpace(txtMaVaiTro.Text))
@@ -285,7 +295,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập mã vai trò!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaVaiTro.Focus();
-                throw new Exception(); // Để không reset trạng thái
+                throw new Exception(); 
             }
 
             try
@@ -306,7 +316,7 @@ namespace QLĐA
                             MessageBox.Show("Mã tài khoản đã có phân quyền!", "Lỗi",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtMaTaiKhoan.Focus();
-                            throw new Exception(); // Để không reset trạng thái
+                            throw new Exception(); 
                         }
                     }
 
@@ -322,7 +332,7 @@ namespace QLĐA
                             MessageBox.Show("Mã tài khoản không tồn tại trong hệ thống!\nVui lòng kiểm tra lại.", "Lỗi",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtMaTaiKhoan.Focus();
-                            throw new Exception(); // Để không reset trạng thái
+                            throw new Exception(); 
                         }
                     }
 
@@ -338,11 +348,11 @@ namespace QLĐA
                             MessageBox.Show("Mã vai trò không tồn tại trong hệ thống!\nVui lòng kiểm tra lại.", "Lỗi",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtMaVaiTro.Focus();
-                            throw new Exception(); // Để không reset trạng thái
+                            throw new Exception(); 
                         }
                     }
 
-                    // Insert phân quyền mới
+                   
                     string insertQuery = @"INSERT INTO TK_vai_tro (Ma_tai_khoan, Ma_vai_tro)
                                          VALUES (@maTaiKhoan, @maVaiTro)";
 
@@ -366,7 +376,7 @@ namespace QLĐA
             }
             catch (SqlException sqlEx)
             {
-                if (sqlEx.Number == 547) // Foreign key constraint error
+                if (sqlEx.Number == 547) 
                 {
                     MessageBox.Show("Lỗi: Mã tài khoản hoặc mã vai trò không hợp lệ!", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -376,7 +386,7 @@ namespace QLĐA
                     MessageBox.Show("Lỗi SQL: " + sqlEx.Message, "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                throw; // Để không reset trạng thái
+                throw; 
             }
         }
 
@@ -387,7 +397,7 @@ namespace QLĐA
             {
                 MessageBox.Show("Vui lòng chọn dòng cần sửa!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                throw new Exception(); // Để không reset trạng thái
+                throw new Exception(); 
             }
 
             if (string.IsNullOrWhiteSpace(txtMaVaiTro.Text))
@@ -395,7 +405,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập mã vai trò!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaVaiTro.Focus();
-                throw new Exception(); // Để không reset trạng thái
+                throw new Exception(); 
             }
 
             try
@@ -404,7 +414,7 @@ namespace QLĐA
                 {
                     conn.Open();
 
-                    // Kiểm tra mã vai trò có tồn tại không
+                   
                     string checkVTQuery = "SELECT COUNT(*) FROM Vai_tro WHERE Ma_vai_tro = @maVaiTro";
                     using (SqlCommand checkVTCmd = new SqlCommand(checkVTQuery, conn))
                     {
@@ -416,7 +426,7 @@ namespace QLĐA
                             MessageBox.Show("Mã vai trò không tồn tại trong hệ thống!\nVui lòng kiểm tra lại.", "Lỗi",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtMaVaiTro.Focus();
-                            throw new Exception(); // Để không reset trạng thái
+                            throw new Exception(); 
                         }
                     }
 
@@ -462,7 +472,7 @@ namespace QLĐA
             {
                 MessageBox.Show("Vui lòng chọn dòng cần xóa!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                throw new Exception(); // Để không reset trạng thái
+                throw new Exception(); 
             }
 
             try
@@ -492,7 +502,7 @@ namespace QLĐA
             }
             catch (SqlException sqlEx)
             {
-                if (sqlEx.Number == 547) // Foreign key constraint error
+                if (sqlEx.Number == 547) 
                 {
                     MessageBox.Show("Không thể xóa phân quyền này vì đang có dữ liệu liên quan!",
                         "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -502,7 +512,7 @@ namespace QLĐA
                     MessageBox.Show("Lỗi SQL: " + sqlEx.Message, "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                throw; // Để không reset trạng thái
+                throw; 
             }
         }
     }
