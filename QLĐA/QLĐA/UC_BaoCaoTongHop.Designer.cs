@@ -63,7 +63,7 @@
             this.pnHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnHeader.Location = new System.Drawing.Point(0, 0);
             this.pnHeader.Name = "pnHeader";
-            this.pnHeader.Size = new System.Drawing.Size(1030, 70);
+            this.pnHeader.Size = new System.Drawing.Size(1030, 158);
             this.pnHeader.TabIndex = 0;
             this.pnHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnHeader_Paint);
             // 
@@ -83,9 +83,9 @@
             this.pnList.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.pnList.Controls.Add(this.pnContainer);
             this.pnList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnList.Location = new System.Drawing.Point(0, 70);
+            this.pnList.Location = new System.Drawing.Point(0, 158);
             this.pnList.Name = "pnList";
-            this.pnList.Size = new System.Drawing.Size(1030, 530);
+            this.pnList.Size = new System.Drawing.Size(1030, 442);
             this.pnList.TabIndex = 1;
             // 
             // pnContainer

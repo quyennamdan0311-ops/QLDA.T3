@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,8 @@ namespace QLĐA
 {
     public partial class UC_QuanLyPhanQuyen : DevExpress.XtraEditors.XtraUserControl
     {
-        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=qldatn_final;Integrated Security=True;Encrypt=False";
-        private SqlConnection conn; 
+        private string connectionString = "Data Source=DESKTOP-OREV608\\SQLEXPRESS;Initial Catalog=QuanLyDoAnTotNghiep;Integrated Security=True";
+        private SqlConnection conn;
         private DataTable dtPhanQuyen;
         private string currentAction = ""; // "Add", "Edit", "Delete", ""
         private int selectedRowIndex = -1;
@@ -79,7 +80,7 @@ namespace QLĐA
             dgvDoAn.ReadOnly = true;
             dgvDoAn.AllowUserToAddRows = false;
 
-            
+
             if (dgvDoAn.Columns["Ma_tai_khoan"] != null)
                 dgvDoAn.Columns["Ma_tai_khoan"].HeaderText = "Mã tài khoản";
             if (dgvDoAn.Columns["Ten_dang_nhap"] != null)
@@ -102,7 +103,7 @@ namespace QLĐA
             if (dgvDoAn.Columns["Ma_giang_vien"] != null)
                 dgvDoAn.Columns["Ma_giang_vien"].HeaderText = "Mã giảng viên";
 
-           
+
             dgvDoAn.CellClick += DgvDoAn_CellClick;
             dgvDoAn.CellFormatting += DgvDoAn_CellFormatting;
         }
@@ -124,12 +125,12 @@ namespace QLĐA
             {
                 selectedRowIndex = e.RowIndex;
 
-              
+
                 if (currentAction == "" || currentAction == "Edit" || currentAction == "Delete")
                 {
                     DisplayDataInTextBoxes(e.RowIndex);
 
-                    
+
                     if (currentAction == "")
                     {
                         btnSua.Enabled = true;
@@ -148,10 +149,9 @@ namespace QLĐA
 
                 txtMaTaiKhoan.Text = row.Cells["Ma_tai_khoan"].Value?.ToString() ?? "";
                 txtTenDangNhap.Text = row.Cells["Ten_dang_nhap"].Value?.ToString() ?? "";
-                
                 // Hiển thị mật khẩu thật (không ẩn) trong TextBox để có thể sửa
                 txtMatKhau.Text = row.Cells["Mat_khau"].Value?.ToString() ?? "";
-                
+
                 txtLoaiNguoiDung.Text = row.Cells["Loai_nguoi_dung"].Value?.ToString() ?? "";
                 txtMaVaiTro.Text = row.Cells["Ma_vai_tro"].Value?.ToString() ?? "";
                 txtTenVaiTro.Text = row.Cells["Ten_vai_tro"].Value?.ToString() ?? "";
@@ -178,27 +178,27 @@ namespace QLĐA
             txtMaGiangVien.Clear();
         }
 
-        
+
         private void SetTextBoxesReadOnly(bool isReadOnly)
         {
             // Mã tài khoản luôn ReadOnly khi sửa
             if (currentAction == "Edit")
             {
                 txtMaTaiKhoan.ReadOnly = true;
-                txtTenDangNhap.ReadOnly = true; 
-                txtMatKhau.ReadOnly = isReadOnly; 
-                txtLoaiNguoiDung.ReadOnly = isReadOnly; 
-                txtMaVaiTro.ReadOnly = isReadOnly; 
+                txtTenDangNhap.ReadOnly = true;
+                txtMatKhau.ReadOnly = isReadOnly;
+                txtLoaiNguoiDung.ReadOnly = isReadOnly;
+                txtMaVaiTro.ReadOnly = isReadOnly;
                 txtTenVaiTro.ReadOnly = isReadOnly;
             }
             else if (currentAction == "Add")
             {
                 txtMaTaiKhoan.ReadOnly = isReadOnly;
-                txtTenDangNhap.ReadOnly = isReadOnly; 
-                txtMatKhau.ReadOnly = isReadOnly; 
-                txtLoaiNguoiDung.ReadOnly = isReadOnly; 
-                txtMaVaiTro.ReadOnly = isReadOnly; 
-                txtTenVaiTro.ReadOnly = isReadOnly; 
+                txtTenDangNhap.ReadOnly = isReadOnly;
+                txtMatKhau.ReadOnly = isReadOnly;
+                txtLoaiNguoiDung.ReadOnly = isReadOnly;
+                txtMaVaiTro.ReadOnly = isReadOnly;
+                txtTenVaiTro.ReadOnly = isReadOnly;
             }
             else
             {
@@ -219,29 +219,27 @@ namespace QLĐA
         {
             currentAction = "";
 
-         
+
             btnThem.Enabled = true;
 
-          
+
             btnSua.Enabled = selectedRowIndex >= 0;
             btnXoa.Enabled = selectedRowIndex >= 0;
 
-           
-            btnCapNhat.Enabled = false;
 
-        
+            btnCapNhat.Enabled = false;
             SetTextBoxesReadOnly(true);
         }
 
         // Thiết lập trạng thái đang thao tác (Thêm/Sửa/Xóa)
         private void SetActionState()
         {
-            
+
             btnThem.Enabled = false;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
 
-        
+
             btnCapNhat.Enabled = true;
         }
 
@@ -260,7 +258,7 @@ namespace QLĐA
                 "3. Nhập Mật khẩu (bắt buộc)\n" +
                 "4. Nhập Loại người dùng (VD: Admin, Sinh viên, Giảng viên)\n" +
                 "5. Nhập Mã vai trò và Tên vai trò\n\n" +
-                "Lưu ý: Mỗi sinh viên/giảng viên chỉ được có 1 tài khoản!", 
+                "Lưu ý: Mỗi sinh viên/giảng viên chỉ được có 1 tài khoản!",
                 "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -282,7 +280,7 @@ namespace QLĐA
             MessageBox.Show("Vui lòng chỉnh sửa thông tin và nhấn 'Cập nhật'\n\n" +
                 "Lưu ý: \n" +
                 "- Không thể sửa Mã tài khoản và Tên đăng nhập\n" +
-                "- Có thể sửa Mật khẩu, Loại người dùng, Mã vai trò, Tên vai trò, Mã sinh viên/giảng viên", 
+                "- Có thể sửa Mật khẩu, Loại người dùng, Mã vai trò, Tên vai trò, Mã sinh viên/giảng viên",
                 "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -345,7 +343,7 @@ namespace QLĐA
             }
             finally
             {
-                
+
                 SetNormalState();
             }
         }
@@ -359,7 +357,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập mã tài khoản!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaTaiKhoan.Focus();
-                throw new Exception(); 
+                throw new Exception();
             }
 
             if (string.IsNullOrWhiteSpace(txtTenDangNhap.Text))
@@ -367,7 +365,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập tên đăng nhập!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenDangNhap.Focus();
-                throw new Exception(); 
+                throw new Exception();
             }
 
             if (string.IsNullOrWhiteSpace(txtMatKhau.Text))
@@ -375,7 +373,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMatKhau.Focus();
-                throw new Exception(); 
+                throw new Exception();
             }
 
             if (txtMatKhau.Text.Length < 6)
@@ -383,7 +381,7 @@ namespace QLĐA
                 MessageBox.Show("Mật khẩu phải có ít nhất 6 ký tự!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMatKhau.Focus();
-                throw new Exception(); 
+                throw new Exception();
             }
 
             if (string.IsNullOrWhiteSpace(txtLoaiNguoiDung.Text))
@@ -391,7 +389,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập loại người dùng!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtLoaiNguoiDung.Focus();
-                throw new Exception(); 
+                throw new Exception();
             }
 
             if (string.IsNullOrWhiteSpace(txtMaVaiTro.Text))
@@ -399,7 +397,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập mã vai trò!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaVaiTro.Focus();
-                throw new Exception(); 
+                throw new Exception();
             }
 
             if (string.IsNullOrWhiteSpace(txtTenVaiTro.Text))
@@ -407,7 +405,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập tên vai trò!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenVaiTro.Focus();
-                throw new Exception(); 
+                throw new Exception();
             }
 
             // Kiểm tra chỉ nhập một trong hai: Mã sinh viên hoặc Mã giảng viên
@@ -520,7 +518,7 @@ namespace QLĐA
                                     MessageBox.Show("Mã tài khoản đã tồn tại!\nVui lòng sử dụng mã khác.", "Lỗi",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     txtMaTaiKhoan.Focus();
-                                    throw new Exception(); 
+                                    throw new Exception();
                                 }
                             }
 
@@ -536,7 +534,7 @@ namespace QLĐA
                                     MessageBox.Show("Tên đăng nhập đã tồn tại!\nVui lòng chọn tên đăng nhập khác.", "Lỗi",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     txtTenDangNhap.Focus();
-                                    throw new Exception(); 
+                                    throw new Exception();
                                 }
                             }
 
@@ -570,11 +568,11 @@ namespace QLĐA
                                 insertTKCmd.Parameters.AddWithValue("@tenDangNhap", txtTenDangNhap.Text.Trim());
                                 insertTKCmd.Parameters.AddWithValue("@matKhau", txtMatKhau.Text.Trim());
                                 insertTKCmd.Parameters.AddWithValue("@loaiNguoiDung", txtLoaiNguoiDung.Text.Trim());
-                                insertTKCmd.Parameters.AddWithValue("@maSinhVien", 
+                                insertTKCmd.Parameters.AddWithValue("@maSinhVien",
                                     coMaSinhVien ? (object)txtMaSinhVien.Text.Trim() : DBNull.Value);
-                                insertTKCmd.Parameters.AddWithValue("@maGiangVien", 
+                                insertTKCmd.Parameters.AddWithValue("@maGiangVien",
                                     coMaGiangVien ? (object)txtMaGiangVien.Text.Trim() : DBNull.Value);
-                                
+
                                 insertTKCmd.ExecuteNonQuery();
                             }
 
@@ -594,7 +592,7 @@ namespace QLĐA
                                     transaction.Commit();
                                     string loaiTaiKhoan = coMaSinhVien ? "Sinh viên" : "Giảng viên";
                                     string maNguoiDung = coMaSinhVien ? txtMaSinhVien.Text.Trim() : txtMaGiangVien.Text.Trim();
-                                    
+
                                     MessageBox.Show("Thêm tài khoản và phân quyền thành công!\n\n" +
                                         $"Loại: {loaiTaiKhoan}\n" +
                                         $"Mã {loaiTaiKhoan.ToLower()}: {maNguoiDung}\n" +
@@ -602,7 +600,7 @@ namespace QLĐA
                                         $"Tên đăng nhập: {txtTenDangNhap.Text.Trim()}\n" +
                                         $"Loại người dùng: {txtLoaiNguoiDung.Text.Trim()}\n" +
                                         $"Vai trò: {txtTenVaiTro.Text.Trim()} ({txtMaVaiTro.Text.Trim()})\n" +
-                                        $"Mật khẩu: {txtMatKhau.Text.Trim()}", 
+                                        $"Mật khẩu: {txtMatKhau.Text.Trim()}",
                                         "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     LoadDanhSachPhanQuyen();
                                     ClearTextBoxes();
@@ -635,7 +633,7 @@ namespace QLĐA
                     MessageBox.Show("Lỗi SQL: " + sqlEx.Message, "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                throw; 
+                throw;
             }
         }
 
@@ -645,8 +643,8 @@ namespace QLĐA
             if (selectedRowIndex < 0)
             {
                 MessageBox.Show("Vui lòng chọn dòng cần sửa!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                throw new Exception(); 
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                throw new Exception();
             }
 
             if (string.IsNullOrWhiteSpace(txtMatKhau.Text))
@@ -654,7 +652,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMatKhau.Focus();
-                throw new Exception(); 
+                throw new Exception();
             }
 
             if (txtMatKhau.Text.Length < 6)
@@ -662,7 +660,7 @@ namespace QLĐA
                 MessageBox.Show("Mật khẩu phải có ít nhất 6 ký tự!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMatKhau.Focus();
-                throw new Exception(); 
+                throw new Exception();
             }
 
             if (string.IsNullOrWhiteSpace(txtLoaiNguoiDung.Text))
@@ -670,7 +668,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập loại người dùng!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtLoaiNguoiDung.Focus();
-                throw new Exception(); 
+                throw new Exception();
             }
 
             if (string.IsNullOrWhiteSpace(txtMaVaiTro.Text))
@@ -678,7 +676,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập mã vai trò!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaVaiTro.Focus();
-                throw new Exception(); 
+                throw new Exception();
             }
 
             if (string.IsNullOrWhiteSpace(txtTenVaiTro.Text))
@@ -686,7 +684,7 @@ namespace QLĐA
                 MessageBox.Show("Vui lòng nhập tên vai trò!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenVaiTro.Focus();
-                throw new Exception(); 
+                throw new Exception();
             }
 
             // Kiểm tra chỉ nhập một trong hai: Mã sinh viên hoặc Mã giảng viên
@@ -833,11 +831,11 @@ namespace QLĐA
                                 updateTKCmd.Parameters.AddWithValue("@maTaiKhoan", txtMaTaiKhoan.Text.Trim());
                                 updateTKCmd.Parameters.AddWithValue("@matKhau", txtMatKhau.Text.Trim());
                                 updateTKCmd.Parameters.AddWithValue("@loaiNguoiDung", txtLoaiNguoiDung.Text.Trim());
-                                updateTKCmd.Parameters.AddWithValue("@maSinhVien", 
+                                updateTKCmd.Parameters.AddWithValue("@maSinhVien",
                                     coMaSinhVien ? (object)txtMaSinhVien.Text.Trim() : DBNull.Value);
-                                updateTKCmd.Parameters.AddWithValue("@maGiangVien", 
+                                updateTKCmd.Parameters.AddWithValue("@maGiangVien",
                                     coMaGiangVien ? (object)txtMaGiangVien.Text.Trim() : DBNull.Value);
-                                
+
                                 updateTKCmd.ExecuteNonQuery();
                             }
 
@@ -845,7 +843,6 @@ namespace QLĐA
                             string updateQuery = @"UPDATE TK_vai_tro SET 
                                                  Ma_vai_tro = @maVaiTro
                                                  WHERE Ma_tai_khoan = @maTaiKhoan";
-
                             using (SqlCommand cmd = new SqlCommand(updateQuery, conn, transaction))
                             {
                                 cmd.Parameters.AddWithValue("@maTaiKhoan", txtMaTaiKhoan.Text.Trim());
@@ -869,7 +866,7 @@ namespace QLĐA
                                 }
                             }
                         }
-                        catch       
+                        catch
                         {
                             transaction.Rollback();
                             throw;
@@ -881,7 +878,7 @@ namespace QLĐA
             {
                 MessageBox.Show("Lỗi SQL: " + sqlEx.Message, "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw; 
+                throw;
             }
         }
 
@@ -892,7 +889,7 @@ namespace QLĐA
             {
                 MessageBox.Show("Vui lòng chọn dòng cần xóa!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                throw new Exception(); 
+                throw new Exception();
             }
 
             try
@@ -911,7 +908,6 @@ namespace QLĐA
                                 deleteTKVTCmd.Parameters.AddWithValue("@maTaiKhoan", txtMaTaiKhoan.Text.Trim());
                                 deleteTKVTCmd.ExecuteNonQuery();
                             }
-
                             // Bước 2: Xóa trong bảng Tai_khoan
                             string deleteTKQuery = "DELETE FROM Tai_khoan WHERE Ma_tai_khoan = @maTaiKhoan";
                             using (SqlCommand deleteTKCmd = new SqlCommand(deleteTKQuery, conn, transaction))
@@ -923,7 +919,7 @@ namespace QLĐA
                                 {
                                     transaction.Commit();
                                     MessageBox.Show("Xóa tài khoản và phân quyền thành công!\n\n" +
-                                        "Sinh viên/Giảng viên này có thể tạo tài khoản mới.", 
+                                        "Sinh viên/Giảng viên này có thể tạo tài khoản mới.",
                                         "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     LoadDanhSachPhanQuyen();
                                     ClearTextBoxes();
@@ -947,7 +943,7 @@ namespace QLĐA
             }
             catch (SqlException sqlEx)
             {
-                if (sqlEx.Number == 547) 
+                if (sqlEx.Number == 547)
                 {
                     MessageBox.Show("Không thể xóa tài khoản này vì đang có dữ liệu liên quan trong hệ thống!\n\n" +
                         "Vui lòng xóa các dữ liệu liên quan trước khi xóa tài khoản.",
@@ -958,7 +954,7 @@ namespace QLĐA
                     MessageBox.Show("Lỗi SQL: " + sqlEx.Message, "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                throw; 
+                throw;
             }
         }
     }
