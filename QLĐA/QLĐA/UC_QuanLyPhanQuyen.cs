@@ -282,8 +282,8 @@ namespace QLĐA
             MessageBox.Show("Vui lòng chỉnh sửa thông tin và nhấn 'Cập nhật'\n\n" +
                 "Lưu ý: \n" +
                 "- Không thể sửa Mã tài khoản và Tên đăng nhập\n" +
-                "- Có thể sửa Mật khẩu, Loại người dùng, Mã vai trò, Tên vai trò, Mã sinh viên/giảng viên", "Thông báo",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                "- Có thể sửa Mật khẩu, Loại người dùng, Mã vai trò, Tên vai trò, Mã sinh viên/giảng viên", 
+                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         // Nút XÓA
@@ -298,7 +298,8 @@ namespace QLĐA
 
             DialogResult result = MessageBox.Show(
                 $"Bạn có chắc chắn muốn xóa tài khoản '{txtTenDangNhap.Text}' (Mã: {txtMaTaiKhoan.Text})?\n\n" +
-                "Cảnh báo: Thao tác này sẽ xóa cả phân quyền của tài khoản!",
+                "Cảnh báo: Thao tác này sẽ xóa HOÀN TOÀN tài khoản và phân quyền!\n" +
+                "Sinh viên/Giảng viên này có thể tạo tài khoản mới sau khi xóa.",
                 "Xác nhận xóa",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
@@ -884,7 +885,7 @@ namespace QLĐA
             }
         }
 
-        // Xóa phân quyền
+        // Xóa tài khoản và phân quyền
         private void XoaPhanQuyen()
         {
             if (selectedRowIndex < 0)
@@ -899,22 +900,47 @@ namespace QLĐA
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-
-                    string deleteQuery = "DELETE FROM TK_vai_tro WHERE Ma_tai_khoan = @maTaiKhoan"; 
-
-                    using (SqlCommand cmd = new SqlCommand(deleteQuery, conn))
+                    using (SqlTransaction transaction = conn.BeginTransaction())
                     {
-                        cmd.Parameters.AddWithValue("@maTaiKhoan", txtMaTaiKhoan.Text.Trim());
-
-                        int result = cmd.ExecuteNonQuery();
-
-                        if (result > 0)
+                        try
                         {
-                            MessageBox.Show("Xóa phân quyền thành công!", "Thành công",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LoadDanhSachPhanQuyen();
-                            ClearTextBoxes();
-                            selectedRowIndex = -1;
+                            // Bước 1: Xóa trong bảng TK_vai_tro trước (foreign key)
+                            string deleteTKVTQuery = "DELETE FROM TK_vai_tro WHERE Ma_tai_khoan = @maTaiKhoan";
+                            using (SqlCommand deleteTKVTCmd = new SqlCommand(deleteTKVTQuery, conn, transaction))
+                            {
+                                deleteTKVTCmd.Parameters.AddWithValue("@maTaiKhoan", txtMaTaiKhoan.Text.Trim());
+                                deleteTKVTCmd.ExecuteNonQuery();
+                            }
+
+                            // Bước 2: Xóa trong bảng Tai_khoan
+                            string deleteTKQuery = "DELETE FROM Tai_khoan WHERE Ma_tai_khoan = @maTaiKhoan";
+                            using (SqlCommand deleteTKCmd = new SqlCommand(deleteTKQuery, conn, transaction))
+                            {
+                                deleteTKCmd.Parameters.AddWithValue("@maTaiKhoan", txtMaTaiKhoan.Text.Trim());
+                                int result = deleteTKCmd.ExecuteNonQuery();
+
+                                if (result > 0)
+                                {
+                                    transaction.Commit();
+                                    MessageBox.Show("Xóa tài khoản và phân quyền thành công!\n\n" +
+                                        "Sinh viên/Giảng viên này có thể tạo tài khoản mới.", 
+                                        "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    LoadDanhSachPhanQuyen();
+                                    ClearTextBoxes();
+                                    selectedRowIndex = -1;
+                                }
+                                else
+                                {
+                                    transaction.Rollback();
+                                    MessageBox.Show("Không tìm thấy tài khoản cần xóa!", "Thông báo",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                            }
+                        }
+                        catch
+                        {
+                            transaction.Rollback();
+                            throw;
                         }
                     }
                 }
@@ -923,7 +949,8 @@ namespace QLĐA
             {
                 if (sqlEx.Number == 547) 
                 {
-                    MessageBox.Show("Không thể xóa phân quyền này vì đang có dữ liệu liên quan!",
+                    MessageBox.Show("Không thể xóa tài khoản này vì đang có dữ liệu liên quan trong hệ thống!\n\n" +
+                        "Vui lòng xóa các dữ liệu liên quan trước khi xóa tài khoản.",
                         "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
