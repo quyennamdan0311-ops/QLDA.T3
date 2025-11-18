@@ -28161,7 +28161,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:QLĐA - NEU Capstone Projects Manager"
         "ProductCode" = "8:{8EA7F6D0-BCDB-4F58-8CF6-C39ECEF6F9EA}"
-        "PackageCode" = "8:{22AAAA1B-BC79-4A27-BC53-DCF7993959BB}"
+        "PackageCode" = "8:{E4AC7B3E-1CB3-43A2-95C9-61095100A3F8}"
         "UpgradeCode" = "8:{78895394-3F0C-4625-A22A-C8211D5D884F}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
