@@ -185,20 +185,20 @@ namespace QLĐA
             if (currentAction == "Edit")
             {
                 txtMaTaiKhoan.ReadOnly = true;
-                txtTenDangNhap.ReadOnly = true; // Không cho sửa tên đăng nhập
-                txtMatKhau.ReadOnly = isReadOnly; // Cho phép sửa mật khẩu
-                txtLoaiNguoiDung.ReadOnly = isReadOnly; // Cho phép sửa loại người dùng
-                txtMaVaiTro.ReadOnly = isReadOnly; // Cho phép sửa mã vai trò
-                txtTenVaiTro.ReadOnly = isReadOnly; // Cho phép sửa tên vai trò
+                txtTenDangNhap.ReadOnly = true; 
+                txtMatKhau.ReadOnly = isReadOnly; 
+                txtLoaiNguoiDung.ReadOnly = isReadOnly; 
+                txtMaVaiTro.ReadOnly = isReadOnly; 
+                txtTenVaiTro.ReadOnly = isReadOnly;
             }
             else if (currentAction == "Add")
             {
                 txtMaTaiKhoan.ReadOnly = isReadOnly;
-                txtTenDangNhap.ReadOnly = isReadOnly; // Cho phép nhập tên đăng nhập khi thêm
-                txtMatKhau.ReadOnly = isReadOnly; // Cho phép nhập mật khẩu khi thêm
-                txtLoaiNguoiDung.ReadOnly = isReadOnly; // Cho phép nhập loại người dùng khi thêm
-                txtMaVaiTro.ReadOnly = isReadOnly; // Cho phép nhập mã vai trò khi thêm
-                txtTenVaiTro.ReadOnly = isReadOnly; // Cho phép nhập tên vai trò khi thêm
+                txtTenDangNhap.ReadOnly = isReadOnly; 
+                txtMatKhau.ReadOnly = isReadOnly; 
+                txtLoaiNguoiDung.ReadOnly = isReadOnly; 
+                txtMaVaiTro.ReadOnly = isReadOnly; 
+                txtTenVaiTro.ReadOnly = isReadOnly; 
             }
             else
             {
